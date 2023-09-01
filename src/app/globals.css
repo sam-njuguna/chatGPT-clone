@@ -1,27 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=Syne:wght@700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  outline: none;
+  font-family: var(--man);
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --man: "Manrope", sans-serif;
+  --syne: "Syne", sans-serif;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@layer components {
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.max-width {
+  @apply max-w-[1440px] m-auto max-mobile:px-2 max-sm:px-4 max-md:px-6 max-lg:px-8 max-xl:px-10 px-12;
+}
+.title {
+  @apply font-bold font-syne text-[60px] max-mobile:text-[20px] max-sm:text-[30px] max-md:text-[40px] max-lg:text-[50px];
+}
+.sub__title {
+  @apply text-[24px] lg:text-[20px];
+}
+.custom-btn {
+  @apply flex flex-row relative justify-center items-center font-bold py-[14px] px-[20px];
 }
