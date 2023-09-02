@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        man: "var(--man)",
-        syne: "var(--syne)",
+        hind: "var(--hind)",
+        outfit: "var(--outfit)",
       },
       screens: {
         mobile: "450px",
