@@ -18,16 +18,19 @@
   --outfit: "Outfit", sans-serif;
 }
 @layer components {
-}
-.max-width {
-  @apply max-w-[1440px] m-auto max-mobile:px-2 max-sm:px-4 max-md:px-6 max-lg:px-8 max-xl:px-10 px-12;
-}
-.title {
-  @apply font-extrabold font-outfit text-[60px] max-mobile:text-[20px] max-sm:text-[30px] max-md:text-[40px] max-lg:text-[50px];
-}
-.sub__title {
-  @apply text-[24px] lg:text-[20px];
-}
-.custom-btn {
-  @apply flex flex-row relative justify-center items-center font-bold py-[14px] px-[20px];
+  .max-width {
+    @apply max-w-[1440px] mx-auto max-mobile:px-2 max-sm:px-4 max-md:px-6 max-lg:px-8 max-xl:px-10 px-12;
+  }
+  .title {
+    @apply font-extrabold font-outfit text-[60px] max-sm:text-[30px] max-md:text-[40px] max-lg:text-[50px];
+  }
+  .sub__title {
+    @apply text-[18px] lg:text-[20px];
+  }
+  .custom-btn {
+    @apply flex flex-row relative justify-center items-center font-bold py-[14px] px-[20px];
+  }
+  .overlay {
+    @apply absolute bg-hero-bg bg-repeat-round  w-full -right-1/4 -top-1/4 h-full -z-10 overflow-hidden;
+  }
 }

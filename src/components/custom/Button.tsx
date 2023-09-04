@@ -3,14 +3,15 @@ import { FC, MouseEventHandler } from "react";
 interface ButtonProps {
   title: string;
   className?: string;
+  type?: "button" | "submit" | undefined;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: FC<ButtonProps> = ({ title, className, handleClick }) => {
+const Button: FC<ButtonProps> = ({ title, className, handleClick, type }) => {
   return (
     <button
       disabled={true}
-      type={"button"}
+      type={type}
       className={`custom-btn ${className}`}
       onClick={handleClick}
     >
