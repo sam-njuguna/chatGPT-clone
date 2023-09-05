@@ -1,67 +1,112 @@
-"use client"
-import React, { FC, useState } from "react";
+"use client";
+import { manufacturers } from "@/constants";
+import React, { useEffect, useRef, useState } from "react";
 
-interface SearchManufacturerProps {
+interface SearchManufacture {
   manufacturer: string;
-  setManufacturer: (manufacturer: string) => void;
+  setManuFacturer: (manufacturer: string) => void;
 }
 
-const SearchManufacturer: FC<SearchManufacturerProps> = ({
+const SuggestionInput: React.FC<SearchManufacture> = ({
   manufacturer,
-  setManufacturer,
+  setManuFacturer,
 }) => {
-  const [inputValue, setInputValue] = useState<string>("");
+  const [query, setQuery] = useState<string>("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const isFocused = useRef<boolean>(false);
 
-  const allManufacturers = [
-    "Apple",
-    "Samsung",
-    "Google",
-    "Microsoft",
-    "Sony",
-    "LG",
-    "Lenovo",
-    "Dell",
-    "HP",
-    "Asus",
-    "Acer",
-  ];
+  useEffect(() => {
+    const handleWindowClick = (e: MouseEvent) => {
+      // Check if the click target is the input element or a suggestion
+      if (
+        inputRef.current &&
+        (e.target === inputRef.current ||
+          inputRef.current.contains(e.target as Node))
+      ) {
+        isFocused.current = true;
+      } else {
+        isFocused.current = false;
+        setSuggestions([]);
+      }
+    };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = event.target.value;
-    setInputValue(inputValue);
+    window.addEventListener("click", handleWindowClick);
 
-    // Filter the manufacturers based on the input value
-    const filteredManufacturers = allManufacturers.filter((manuf) =>
-      manuf.toLowerCase().includes(inputValue.toLowerCase())
+    return () => {
+      window.removeEventListener("click", handleWindowClick);
+    };
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    setQuery(inputValue);
+
+    // Filter suggestions based on the first letter entered
+    const filtered = manufacturers.filter((suggestion) =>
+      suggestion.toLowerCase().startsWith(inputValue.toLowerCase())
     );
 
-    setSuggestions(filteredManufacturers);
+    setSuggestions(filtered);
   };
 
-  const handleSelectSuggestion = (selectedValue: string) => {
-    setInputValue(selectedValue);
+  const handleSuggestionClick = (suggestion: string) => {
+    setQuery(suggestion);
     setSuggestions([]);
-    setManufacturer(selectedValue);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && query.length >= 3) {
+      const matchedManufacturer = manufacturers.find((manufacturer) =>
+        manufacturer.toLowerCase().startsWith(query.toLowerCase())
+      );
+
+      if (matchedManufacturer) {
+        setQuery(matchedManufacturer);
+        setSuggestions([]);
+        e.preventDefault();
+      }
+    }
   };
 
   return (
     <div>
       <input
         type="text"
-        value={inputValue}
+        placeholder="Enter a suggestion"
+        value={query}
         onChange={handleInputChange}
-        placeholder="Type to search..."
+        onKeyDown={handleKeyDown}
+        ref={inputRef}
       />
-      <ul>
-        {suggestions.map((suggestion, index) => (
-          <li key={index} onClick={() => handleSelectSuggestion(suggestion)}>
-            {suggestion}
-          </li>
-        ))}
-      </ul>
+      {isFocused.current && query === "" && (
+        <ul>
+          {manufacturers.map((suggestion, index) => (
+            <li
+              key={index}
+              onClick={() => handleSuggestionClick(suggestion)}
+              style={{ cursor: "pointer" }}
+            >
+              {suggestion}
+            </li>
+          ))}
+        </ul>
+      )}
+      {query !== "" && (
+        <ul>
+          {suggestions.map((suggestion, index) => (
+            <li
+              key={index}
+              onClick={() => handleSuggestionClick(suggestion)}
+              style={{ cursor: "pointer" }}
+            >
+              {suggestion}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
-export default SearchManufacturer;
+export default SuggestionInput;
