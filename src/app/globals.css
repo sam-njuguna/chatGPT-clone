@@ -28,7 +28,7 @@
     @apply text-[18px] lg:text-[20px];
   }
   .custom-btn {
-    @apply flex flex-row relative justify-center items-center font-bold py-[14px] px-[20px];
+    @apply flex flex-row relative justify-center items-center font-bold py-[12px] px-[20px];
   }
   .overlay {
     @apply absolute bg-hero-bg bg-repeat-round  w-full -right-1/4 -top-1/4 h-full -z-10 overflow-hidden;

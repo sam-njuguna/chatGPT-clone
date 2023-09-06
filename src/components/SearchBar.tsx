@@ -6,7 +6,9 @@ interface SearchBarProps {}
 
 const SearchBar: FC<SearchBarProps> = ({}) => {
   const [manufacturer, setManufacturer] = useState("");
-  const handleSearch = () => {};
+  const handleSearch = (e: any) => {
+    e.preventDefault();
+  };
 
   return (
     <form
@@ -16,7 +18,7 @@ const SearchBar: FC<SearchBarProps> = ({}) => {
       <div className="flex-1 max-sm:w-full flex justify-start items-center relative">
         <SearchManufacturer
           manufacturer={manufacturer}
-          setManufacturer={setManufacturer}
+          setManuFacturer={setManufacturer}
         />
       </div>
     </form>

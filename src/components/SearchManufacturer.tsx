@@ -11,7 +11,7 @@ const SuggestionInput: React.FC<SearchManufacture> = ({
   manufacturer,
   setManuFacturer,
 }) => {
-  const [query, setQuery] = useState<string>("");
+  const [query, setQuery] = useState<string>(manufacturer);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const isFocused = useRef<boolean>(false);
@@ -41,8 +41,7 @@ const SuggestionInput: React.FC<SearchManufacture> = ({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setQuery(inputValue);
-
-    // Filter suggestions based on the first letter entered
+    setManuFacturer(inputValue);
     const filtered = manufacturers.filter((suggestion) =>
       suggestion.toLowerCase().startsWith(inputValue.toLowerCase())
     );
