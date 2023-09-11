@@ -21,7 +21,6 @@ const CarCard: FC<CarCardProps> = ({ car, onClick }) => {
         <div className=" w-full flex justify-between items-start gap-2">
           <h2 className="text-[22px] leading-[26px] font-bold font-outfit capitalize">
             {make}
-            {model}
           </h2>
           <p className="flex my-6 text-[28px] font-extrabold font-outfit">
             <span className="self-start text-[14px] font-semibold">$</span>
