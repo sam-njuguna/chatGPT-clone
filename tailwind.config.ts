@@ -16,12 +16,16 @@ const config: Config = {
         mobile: "450px",
       },
       colors: {
-        "primary-blue": {
-          DEFAULT: "#5928e5",
-          100: "#0057FA",
+        "p-blue": {
+          default: "#3c46ff",
+          100: "#0000ff",
         },
-        "primary-white": {
-          DEFAULT: "#F9EAFF",
+        "theme-color": {
+          dark: "#d292ff",
+          light: "#fe7600",
+        },
+        citation: {
+          default: "#1f243c",
         },
       },
       backgroundImage: {

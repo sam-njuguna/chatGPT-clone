@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300;400;500;600&family=Outfit:wght@700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,26 +11,7 @@
   list-style: none;
   scroll-behavior: smooth;
   outline: none;
-  font-family: var(--hind);
-}
-:root {
-  --hind: "Hind Guntur", sans-serif;
-  --outfit: "Outfit", sans-serif;
+  font-family: "Figtree", sans-serif;
 }
 @layer components {
-  .max-width {
-    @apply max-w-[1440px] mx-auto max-mobile:px-2 max-sm:px-4 max-md:px-6 max-lg:px-8 max-xl:px-10 px-12;
-  }
-  .title {
-    @apply font-extrabold font-outfit text-[60px] max-sm:text-[30px] max-md:text-[40px] max-lg:text-[50px];
-  }
-  .sub__title {
-    @apply text-[18px] lg:text-[20px];
-  }
-  .custom-btn {
-    @apply flex flex-row relative justify-center items-center font-bold py-[12px] px-[20px];
-  }
-  .overlay {
-    @apply absolute bg-hero-bg bg-repeat-round  w-full -right-1/4 -top-1/4 h-full -z-10 overflow-hidden;
-  }
 }
