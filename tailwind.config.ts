@@ -17,7 +17,7 @@ const config: Config = {
       },
       colors: {
         "p-blue": {
-          default: "#3c46ff",
+          DEFAULT: "#3c46ff",
           100: "#0000ff",
         },
         "theme-color": {
@@ -25,7 +25,7 @@ const config: Config = {
           light: "#fe7600",
         },
         citation: {
-          default: "#1f243c",
+          DEFAULT: "#1f243c",
         },
       },
       backgroundImage: {
