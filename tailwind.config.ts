@@ -14,7 +14,7 @@ const config: Config = {
         outfit: "var(--outfit)",
       },
       screens: {
-        mobile: "450px",
+        tablet: "1020px",
       },
       colors: {
         "p-blue": {
@@ -23,6 +23,10 @@ const config: Config = {
         },
         "theme-color": {
           dark: "#d292ff",
+          light: "#fe7600",
+        },
+        "focus-color": {
+          green: "#10a37f",
           light: "#fe7600",
         },
         citation: {

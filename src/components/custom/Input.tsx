@@ -1,14 +1,16 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { twMerge } from "tailwind-merge";
-
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 interface InputProps {
-  label: string;
+  label?: string;
   disabled?: boolean;
   type: string;
   value: string;
-  setValue: (value: string) => void;
+  setValue?: (value: string) => void;
   readOnly?: boolean;
+  error?: string | null;
+  onClick?: () => void;
 }
 
 const Input: FC<InputProps> = ({
@@ -18,43 +20,86 @@ const Input: FC<InputProps> = ({
   value,
   setValue,
   readOnly,
+  error,
+  onClick,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const enter = () => {
-    setIsOpen(true);
-  };
-  useEffect(() => {
-    if (Boolean(value)) {
+    if (!readOnly) {
       setIsOpen(true);
-    } else {
-      setIsOpen(false);
     }
-  }, [value]);
-
+  };
+  const leave = () => {
+    setIsOpen(false);
+  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (setValue && !readOnly) {
+      // Check if setValue is defined before calling it
+      setValue(e.target.value);
+    }
+  };
+  const handlePassword = () => {
+    setShowPassword(!showPassword);
+  };
   return (
-    <div className="w-full h-[52px] group focus:text-[#10a23c] relative">
-      <input
-        type={type}
-        disabled={disabled}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onFocus={enter}
-        className=" h-full w-full px-4 border text-[16px] border-zinc-400/60 focus:border-[#10a23c] group-focus:text-[#2d333a] text-[#2d333a] rounded bg-transparent focus:bg-transparent"
-        required
-        readOnly={readOnly}
-      />
-      <label
-        htmlFor={type}
-        className={twMerge(
-          "absolute  px-1 w-max duration-200",
-          isOpen
-            ? "-top-2 bg-white text-[15px]  left-3 "
-            : "top-1/2 transform -translate-y-1/2 left-4"
+    <div className="relative">
+      <div className="w-full h-[52px] group focus: relative">
+        <input
+          type={type === "password" && showPassword ? "text" : type}
+          disabled={disabled}
+          value={value}
+          onChange={handleChange}
+          onFocus={enter}
+          onBlur={leave}
+          className={twMerge(
+            "h-full  w-full px-4  border text-[16px] font-medium border-[#c2c8d0] focus:border-focus-color-green group-focus:text-[#2d333a] text-[#2d333a] rounded bg-transparent focus:bg-transparent",
+            type === "password" && "pr-[45px]",
+            readOnly && "focus:border-[#c2c8d0] cursor-default"
+          )}
+          required
+          readOnly={readOnly}
+        />
+        <label
+          htmlFor={type}
+          className={twMerge(
+            `absolute  px-1 w-max duration-200  text-${
+              isOpen ? "focus-color-green " : "[#2d333a] "
+            }`,
+            isOpen || value
+              ? "-top-2 bg-white text-[15px] left-3 "
+              : "top-1/2 transform -translate-y-1/2 left-4 "
+          )}
+        >
+          {label}
+        </label>
+        {readOnly && (
+          <button
+            onClick={onClick}
+            className="absolute right-0 top-1/2 transform z-10 -translate-y-1/2 px-4 py-1 text-focus-color-green"
+          >
+            Edit
+          </button>
         )}
-      >
-        {label}
-      </label>
+        {type === "password" && (
+          <div
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[44px] h-[52px] flex justify-center items-center hover:bg-gray-300/60 text-gray-500 hover:text-gray-800"
+            onClick={handlePassword}
+          >
+            {type === "password" && showPassword ? (
+              <BsEyeSlash className="text-[20px]" />
+            ) : (
+              <BsEye className="text-[20px]" />
+            )}
+          </div>
+        )}
+      </div>
+      {error && (
+        <p className="absolute top-[54px] text-[14px] list-disc w-full">
+          {error}
+        </p>
+      )}
     </div>
   );
 };
