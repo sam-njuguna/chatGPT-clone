@@ -10,25 +10,24 @@ const page: FC<pageProps> = () => {
   const param = useParams();
   const router = useRouter();
   const [password, setPassword] = useState("");
-  const decodedEmail = param.email
+  const email = param.email
     ? decodeURIComponent(decodeURIComponent(param.email as string))
     : "";
 
   const handleEditClick = () => {
-    router.push(`/auth/login?email=${encodeURIComponent(decodedEmail)}`);
+    router.push(`/auth/signup?email=${encodeURIComponent(email)}`);
   };
-  //to-do
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   if (password) {
-  //     router.push(`/auth/onboarding`);
-  //   } else {
-  //     return null;
-  //   }
-  // };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (password) {
+      router.push(`/auth/onboarding/${encodeURIComponent(email)}`);
+    } else {
+      return null;
+    }
+  };
   return (
     <div className="w-full relative flex flex-col items-center justify-center supports-[min-height:100dvh]:min-h-[100dvh] bg-white text-[#2d333a]">
-      <div className="w-full absolute top-[32px] left-0 flex justify-center items-baseline">
+      <div className="w-full absolute top-[32px]    left-0 flex justify-center items-baseline">
         <div className="h-8 w-8">
           <Image
             src="/openai.png"
@@ -39,18 +38,22 @@ const page: FC<pageProps> = () => {
           />
         </div>
       </div>
-      <div className="  max-w-[400px] my-[10%] max-md:my-[15%] tablet:mt-[20%] xl:mt-[16.5%] px-8 sm:px-10 w-full mx-auto text-center ">
-        <h1 className="text-[32px] leading-[1.2em] font-bold mb-4">
-          Enter your password
+      <div className="  max-w-[400px] my-[10%] max-md:my-[15%] tablet:mt-[20%] xl:mt-[15.5%]  px-8 sm:px-10 w-full mx-auto text-center ">
+        <h1 className="text-[32px] leading-[1.2em] font-bold ">
+          Create your account
         </h1>
+        <p className="text-center text-[14px] mt-[10px]">
+          Note that phone verification may be required for signup. Your number
+          will only be used to verify your identity for security purposes.
+        </p>
         <form
           action=""
           className="w-full mt-6 flex flex-col flex-1 gap-y-[14px]"
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <Input
             type="email"
-            value={decodedEmail}
+            value={email}
             readOnly={true}
             onClick={handleEditClick}
           />
@@ -60,12 +63,6 @@ const page: FC<pageProps> = () => {
             value={password}
             setValue={setPassword}
           />
-          <a
-            href=""
-            className="text-focus-color-green text-start text-[14px] font-medium"
-          >
-            Forgot password?
-          </a>
           <button
             className=" w-full mt-2  bg-focus-color-green hover:bg-[#10a36be7] flex rounded justify-center items-center h-[52px] font-medium text-white"
             type="submit"
@@ -74,12 +71,12 @@ const page: FC<pageProps> = () => {
           </button>
         </form>
         <p className="w-full mt-4 text-[14px]">
-          Don't have an account?
+          Already have an account?
           <span
             className="text-focus-color-green cursor-pointer pl-2"
             onClick={() => router.push("/auth/signup")}
           >
-            Sign up
+            Log in
           </span>
         </p>
       </div>

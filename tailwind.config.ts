@@ -29,6 +29,13 @@ const config: Config = {
           green: "#10a37f",
           light: "#fe7600",
         },
+        "home-color": {
+          nav_bg: "#202123",
+          dark_btn: "#40414f",
+          dark_text: "#c5c5d2",
+          light_btn: "#ececf1",
+          light_text: "",
+        },
         citation: {
           DEFAULT: "#1f243c",
         },

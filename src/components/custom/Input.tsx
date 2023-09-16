@@ -25,7 +25,7 @@ const Input: FC<InputProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+  const [hover, setHover] = useState(false);
   const enter = () => {
     if (!readOnly) {
       setIsOpen(true);
@@ -36,7 +36,6 @@ const Input: FC<InputProps> = ({
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (setValue && !readOnly) {
-      // Check if setValue is defined before calling it
       setValue(e.target.value);
     }
   };
@@ -84,13 +83,32 @@ const Input: FC<InputProps> = ({
         )}
         {type === "password" && (
           <div
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[44px] h-[52px] flex justify-center items-center hover:bg-gray-300/60 text-gray-500 hover:text-gray-800"
+            className="absolute right-0 z-20 top-1/2 transform -translate-y-1/2  "
             onClick={handlePassword}
           >
-            {type === "password" && showPassword ? (
-              <BsEyeSlash className="text-[20px]" />
-            ) : (
-              <BsEye className="text-[20px]" />
+            <div
+              className="w-[44px] h-[52px] flex justify-center items-center hover:bg-gray-300/60 text-gray-500 hover:text-gray-800"
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+            >
+              {type === "password" && showPassword ? (
+                <BsEyeSlash className="text-[20px]" />
+              ) : (
+                <BsEye className="text-[20px]" />
+              )}
+            </div>
+            {hover && (
+              <div
+                className={twMerge(
+                  "absolute -right-3 duration-500 ease-in-out -top-[48px] h-[48px] w-[70px] px-2 rounded flex justify-center items-center bg-black text-[#fff] text-xs",
+                  hover ? "opacity-100" : "opacity-0"
+                )}
+              >
+                {type === "password" && showPassword
+                  ? "Hide password"
+                  : "Show password"}
+                <div className="absolute left-1/2 -bottom-[6px] transform -translate-x-1/2 rotate-45 bg-black h-3 w-3" />
+              </div>
             )}
           </div>
         )}

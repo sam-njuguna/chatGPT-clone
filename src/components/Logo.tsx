@@ -15,7 +15,7 @@ const Logo: FC<LogoProps> = ({}) => {
           alt="chatGPT"
           height={22}
           width={118}
-          className="object-contain opacity-60"
+          className="object-contain opacity-80"
         />
       ) : (
         <Image
