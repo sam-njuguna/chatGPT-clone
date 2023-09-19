@@ -15,6 +15,7 @@ const config: Config = {
       },
       screens: {
         tablet: "1020px",
+        xphone: "540px",
       },
       colors: {
         "p-blue": {
@@ -31,7 +32,7 @@ const config: Config = {
         },
         "home-color": {
           nav_bg: "#202123",
-          dark_btn: "#40414f",
+          dark_btn: "#343541",
           dark_text: "#c5c5d2",
           light_btn: "#ececf1",
           light_text: "",
