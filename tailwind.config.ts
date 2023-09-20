@@ -15,7 +15,8 @@ const config: Config = {
       },
       screens: {
         tablet: "1020px",
-        xphone: "540px",
+        xphone: "535px",
+        xtablet: "835px",
       },
       colors: {
         "p-blue": {

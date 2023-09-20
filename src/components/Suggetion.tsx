@@ -13,11 +13,24 @@ function getRandomPrompts(prompts: Prompt[], count: number): Prompt[] {
 
 const Suggestion: FC<SuggestionProps> = ({}) => {
   const [randomPrompts, setRandomPrompts] = useState<Prompt[]>([]);
-  let numCardsToShow = 4;
+  const [numCardsToShow, setNumCardsToShow] = useState<number>(4);
 
-  if (typeof window !== "undefined") {
-    numCardsToShow = window.innerWidth <= 639 ? 2 : 4;
-  }
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 638) {
+        setNumCardsToShow(2);
+      } else {
+        setNumCardsToShow(4);
+      }
+    }
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const randomPromptsToShow = getRandomPrompts(prompts, numCardsToShow);
@@ -25,11 +38,11 @@ const Suggestion: FC<SuggestionProps> = ({}) => {
   }, [numCardsToShow]);
 
   return (
-    <ul className="grid w-full grid-cols-1 xphone:grid-cols-2 gap-3">
+    <ul className="grid w-full grid-cols-1 max-xphone:grid-cols-2 max-md:grid-cols-2 max-xtablet:grid-cols-1 xtablet:grid-cols-2 gap-3">
       {randomPrompts.map((prompt, index) => (
         <li
           key={index}
-          className="relative group cursor-pointer max-w-[380px] overflow-hidden h-[58px] text-[14px] px-3 flex flex-col items-start justify-center border border-[#565869] group w-full whitespace-nowrap rounded-xl text-left text-gray-700 shadow-[0px_1px_6px_0px_rgba(0,0,0,0.02)] dark:text-gray-300 md:whitespace-normal hover:dark:bg-[#444654e8] hover:bg-gray-100"
+          className="relative group cursor-pointer max-w-[380px] max-xphone:max-w-full max-xtablet:max-w-full overflow-hidden h-[58px] text-[14px] px-3 flex flex-col items-start justify-center border border-[#565869] group w-full whitespace-nowrap rounded-xl text-left text-gray-700 shadow-[0px_1px_6px_0px_rgba(0,0,0,0.02)] dark:text-gray-300 md:whitespace-normal hover:dark:bg-[#444654e8] hover:bg-gray-100"
         >
           <h3 className="font-bold truncate">{prompt.title}</h3>
           <p className="truncate w-full text-gray-400 text-[14px] font-medium leading-none">

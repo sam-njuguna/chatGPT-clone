@@ -1,4 +1,4 @@
-import { Navbar } from "@/components";
+"use client";
 import { NavbarProvider } from "@/provider";
 import { FC } from "react";
 
@@ -9,11 +9,8 @@ interface layoutProps {
 const layout: FC<layoutProps> = ({ children }) => {
   return (
     <NavbarProvider>
-      <div className="flex overflow-hidden w-full h-full z-0">
-        <Navbar />
-        <div className="bg-white flex flex-1 text-home dark:bg-home-color-dark_btn dark:text-home-color-dark_text">
-          {children}
-        </div>
+      <div className="bg-white flex flex-1 text-home dark:bg-home-color-dark_btn dark:text-home-color-dark_text">
+        {children}
       </div>
     </NavbarProvider>
   );

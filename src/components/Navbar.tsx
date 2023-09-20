@@ -8,7 +8,7 @@ interface NavbarProps {}
 const Navbar: FC<NavbarProps> = ({}) => {
   const { isOpen, toggleNavbar } = useNavbar();
   return (
-    <div className="flex-shrink-0 flex overflow-x-hidden h-full min-h-0 ">
+    <div className="flex-shrink-0 flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
       <div
         className={twMerge(
           "supports-[height:100dvh]:h-[100dvh] bg-home-color-nav_bg text-white flex ",

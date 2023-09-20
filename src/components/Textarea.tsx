@@ -20,12 +20,15 @@ const Textarea: FC<TextareaProps> = ({}) => {
   return (
     <div className="w-full relative">
       <TextareaAutosize
-        className="max-h-[200px] shadow-lg p-4 pr-12 bg-[#444654] drop-shadow-xl w-full rounded-xl font-medium dark:text-gray-300 text-gray-700"
+        className="max-h-[200px] text-[16px]  shadow-lg p-4 max-xtablet:p-[10px] pr-12 bg-[#444654] drop-shadow-xl w-full rounded-xl font-medium dark:text-gray-300 text-gray-700"
         value={text}
         placeholder="Send a message"
         onChange={handleTextChange}
       />
-      <button disabled={disable} className="absolute right-0 bottom-0 p-4">
+      <button
+        disabled={disable}
+        className="absolute right-0 bottom-0 p-4 max-xtablet:p-[10px]  max-xtablet:pb-3"
+      >
         <div
           className={twMerge(
             "h-8 w-8 justify-center flex items-center rounded",
