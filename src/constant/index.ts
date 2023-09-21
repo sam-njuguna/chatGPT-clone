@@ -2,6 +2,11 @@ export interface Prompt {
   title: string;
   description: string;
 }
+export interface Shortcut {
+  action: string;
+  keyCombination: { name: string; id: string }[];
+}
+
 export const prompts: Prompt[] = [
   {
     title: "Write a short story",
@@ -127,5 +132,70 @@ export const prompts: Prompt[] = [
     title: "Suggest a business idea",
     description:
       "Pitch a unique business idea, including its target market, revenue model, and competitive advantage.",
+  },
+];
+
+export const shortcuts: Shortcut[] = [
+  {
+    action: "Open new chat",
+    keyCombination: [
+      { name: "Ctrl", id: "ctrl" },
+      { name: "Shift", id: "shift" },
+      { name: "O", id: "o" },
+    ],
+  },
+  {
+    action: "Focus chat input",
+    keyCombination: [
+      { name: "Shift", id: "shift" },
+      { name: "Esc", id: "esc" },
+    ],
+  },
+  {
+    action: "Copy last code block",
+    keyCombination: [
+      { name: "Ctrl", id: "ctrl" },
+      { name: "Shift", id: "shift" },
+      { name: ";", id: "semicolon" },
+    ],
+  },
+  {
+    action: "Copy last response",
+    keyCombination: [
+      { name: "Ctrl", id: "ctrl" },
+      { name: "Shift", id: "shift" },
+      { name: "C", id: "c" },
+    ],
+  },
+  {
+    action: "Set custom instructions",
+    keyCombination: [
+      { name: "Ctrl", id: "ctrl" },
+      { name: "Shift", id: "shift" },
+      { name: "I", id: "i" },
+    ],
+  },
+  {
+    action: "Toggle sidebar",
+    keyCombination: [
+      { name: "Ctrl", id: "ctrl" },
+      { name: "Shift", id: "shift" },
+      { name: "S", id: "s" },
+    ],
+  },
+  {
+    action: "Delete chat",
+    keyCombination: [
+      { name: "Ctrl", id: "ctrl" },
+      { name: "Shift", id: "shift" },
+      { name: "⌫", id: "delete" },
+    ],
+  },
+  {
+    action: "Show shortcuts",
+    keyCombination: [
+      { name: "Ctrl", id: "ctrl" },
+      { name: "/", id: "slash" },
+    ],
   },
 ];

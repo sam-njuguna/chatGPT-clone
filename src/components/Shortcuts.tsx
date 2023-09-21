@@ -1,33 +1,37 @@
 "use client";
-import { FC, useState } from "react";
+import { FC } from "react";
 import Modal from "./custom/Modal";
-
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { PiSquaresFourBold } from "react-icons/pi";
+import { useModal } from "@/provider/ModalContext";
 interface ShortcutsProps {}
 
 const Shortcuts: FC<ShortcutsProps> = ({}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleModal = () => {
-    setIsOpen(!isOpen);
-  };
+  const { isKey, openCut, openKey } = useModal();
   return (
-    <div className="absolute w-full h-[52px] bottom-0 left-0 flex justify-end items-end flex-col gap-0 p-4">
+    <div className="absolute w-full h-[52px] bottom-0 z-10 left-0 flex justify-end items-end flex-col gap-0 px-4 py-6 max-md:hidden">
       <button
-        onClick={handleModal}
-        className="h-8 w-8 text-[20px] font-bold bg-red-400 rounded-full flex justify-center items-center"
+        onClick={openKey}
+        className="h-6 w-6 text-[18px] font-medium bg-[#444654] border border-gray-400 text-gray-300 rounded-full flex justify-center items-center"
       >
         ?
       </button>
-      {isOpen && (
+      {isKey && (
         <Modal
-          isOpen={isOpen}
-          closeModal={handleModal}
-          className="absolute right-0 -top-14 dark:bg-black w-[175px] "
+          isOpen={isKey}
+          closeModal={openKey}
+          className="absolute top-[-108px] w-[175px] overflow-hidden right-0 m-4 rounded-md dark:bg-black drop-shadow-lg dark:text-gray-100 text-gray-700"
         >
-          <div className="flex h-[44px]">
-            <p>Help and FAQ</p>
+          <div className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3 hover:bg-[#444654] ">
+            <FaArrowUpRightFromSquare className="text-[16px]" />
+            <p className="text-sm">Help & FAQ</p>
           </div>
-          <div className="flex  h-[44px]">
-            <p>Keyboard shorcuts</p>
+          <div
+            className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3 hover:bg-[#444654] "
+            onClick={openCut}
+          >
+            <PiSquaresFourBold className="text-[18px]" />
+            <p className="text-sm">Keybord shortcuts</p>
           </div>
         </Modal>
       )}

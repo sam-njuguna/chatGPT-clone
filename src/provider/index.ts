@@ -1,5 +1,4 @@
 import ThemeSwitcher from "./ThemeSwitcher";
 import ThemeProvider from "./ThemeProvider";
-import NavbarProvider from "./NavbarProvider";
-
-export { ThemeSwitcher, ThemeProvider, NavbarProvider };
+import { ModalProvider } from "./ModalContext";
+export { ThemeSwitcher, ThemeProvider, ModalProvider };

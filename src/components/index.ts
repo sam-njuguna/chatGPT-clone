@@ -6,3 +6,5 @@ export { default as Navbar } from "./Navbar";
 export { default as Svg } from "./custom/Svg";
 export { default as Suggestion } from "./Suggetion";
 export { default as Textarea } from "./Textarea";
+export { default as Keys } from "./modals/Keys";
+export { default as Upgrade } from "./modals/Upgrade";
