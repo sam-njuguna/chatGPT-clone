@@ -17,11 +17,10 @@ const Navbar: FC<NavbarProps> = ({}) => {
     setOpen(!open);
   };
   return (
-    <div className="flex-shrink-0 relative flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
+    <div className="flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
       <div
         className={twMerge(
-          "supports-[height:100dvh]:h-[100dvh] relative bg-home-color-nav_bg text-white flex flex-col",
-          isOpen ? "w-[260px] p-2" : "w-0"
+          "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col"
         )}
       >
         <div className="flex items-center gap-2 w-full">
@@ -43,45 +42,61 @@ const Navbar: FC<NavbarProps> = ({}) => {
           </button>
         </div>
         <div className="flex flex-1 flex-col"></div>
-        <div className="w-full  p-2 border-t border-white/20">
+        <div className="w-full relative  border-t border-white/20 pt-2">
           <button
             onClick={openPlus}
-            className=" h-[44px] px-3 flex items-center justify-between w-full hover:bg-gray-800 duration-100 rounded-md cursor-pointer "
+            className=" h-[44px] px-3 flex items-center justify-between w-full duration-200 hover:bg-[#444654] rounded-md cursor-pointer "
           >
             <div className="flex items-center gap-3">
               <LuUser size={16} />
               <p>Upgrade to plus</p>
             </div>
-            <button className=" w-max h-[20px] flex items-center justify-center text-sm text-gray-800 px-1 rounded bg-yellow-200  ">
-              New
-            </button>
           </button>
-          <div className="relative ">
-            <button
-              onClick={handleOpen}
-              className=" h-[60px] flex w-full items-center justify-between cursor-pointer px-3 duration-100  hover:bg-gray-800 "
-            >
-              <div className="flex w-full items-center gap-3">
-                <div className="h-9 w-9 rounded-sm"></div>
-                <p className="text-white font-semibold">Jojn Doe</p>
-              </div>
-              <BsThreeDots
-                size={16}
-                className="text-gray-400 duration-200 hover:text-gray-200"
-              />
-            </button>
-            {isOpen && (
-              <Modal
-                isOpen={open}
-                closeModal={handleOpen}
-                className="absolute top-[70px] left-0 max-w-[250px] bg-black w-full mx-2"
-              >
-                <div className="flex items-center">Customize</div>
-                <div className="flex items-center">Settings</div>
-                <div className="flex items-center">Log out</div>
-              </Modal>
+          <button
+            className={twMerge(
+              "relative z-10 h-[60px] duration-200 hover:bg-[#444654] rounded-md flex w-full items-center justify-between px-3 ",
+              open && "bg-[#444654]"
             )}
-          </div>
+            onClick={handleOpen}
+          >
+            <div className=" flex items-center gap-2">
+              <div className=" h-9 w-9 rounded overflow-hidden">
+                <Image
+                  src="/user.jpg"
+                  alt="user"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                />
+              </div>
+              <p className="font-bold">John Doe</p>
+            </div>
+            <BsThreeDots
+              size={16}
+              className="text-gray-400 duration-200 hover:text-gray-200"
+            />
+          </button>
+          {open ? (
+            <Modal
+              isOpen={open}
+              closeModal={handleOpen}
+              className={twMerge(
+                "absolute -top-28 z-20 py-1 left-0 bg-black w-full rounded-md ",
+                open ? "opacity-100 duration-200" : "opacity-0 duration-200"
+              )}
+            >
+              <div className="flex items-center h-11 w-full justify-star gap-2 px-2 duration-200 hover:bg-[#444654] ">
+                Customize
+              </div>
+              <div className="flex items-center h-11 w-full justify-start gap-2 px-2 duration-200 hover:bg-[#444654] ">
+                Settings
+              </div>
+              <div className="my-1.5 h-px bg-white/20" />
+              <div className="flex items-center h-11 w-full justify-start gap-2 px-2 duration-200 hover:bg-[#444654] ">
+                Log out
+              </div>
+            </Modal>
+          ) : null}
         </div>
       </div>
     </div>

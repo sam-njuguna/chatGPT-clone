@@ -9,26 +9,40 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ className, children, isOpen, closeModal }) => {
-  const modalRef = useRef<HTMLDivElement | null>(null);
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      closeModal();
-    }
-  };
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        closeModal();
+      }
+    };
+
     if (isOpen) {
-      document.addEventListener("mousedown", handleOutsideClick);
+      document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen]);
+  }, [isOpen, closeModal]);
+
+  if (!isOpen) return null;
   return isOpen ? (
-    <div ref={modalRef} className={className}>
+    <div
+      ref={modalRef}
+      className={className}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      }}
+    >
       {children}
     </div>
   ) : null;

@@ -33,14 +33,16 @@ export const ModalProvider: React.FC<ModalProps> = ({ children }) => {
   const openKey = () => {
     setIsKey(!isKey);
     setIsPlus(false);
-    setIsCut(false);
     setIsSetting(false);
+
+    setIsCut(false);
   };
   const openCut = () => {
     setIsCut(!isCut);
-    setIsKey(false);
     setIsPlus(false);
     setIsSetting(false);
+
+    setIsKey(false);
   };
   const openSetting = () => {
     setIsSetting(!isSetting);
