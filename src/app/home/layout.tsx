@@ -8,7 +8,7 @@ interface layoutProps {
 }
 
 const layout: FC<layoutProps> = ({ children }) => {
-  const { isCut, isPlus } = useModal();
+  const { isKeyModal } = useModal();
 
   return (
     <div className="flex relative overflow-hidden w-full h-full z-0 supports-[min-height:100dvh]:min-h-[100dvh]">
@@ -17,14 +17,9 @@ const layout: FC<layoutProps> = ({ children }) => {
         {children}
       </div>
       <Shortcuts />
-      {isCut && (
+      {isKeyModal && (
         <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40">
           <Keys />
-        </div>
-      )}
-      {isPlus && (
-        <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40">
-          <Upgrade />
         </div>
       )}
     </div>

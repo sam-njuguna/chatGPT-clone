@@ -7,11 +7,11 @@ import { useModal } from "@/provider/ModalContext";
 interface KeysProps {}
 
 const Keys: FC<KeysProps> = ({}) => {
-  const { isCut, openCut } = useModal();
+  const { isKeyModal, closeKeyModal } = useModal();
   return (
     <Modal
-      isOpen={isCut}
-      closeModal={openCut}
+      isOpen={isKeyModal}
+      closeModal={closeKeyModal}
       className=" max-w-[928px] mx-auto w-full px-2 xphone:px-4 md:px-8 "
     >
       <div className="bg-home-color-nav_bg w-full rounded-lg overflow-hidden">
@@ -20,7 +20,7 @@ const Keys: FC<KeysProps> = ({}) => {
             Keyboard Shortcuts
           </p>
           <button
-            onClick={openCut}
+            onClick={closeKeyModal}
             className="text-gray-500 hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-200 text-[20px] duration-200"
           >
             <HiX />

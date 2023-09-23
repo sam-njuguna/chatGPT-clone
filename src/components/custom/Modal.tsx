@@ -1,4 +1,5 @@
 "use client";
+import { useModal } from "@/provider/ModalContext";
 import { FC, useEffect, useRef } from "react";
 
 interface ModalProps {
@@ -34,15 +35,7 @@ const Modal: FC<ModalProps> = ({ className, children, isOpen, closeModal }) => {
 
   if (!isOpen) return null;
   return isOpen ? (
-    <div
-      ref={modalRef}
-      className={className}
-      onKeyDown={(e) => {
-        if (e.key === "Escape") {
-          closeModal();
-        }
-      }}
-    >
+    <div ref={modalRef} className={className}>
       {children}
     </div>
   ) : null;

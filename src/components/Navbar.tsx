@@ -7,15 +7,12 @@ import { LuUser } from "react-icons/lu";
 import Image from "next/image";
 import { BsThreeDots } from "react-icons/bs";
 import Modal from "./custom/Modal";
+import MdModal from "./custom/MdModal";
 
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
-  const { isOpen, toggleNavbar, openPlus } = useModal();
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(!open);
-  };
+  const { isSetting, settingRef, toggleSetting } = useModal();
   return (
     <div className="flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
       <div
@@ -28,10 +25,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
             <HiPlus className="text-gray-300 text-[16px]" />
             <p className="text-white">New Chat</p>
           </div>
-          <button
-            onClick={toggleNavbar}
-            className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20"
-          >
+          <button className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
             <Image
               src="/bar.svg"
               alt="bar"
@@ -42,10 +36,16 @@ const Navbar: FC<NavbarProps> = ({}) => {
           </button>
         </div>
         <div className="flex flex-1 flex-col"></div>
-        <div className="w-full relative  border-t border-white/20 pt-2">
+        <div
+          className="w-full relative  border-t border-white/20 pt-2"
+          ref={settingRef} // setting ref
+        >
           <button
-            onClick={openPlus}
-            className=" h-[44px] px-3 flex items-center justify-between w-full duration-200 hover:bg-[#444654] rounded-md cursor-pointer "
+            className={twMerge(
+              " h-[44px] px-3 flex items-center justify-between w-full duration-200 hover:bg-[#444654] rounded-md cursor-pointer ",
+              isSetting && "hover:bg-transparent"
+            )}
+            disabled={isSetting && true}
           >
             <div className="flex items-center gap-3">
               <LuUser size={16} />
@@ -55,9 +55,9 @@ const Navbar: FC<NavbarProps> = ({}) => {
           <button
             className={twMerge(
               "relative z-10 h-[60px] duration-200 hover:bg-[#444654] rounded-md flex w-full items-center justify-between px-3 ",
-              open && "bg-[#444654]"
+              isSetting && "bg-[#444654]"
             )}
-            onClick={handleOpen}
+            onClick={toggleSetting}
           >
             <div className=" flex items-center gap-2">
               <div className=" h-9 w-9 rounded overflow-hidden">
@@ -76,13 +76,14 @@ const Navbar: FC<NavbarProps> = ({}) => {
               className="text-gray-400 duration-200 hover:text-gray-200"
             />
           </button>
-          {open ? (
-            <Modal
-              isOpen={open}
-              closeModal={handleOpen}
+          {isSetting ? (
+            <MdModal
+              isOpen={isSetting}
               className={twMerge(
-                "absolute -top-28 z-20 py-1 left-0 bg-black w-full rounded-md ",
-                open ? "opacity-100 duration-200" : "opacity-0 duration-200"
+                "absolute -top-[106px] z-20 py-1 left-0 bg-black w-full rounded-md ",
+                isSetting
+                  ? "opacity-100 duration-200"
+                  : "opacity-0 duration-200"
               )}
             >
               <div className="flex items-center h-11 w-full justify-star gap-2 px-2 duration-200 hover:bg-[#444654] ">
@@ -95,7 +96,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               <div className="flex items-center h-11 w-full justify-start gap-2 px-2 duration-200 hover:bg-[#444654] ">
                 Log out
               </div>
-            </Modal>
+            </MdModal>
           ) : null}
         </div>
       </div>

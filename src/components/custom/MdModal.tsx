@@ -9,7 +9,6 @@ interface ModalProps {
 }
 
 const MdModal: FC<ModalProps> = ({ children, className, isOpen }) => {
-  const { isKey } = useModal();
   return isOpen ? <div className={className}>{children}</div> : null;
 };
 

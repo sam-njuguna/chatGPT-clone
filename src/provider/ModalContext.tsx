@@ -1,83 +1,124 @@
 "use client";
-import React, { createContext, useContext, useState, useMemo } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
 
-interface ModalContextType {
-  isPlus: boolean;
+interface DropdownContextType {
   isKey: boolean;
-  isCut: boolean;
-  isOpen: boolean;
   isSetting: boolean;
-  openPlus: () => void;
-  openKey: () => void;
-  openCut: () => void;
-  toggleNavbar: () => void;
-  openSetting: () => void;
+  isKeyModal: boolean;
+  toggleKey: () => void;
+  toggleSetting: () => void;
+  openKeyModal: () => void;
+  closeKeyModal: () => void;
+  keyRef: React.RefObject<HTMLDivElement> | null;
+  settingRef: React.RefObject<HTMLDivElement> | null;
 }
 
-const ModalContext = createContext<ModalContextType | undefined>(undefined);
-type ModalProps = {
+const DropdownContext = createContext<DropdownContextType | null>(null);
+type Prop = {
   children: React.ReactNode;
 };
-export const ModalProvider: React.FC<ModalProps> = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(true);
-  const [isPlus, setIsPlus] = useState(false);
+export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isKey, setIsKey] = useState(false);
-  const [isCut, setIsCut] = useState(false);
+  const [isKeyModal, setIsKeyModal] = useState(false);
   const [isSetting, setIsSetting] = useState(false);
-  const openPlus = () => {
-    setIsPlus(!isPlus);
-    setIsCut(false);
-    setIsKey(false);
-    setIsSetting(false);
-  };
-  const openKey = () => {
+  const keyRef = useRef<HTMLDivElement | null>(null);
+  const settingRef = useRef<HTMLDivElement | null>(null);
+
+  const toggleKey = () => {
     setIsKey(!isKey);
-    setIsPlus(false);
     setIsSetting(false);
-
-    setIsCut(false);
   };
-  const openCut = () => {
-    setIsCut(!isCut);
-    setIsPlus(false);
-    setIsSetting(false);
-
-    setIsKey(false);
-  };
-  const openSetting = () => {
+  const toggleSetting = () => {
     setIsSetting(!isSetting);
-    setIsPlus(false);
-    setIsCut(false);
     setIsKey(false);
   };
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
+
+  const openKeyModal = () => {
+    setIsKeyModal(true);
+    toggleKey();
   };
-  const contextValue = useMemo(() => {
-    return {
-      isOpen,
-      isPlus,
-      isKey,
-      isCut,
-      isSetting,
-      toggleNavbar,
-      openPlus,
-      openKey,
-      openCut,
-      openSetting,
+
+  const closeKeyModal = () => {
+    setIsKeyModal(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      if (
+        isKey &&
+        keyRef.current &&
+        !keyRef.current.contains(event.target as Node)
+      ) {
+        setIsKey(false);
+        setIsSetting(false);
+      }
     };
-  }, [isOpen, isPlus, isKey, isCut, isSetting]);
+
+    if (isKey) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isKey]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      if (
+        isSetting &&
+        settingRef.current &&
+        !settingRef.current.contains(event.target as Node)
+      ) {
+        setIsKey(false);
+        setIsSetting(false);
+      }
+    };
+
+    if (isSetting) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSetting]);
+
+  const contextValue = {
+    isKey,
+    isSetting,
+    isKeyModal,
+    toggleKey,
+    toggleSetting,
+    openKeyModal,
+    closeKeyModal,
+    keyRef,
+    settingRef,
+  };
+
   return (
-    <ModalContext.Provider value={contextValue}>
+    <DropdownContext.Provider value={contextValue}>
       {children}
-    </ModalContext.Provider>
+    </DropdownContext.Provider>
   );
 };
 
 export const useModal = () => {
-  const context = useContext(ModalContext);
+  const context = useContext(DropdownContext);
+
   if (!context) {
-    throw new Error("useModal must be used within a ModalProvider");
+    throw new Error("useDropdown must be used within a DropdownProvider");
   }
+
   return context;
 };
