@@ -1,18 +1,18 @@
 "use client";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 import { useModal } from "@/provider/ModalContext";
 import { HiPlus } from "react-icons/hi";
 import { LuUser } from "react-icons/lu";
 import Image from "next/image";
 import { BsThreeDots } from "react-icons/bs";
-import Modal from "./custom/Modal";
 import MdModal from "./custom/MdModal";
 
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
   const { isSetting, settingRef, toggleSetting } = useModal();
+
   return (
     <div className="flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
       <div
@@ -20,7 +20,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
           "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col"
         )}
       >
-        <div className="flex items-center gap-2 w-full">
+        <div className="flex relative items-center gap-2 w-full">
           <div className="h-[44px] w-[192px] pl-4 rounded-md border border-white/20 flex items-center justify-start gap-3 cursor-pointer">
             <HiPlus className="text-gray-300 text-[16px]" />
             <p className="text-white">New Chat</p>
