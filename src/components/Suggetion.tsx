@@ -38,7 +38,7 @@ const Suggestion: FC<SuggestionProps> = ({}) => {
   }, [numCardsToShow]);
 
   return (
-    <ul className="grid w-full grid-cols-1 max-xphone:grid-cols-2 max-md:grid-cols-2 max-xtablet:grid-cols-1 xtablet:grid-cols-2 gap-3">
+    <ul className="grid w-full grid-cols-1 max-xphone:grid-cols-1 max-md:grid-cols-2 max-xtablet:grid-cols-1 xtablet:grid-cols-2 gap-3">
       {randomPrompts.map((prompt, index) => (
         <li
           key={index}

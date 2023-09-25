@@ -11,10 +11,16 @@ interface DropdownContextType {
   isKey: boolean;
   isSetting: boolean;
   isKeyModal: boolean;
+  isSettingModal: boolean;
+  isCustomModal: boolean;
   toggleKey: () => void;
   toggleSetting: () => void;
   openKeyModal: () => void;
   closeKeyModal: () => void;
+  openSettingModal: () => void;
+  closeSettingModal: () => void;
+  openCustomModal: () => void;
+  closeCustomModal: () => void;
   keyRef: React.RefObject<HTMLDivElement> | null;
   settingRef: React.RefObject<HTMLDivElement> | null;
 }
@@ -27,6 +33,9 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isKey, setIsKey] = useState(false);
   const [isKeyModal, setIsKeyModal] = useState(false);
   const [isSetting, setIsSetting] = useState(false);
+  const [isSettingModal, setIsSettingModal] = useState(false);
+  const [isCustomModal, setIsCustomModal] = useState(false);
+
   const keyRef = useRef<HTMLDivElement | null>(null);
   const settingRef = useRef<HTMLDivElement | null>(null);
 
@@ -46,6 +55,22 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
 
   const closeKeyModal = () => {
     setIsKeyModal(false);
+  };
+  const openSettingModal = () => {
+    setIsSettingModal(true);
+    toggleSetting();
+  };
+
+  const closeSettingModal = () => {
+    setIsSettingModal(false);
+  };
+  const openCustomModal = () => {
+    setIsCustomModal(true);
+    toggleSetting();
+  };
+
+  const closeCustomModal = () => {
+    setIsCustomModal(false);
   };
 
   useEffect(() => {
@@ -98,10 +123,16 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     isKey,
     isSetting,
     isKeyModal,
+    isSettingModal,
+    isCustomModal,
     toggleKey,
     toggleSetting,
     openKeyModal,
     closeKeyModal,
+    openSettingModal,
+    closeSettingModal,
+    openCustomModal,
+    closeCustomModal,
     keyRef,
     settingRef,
   };

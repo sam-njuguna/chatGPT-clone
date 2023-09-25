@@ -8,3 +8,5 @@ export { default as Suggestion } from "./Suggetion";
 export { default as Textarea } from "./Textarea";
 export { default as Keys } from "./modals/Keys";
 export { default as Upgrade } from "./modals/Upgrade";
+export { default as Settings } from "./modals/Settings";
+export { default as Customize } from "./modals/Customize";

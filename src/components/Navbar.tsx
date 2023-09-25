@@ -4,14 +4,23 @@ import { twMerge } from "tailwind-merge";
 import { useModal } from "@/provider/ModalContext";
 import { HiPlus } from "react-icons/hi";
 import { LuUser } from "react-icons/lu";
-import Image from "next/image";
 import { BsThreeDots } from "react-icons/bs";
+import { FiLogOut, FiSettings } from "react-icons/fi";
+import { TbMessageDots } from "react-icons/tb";
+import Image from "next/image";
 import MdModal from "./custom/MdModal";
+import Link from "next/link";
 
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
-  const { isSetting, settingRef, toggleSetting } = useModal();
+  const {
+    isSetting,
+    settingRef,
+    toggleSetting,
+    openSettingModal,
+    openCustomModal,
+  } = useModal();
 
   return (
     <div className="flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
@@ -86,16 +95,28 @@ const Navbar: FC<NavbarProps> = ({}) => {
                   : "opacity-0 duration-200"
               )}
             >
-              <div className="flex items-center h-11 w-full justify-star gap-2 px-2 duration-200 hover:bg-[#444654] ">
-                Customize
-              </div>
-              <div className="flex items-center h-11 w-full justify-start gap-2 px-2 duration-200 hover:bg-[#444654] ">
-                Settings
-              </div>
+              <button
+                className="flex items-center h-11 w-full justify-star gap-3 px-3 duration-200 hover:bg-[#444654] "
+                onClick={openCustomModal}
+              >
+                <TbMessageDots size={16} />
+                <div className="text-sm font-medium">Customize</div>
+              </button>
+              <button
+                className="flex items-center h-11 w-full justify-start gap-3 px-3 duration-200 hover:bg-[#444654] "
+                onClick={openSettingModal}
+              >
+                <FiSettings size={16} />
+                <div className="text-sm font-medium"> Settings</div>
+              </button>
               <div className="my-1.5 h-px bg-white/20" />
-              <div className="flex items-center h-11 w-full justify-start gap-2 px-2 duration-200 hover:bg-[#444654] ">
-                Log out
-              </div>
+              <Link
+                href="/"
+                className="flex items-center h-11 w-full justify-start gap-3 px-3 duration-200 hover:bg-[#444654] "
+              >
+                <FiLogOut size={16} />
+                <div className="text-sm font-medium"> Log out</div>
+              </Link>
             </MdModal>
           ) : null}
         </div>

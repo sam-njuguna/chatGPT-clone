@@ -26,33 +26,22 @@ export default function page() {
       <div className="max-w-3xl w-full mx-auto max-xtablet:px-2 flex flex-col justify-center">
         <div className="h-[98px] flex justify-center items-center w-full">
           <div className="flex  relative items-center h-[54px] max-xphone:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-lg">
-            <div
-              className="w-[148px] max-xphone:w-full"
-              onMouseEnter={enterGpt3}
-              onMouseLeave={leaveGpt3}
-            >
-              <button
-                className={twMerge(
-                  "h-full flex gap-2 items-center justify-center  w-full  bg-white dark:bg-[#444654] border border-gray-400 rounded-lg font-semibold text-home-color-dark_btn dark:text-home-color-dark_text ",
-                  "border-black/10 shodow-[o_1px_7px_rgba(0,0,0,0,0.6)] "
-                )}
-              >
-                <Svg
-                  className="text-green-500"
-                  width="16"
-                  height="16"
-                  fill="none"
-                  pathData={flashPathIcon}
-                />
-                GPT-3.5
-              </button>
-              {gpt3 && (
-                <div className="absolute w-full -bottom-4  bg-red-400">
-                  hello gpt3
-                  <button onClick={openKeyModal}>open</button>
-                </div>
+            <button
+              className={twMerge(
+                "h-full flex gap-2 items-center justify-center w-[148px] max-xphone:w-full  bg-white dark:bg-[#444654] border border-gray-400 rounded-lg font-semibold text-home-color-dark_btn dark:text-home-color-dark_text ",
+                "border-black/10 shodow-[o_1px_7px_rgba(0,0,0,0,0.6)] "
               )}
-            </div>
+            >
+              <Svg
+                className="text-green-500"
+                width="16"
+                height="16"
+                fill="none"
+                pathData={flashPathIcon}
+              />
+              GPT-3.5
+            </button>
+
             <button
               className="h-full group flex items-center justify-center gap-2 w-[148px] max-xphone:w-full btn font-semibold text-[#8e8ea0]"
               onClick={enterGpt4}
@@ -69,13 +58,6 @@ export default function page() {
               GPT-4
               <BiSolidLockAlt className=" text-[16px]" />
             </button>
-
-            {gpt4 && (
-              <div className="absolute w-full -bottom-4 bg-red-400">
-                <p>GPT4</p>
-                <button onClick={openKeyModal}>open</button>
-              </div>
-            )}
           </div>
         </div>
         <div className="text-4xl h-[56px] flex justify-center items-center  font-bold text-center text-gray-200 dark:text-[#444654]">
