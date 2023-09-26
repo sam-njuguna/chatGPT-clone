@@ -2,6 +2,7 @@
 import { Suggestion, Svg, Textarea } from "@/components";
 import { UseModal } from "@/provider/ModalContext";
 import { flashPathIcon, plusPathIcon } from "@/types";
+import Image from "next/image";
 import { FC, useState } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
 import { twMerge } from "tailwind-merge";
@@ -9,7 +10,7 @@ import { twMerge } from "tailwind-merge";
 interface pageProps {}
 
 const Home: FC<pageProps> = ({}) => {
-  const { openKeyModal } = UseModal();
+  const { openKeyModal, isNav, handleNav } = UseModal();
   const [gpt3, setGpt3] = useState(false);
   const [gpt4, setGpt4] = useState(false);
   const enterGpt3 = () => {
@@ -82,6 +83,24 @@ const Home: FC<pageProps> = ({}) => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="absolute top-0 md:hidden">
+        {isNav ? (
+          ""
+        ) : (
+          <button
+            className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20"
+            onClick={handleNav}
+          >
+            <Image
+              src="/bar.svg"
+              alt="bar"
+              width={16}
+              height={16}
+              className="object-contain"
+            />
+          </button>
+        )}
       </div>
     </div>
   );

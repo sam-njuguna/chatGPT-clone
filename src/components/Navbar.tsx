@@ -17,17 +17,27 @@ const Navbar: FC<NavbarProps> = ({}) => {
   const {
     isSetting,
     settingRef,
+    isNav,
     toggleSetting,
     openSettingModal,
     openCustomModal,
     openUpgradeModal,
+    handleNav,
   } = UseModal();
 
   return (
-    <div className="flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
+    <div
+      className={twMerge(
+        "flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-md:hidden ",
+        isNav && "max-md:bg-gray-300/70 max-md:dark:bg-gray-600/70 md:block"
+      )}
+    >
       <div
         className={twMerge(
-          "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col"
+          "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col",
+          isNav
+            ? "max-md:absolute z-10 max-md:w-[260px] md:h-[100dvh]"
+            : "max-md:max-w-[0px]"
         )}
       >
         <div className="flex relative items-center gap-2 w-full">
@@ -35,7 +45,10 @@ const Navbar: FC<NavbarProps> = ({}) => {
             <HiPlus className="text-gray-300 text-[16px]" />
             <p className="text-white">New Chat</p>
           </div>
-          <button className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
+          <button
+            className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20"
+            onClick={handleNav}
+          >
             <Image
               src="/bar.svg"
               alt="bar"
