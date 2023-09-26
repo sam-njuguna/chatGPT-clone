@@ -84,7 +84,7 @@ const Home: FC<pageProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 md:hidden">
+      <div className="absolute top-4 left-4">
         {isNav ? (
           "open"
         ) : (
