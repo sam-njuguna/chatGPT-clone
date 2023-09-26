@@ -1,5 +1,4 @@
 import { Button, CustomText, Logo } from "@/components";
-import { ThemeSwitcher } from "@/provider";
 import React from "react";
 
 export default function page() {
@@ -9,11 +8,10 @@ export default function page() {
         <CustomText />
       </div>
       <nav className="absolute w-full top-8 left-0 md:top-[22px] flex gap-4 items-center px-6 lg:px-8 z-10">
-        <h1 className="text-[20px] lg:text-[22px] font-bold cursor-default flex items-center gap-1 text-theme-color-light dark:text-theme-color-dark  max-md:text-black max-md:dark:text-theme-color-dark">
+        <h1 className="text-[20px] lg:text-[22px] font-bold cursor-default flex items-center gap-1 text-theme-color-light dark:text-theme-color-dark  max-md:text-black max-md:dark:text-white">
           ChatGPT
-          <span className="block w-[20px] h-[20px] rounded-full bg-theme-color-light dark:bg-theme-color-dark max-md:bg-black max-md:dark:bg-theme-color-dark" />
+          <span className="block w-[20px] h-[20px] rounded-full bg-theme-color-light dark:bg-theme-color-dark max-md:bg-black max-md:dark:bg-white" />
         </h1>
-        <ThemeSwitcher />
       </nav>
       <div className="relative max-md:flex-1  md:rounded-none bg-white dark:bg-black h-full flex flex-col justify-center items-center px-5 md:px-6 py-8 md:py-0">
         <h2 className="text-[20px] text-black  dark:text-[#fff] font-bold md:text-[32px]">

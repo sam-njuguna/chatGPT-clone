@@ -64,10 +64,10 @@ const Input: FC<InputProps> = ({
           htmlFor={type}
           className={twMerge(
             `absolute  px-1 w-max duration-200  text-${
-              isOpen ? "focus-color-green " : "[#2d333a] "
+              isOpen ? "focus-color-green " : "cursor-none"
             }`,
             isOpen || value
-              ? "-top-2 bg-white text-[15px] left-3 "
+              ? "-top-2.5 bg-white text-[15px] left-3 "
               : "top-1/2 transform -translate-y-1/2 left-4 "
           )}
         >

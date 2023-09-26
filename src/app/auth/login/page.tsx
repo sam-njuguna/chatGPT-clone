@@ -33,7 +33,7 @@ export default function Login() {
           />
         </div>
       </div>
-      <div className=" max-w-[400px] my-[10%] max-xphone:pt-28 max-md:my-[15%] tablet:mt-[20%] xl:mt-[13%] px-8 sm:px-10 w-full mx-auto text-center ">
+      <div className=" max-w-[400px] my-[10%] max-xphone:pt-20 max-md:my-[15%] tablet:mt-[20%] xl:mt-[13%] px-8 sm:px-10 w-full mx-auto text-center ">
         <h1 className="text-[32px] font-bold mb-4">Welcome back</h1>
         <form
           action=""
@@ -57,7 +57,7 @@ export default function Login() {
         <p className=" w-full mt-4 text-[14px]">
           Don't have an account?
           <span
-            className="text-focus-color-green cursor-pointer pl-2"
+            className="text-focus-color-green cursor-pointer pl-2 select-none"
             onClick={() => router.push("/auth/signup")}
           >
             Sign up
@@ -90,13 +90,13 @@ export default function Login() {
           />
           <Link
             href="/home"
-            className="flex items-center duration-200 hover:text-gray-600 gap-1 mt-2"
+            className="flex items-center justify-end duration-200 hover:text-gray-600 gap-1 mt-4"
           >
             Skip <FaArrowRightLong />
           </Link>
         </div>
       </div>
-      <div className="w-full flex items-center justify-center max-tablet:absolute bottom-0 left-0">
+      <div className="w-full flex items-center justify-center max-xphone:pt-10 max-tablet:absolute bottom-0 left-0">
         <div className="py-3 text-[14px]">
           <a href="" className="text-focus-color-green font-medium mx-3">
             Terms of use

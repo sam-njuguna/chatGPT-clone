@@ -33,7 +33,7 @@ export default function Signup() {
           />
         </div>
       </div>
-      <div className=" max-w-[400px] my-[10%] max-xphone:pt-28 max-md:my-[15%] tablet:mt-[20%] xl:mt-[13%] xl:mb-[8.5%] px-8 sm:px-10 w-full mx-auto text-center ">
+      <div className=" max-w-[400px] my-[10%] max-xphone:pt-20 max-md:my-[15%] tablet:mt-[20%] xl:mt-[13%] xl:mb-[8.5%] px-8 sm:px-10 w-full mx-auto text-center ">
         <h1 className="text-[32px] font-bold">Create your account</h1>
         <p className="text-center text-[14px] mt-1">
           Note that phone verification may be required for signup. Your number
@@ -61,7 +61,7 @@ export default function Signup() {
         <p className=" w-full mt-4  text-[14px]">
           Already have an account?
           <span
-            className="text-focus-color-green cursor-pointer pl-2"
+            className="text-focus-color-green cursor-pointer pl-2 select-none"
             onClick={() => router.push("/auth/signup")}
           >
             Log in
@@ -94,13 +94,13 @@ export default function Signup() {
           />
           <Link
             href="/home"
-            className="flex items-center duration-200 hover:text-gray-600 gap-1 mt-2"
+            className="flex items-center justify-end duration-200 hover:text-gray-600 gap-1 mt-4"
           >
             Skip <FaArrowRightLong />
           </Link>
         </div>
       </div>
-      <div className="w-full flex items-center justify-center max-tablet:absolute bottom-0 left-0">
+      <div className="w-full flex items-center  max-xphone:pt-10 justify-center max-tablet:absolute bottom-0 left-0">
         <div className="py-3 text-[14px]">
           <a href="" className="text-focus-color-green font-medium mx-3">
             Terms of use

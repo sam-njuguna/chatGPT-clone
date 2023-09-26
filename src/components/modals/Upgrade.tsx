@@ -35,17 +35,19 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
             <button className="h-[44px] mt-3 w-full rounded-md bg-gray-300 dark:bg-gray-500 text-gray-800 font-semibold cursor-not-allowed">
               Your current plan
             </button>
-            <div className="flex items-start gap-1.5 mt-3">
-              <LiaCheckCircle size={20} className=" text-gray-500" />
-              <p className="text-sm">Access to our GPT-3.5 model</p>
-            </div>
-            <div className="flex items-start gap-1.5 mt-2">
-              <LiaCheckCircle size={20} className=" text-gray-500" />
-              <p className="text-sm">Standard response speed</p>
-            </div>
-            <div className="flex items-start gap-1.5 mt-2">
-              <LiaCheckCircle size={20} className=" text-gray-500" />
-              <p className="text-sm">Regular model updates</p>
+            <div className="flex flex-col mt-3 gap-y-3">
+              <div className="flex items-start gap-1.5 mt-3">
+                <LiaCheckCircle size={20} className=" text-gray-500" />
+                <p className="text-sm">Access to our GPT-3.5 model</p>
+              </div>
+              <div className="flex items-start gap-1.5 mt-2">
+                <LiaCheckCircle size={20} className=" text-gray-500" />
+                <p className="text-sm">Standard response speed</p>
+              </div>
+              <div className="flex items-start gap-1.5 mt-2">
+                <LiaCheckCircle size={20} className=" text-gray-500" />
+                <p className="text-sm">Regular model updates</p>
+              </div>
             </div>
           </div>
           <div className="flex flex-col p-4 w-full">
@@ -60,20 +62,24 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
             <button className="h-[44px]  mt-3  w-full rounded-md bg-[#10a37f] text-gray-50 font-semibold">
               Upgrade to plus
             </button>
-            <div className="flex items-start gap-1.5 mt-3">
-              <LiaCheckCircle size={20} className=" text-[#10a37f]" />
-              <p className="text-sm">Access to GPT-4, our most capable model</p>
-            </div>
-            <div className="flex items-start gap-1.5 mt-2">
-              <LiaCheckCircle size={20} className=" text-[#10a37f]" />
-              <p className="text-sm">Faster response speed</p>
-            </div>
-            <div className="flex items-start gap-1.5 mt-2">
-              <LiaCheckCircle size={20} className="text-[#10a37f]" />
-              <p className="text-sm">
-                Exclusive access to features like Plugins and Advanced Data
-                Analysis
-              </p>
+            <div className="flex flex-col mt-3 gap-y-3">
+              <div className="flex items-start gap-1.5">
+                <LiaCheckCircle size={20} className=" text-[#10a37f]" />
+                <p className="text-sm">
+                  Access to GPT-4, our most capable model
+                </p>
+              </div>
+              <div className="flex items-start gap-1.5">
+                <LiaCheckCircle size={20} className=" text-[#10a37f]" />
+                <p className="text-sm">Faster response speed</p>
+              </div>
+              <div className="flex items-start gap-1.5">
+                <LiaCheckCircle size={20} className="text-[#10a37f]" />
+                <p className="text-sm">
+                  Exclusive access to features like Plugins and Advanced Data
+                  Analysis
+                </p>
+              </div>
             </div>
             <p className="mt-4 cursor-pointer underline">
               I need help with a billing issue
