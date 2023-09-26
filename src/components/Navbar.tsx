@@ -42,7 +42,10 @@ const Navbar: FC<NavbarProps> = ({}) => {
             <HiPlus className="text-gray-300 text-[16px]" />
             <p className="text-white">New Chat</p>
           </div>
-          <button className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
+          <button
+            className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20"
+            onClick={handleNav}
+          >
             <Image
               src="/bar.svg"
               alt="bar"
