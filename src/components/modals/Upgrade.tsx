@@ -16,8 +16,8 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
       className=" max-w-[652px] max-[639px]:max-w-[310px] mx-auto w-full max-xphone:px-2 px-4"
     >
       <div className="bg-home-color-nav_bg w-full rounded-lg  text-gray-100">
-        <div className=" p-4  border-b border-white/10 flex items-center justify-between">
-          <p className="text-[16px] font-semibold text-gray-900 dark:text-gray-50 ">
+        <div className="h-[49px] px-4  border-b border-white/10 flex items-center justify-between">
+          <p className="text-[16px] font-bold text-gray-900 dark:text-gray-50 ">
             Your plan
           </p>
           <button
@@ -30,12 +30,12 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
         <div className="flex max-[639px]:flex-col-reverse">
           <div className="flex flex-col p-4 max-[639px]:border-t  sm:border-r border-white/10 w-full">
             <h3 className="text-[20px] font-semibold text-gray-900 dark:text-gray-50 ">
-              Your plan
+              Free plan
             </h3>
             <button className="h-[44px] mt-3 w-full rounded-md bg-gray-300 dark:bg-gray-500 text-gray-800 font-semibold cursor-not-allowed">
               Your current plan
             </button>
-            <div className="flex items-start gap-1.5 mt-2">
+            <div className="flex items-start gap-1.5 mt-3">
               <BsCheck2Circle size={20} className="text-xl text-gray-500" />
               <p className="text-sm">Access to our GPT-3.5 model</p>
             </div>
@@ -50,17 +50,17 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
           </div>
           <div className="flex flex-col p-4 w-full">
             <div className="flex justify-between items-center">
-              <h3 className="text-[20px] font-semibold text-gray-900 dark:text-gray-50 ">
+              <h3 className="text-[20px] font-bold text-gray-900 dark:text-gray-50 ">
                 ChatGPT Plus
               </h3>
-              <p className="text-[20px] font-semibold text-gray-900 dark:text-gray-500 ">
+              <p className="text-[20px] font-bold text-gray-900 dark:text-gray-500 ">
                 USD $20/mo
               </p>
             </div>
             <button className="h-[44px]  mt-3  w-full rounded-md bg-green-600/95 text-gray-50 font-semibold">
               Upgrade to plus
             </button>
-            <div className="flex items-start gap-1.5 mt-2">
+            <div className="flex items-start gap-1.5 mt-3">
               <BsCheck2Circle size={20} className="text-xl text-green-600" />
               <p className="text-sm">Access to GPT-4, our most capable model</p>
             </div>
@@ -69,7 +69,7 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
               <p className="text-sm">Faster response speed</p>
             </div>
             <div className="flex items-start gap-1.5 mt-2">
-              <BsCheck2Circle size={20} className="text-green-600" />
+              <BsCheck2Circle size={20} className="text-xl text-green-600" />
               <p className="text-sm">
                 Exclusive access to features like Plugins and Advanced Data
                 Analysis
