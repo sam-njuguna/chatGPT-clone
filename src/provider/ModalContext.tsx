@@ -160,7 +160,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   );
 };
 
-export const useModal = () => {
+export const UseModal = () => {
   const context = useContext(DropdownContext);
 
   if (!context) {

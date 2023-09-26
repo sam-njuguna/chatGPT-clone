@@ -1,14 +1,14 @@
 "use client";
 import { FC } from "react";
 import Modal from "../custom/Modal";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 import { HiX } from "react-icons/hi";
 import { BsCheck2Circle } from "react-icons/bs";
 
 interface UpgradeProps {}
 
 const Upgrade: FC<UpgradeProps> = ({}) => {
-  const { isUpgradeModal, closeUpgardeModal } = useModal();
+  const { isUpgradeModal, closeUpgardeModal } = UseModal();
   return (
     <Modal
       isOpen={isUpgradeModal}

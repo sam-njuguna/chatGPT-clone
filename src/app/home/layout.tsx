@@ -2,14 +2,14 @@
 import { FC } from "react";
 import { Customize, Keys, Navbar, Settings, Upgrade } from "@/components";
 import Shortcuts from "@/components/Shortcuts";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 interface layoutProps {
   children: React.ReactNode;
 }
 
 const layout: FC<layoutProps> = ({ children }) => {
   const { isKeyModal, isSettingModal, isCustomModal, isUpgradeModal } =
-    useModal();
+    UseModal();
 
   return (
     <div className="flex relative w-full h-full z-0 supports-[min-height:100dvh]:min-h-[100dvh]">

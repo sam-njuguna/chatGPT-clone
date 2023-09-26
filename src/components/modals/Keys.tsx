@@ -3,12 +3,12 @@ import { shortcuts } from "@/constant";
 import { FC } from "react";
 import Modal from "../custom/Modal";
 import { HiX } from "react-icons/hi";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 
 interface KeysProps {}
 
 const Keys: FC<KeysProps> = ({}) => {
-  const { isKeyModal, closeKeyModal } = useModal();
+  const { isKeyModal, closeKeyModal } = UseModal();
   return (
     <Modal
       isOpen={isKeyModal}

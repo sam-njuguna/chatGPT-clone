@@ -3,12 +3,12 @@ import { FC, useState } from "react";
 
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { PiSquaresFourBold } from "react-icons/pi";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 import MdModal from "./custom/MdModal";
 interface ShortcutsProps {}
 
 const Shortcuts: FC<ShortcutsProps> = ({}) => {
-  const { isKey, keyRef, toggleKey, openKeyModal } = useModal();
+  const { isKey, keyRef, toggleKey, openKeyModal } = UseModal();
 
   return (
     <div className="absolute w-full h-[52px] bottom-0 z-10 left-0 flex justify-end items-end flex-col gap-0 px-4 py-6 max-md:hidden">

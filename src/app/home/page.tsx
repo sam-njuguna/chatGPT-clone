@@ -1,12 +1,15 @@
 "use client";
 import { Suggestion, Svg, Textarea } from "@/components";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 import { flashPathIcon, plusPathIcon } from "@/types";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
 import { twMerge } from "tailwind-merge";
-export default function page() {
-  const { openKeyModal } = useModal();
+
+interface pageProps {}
+
+const page: FC<pageProps> = ({}) => {
+  const { openKeyModal } = UseModal();
   const [gpt3, setGpt3] = useState(false);
   const [gpt4, setGpt4] = useState(false);
   const enterGpt3 = () => {
@@ -80,4 +83,6 @@ export default function page() {
       </div>
     </div>
   );
-}
+};
+
+export default page;

@@ -1,5 +1,5 @@
 "use client";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 import { FC, useEffect, useRef } from "react";
 
 interface ModalProps {

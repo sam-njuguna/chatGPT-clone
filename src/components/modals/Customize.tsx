@@ -1,14 +1,14 @@
 "use client";
 import { FC, useEffect, useRef, useState } from "react";
 import Modal from "../custom/Modal";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 import { TbInfoCircle } from "react-icons/tb";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 interface CustomizeProps {}
 
 const Customize: FC<CustomizeProps> = ({}) => {
-  const { isCustomModal, closeCustomModal } = useModal();
+  const { isCustomModal, closeCustomModal } = UseModal();
   const [instruction, setInstruction] = useState(false);
   const [instruction1, setInstruction1] = useState(false);
 

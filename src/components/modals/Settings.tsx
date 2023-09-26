@@ -1,5 +1,5 @@
 "use client";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 import { FC, useState } from "react";
 import Modal from "../custom/Modal";
 import { HiX } from "react-icons/hi";
@@ -12,7 +12,7 @@ import { FaDatabase } from "react-icons/fa6";
 interface SettingsProps {}
 
 const Settings: FC<SettingsProps> = ({}) => {
-  const { isSettingModal, closeSettingModal } = useModal();
+  const { isSettingModal, closeSettingModal } = UseModal();
   const [active, setActive] = useState(1);
 
   const handleActive = (tabNumber: number) => {

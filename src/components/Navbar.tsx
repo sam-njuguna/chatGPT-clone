@@ -1,7 +1,7 @@
 "use client";
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
-import { useModal } from "@/provider/ModalContext";
+import { UseModal } from "@/provider/ModalContext";
 import { HiPlus } from "react-icons/hi";
 import { LuUser } from "react-icons/lu";
 import { BsThreeDots } from "react-icons/bs";
@@ -21,7 +21,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
     openSettingModal,
     openCustomModal,
     openUpgradeModal,
-  } = useModal();
+  } = UseModal();
 
   return (
     <div className="flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-xtablet:hidden ">
