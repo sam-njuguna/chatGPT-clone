@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export default function page() {
+export default function Signup() {
   const router = useRouter();
   const [email, setEmail] = useState<string>("");
 

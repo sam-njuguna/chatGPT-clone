@@ -8,7 +8,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 interface pageProps {}
 
-const page: FC<pageProps> = () => {
+const Email: FC<pageProps> = () => {
   const param = useParams();
   const router = useRouter();
   const [password, setPassword] = useState("");
@@ -103,4 +103,4 @@ const page: FC<pageProps> = () => {
   );
 };
 
-export default page;
+export default Email;

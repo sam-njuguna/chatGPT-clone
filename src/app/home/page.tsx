@@ -8,7 +8,7 @@ import { twMerge } from "tailwind-merge";
 
 interface pageProps {}
 
-const page: FC<pageProps> = ({}) => {
+const Home: FC<pageProps> = ({}) => {
   const { openKeyModal } = UseModal();
   const [gpt3, setGpt3] = useState(false);
   const [gpt4, setGpt4] = useState(false);
@@ -85,4 +85,4 @@ const page: FC<pageProps> = ({}) => {
   );
 };
 
-export default page;
+export default Home;
