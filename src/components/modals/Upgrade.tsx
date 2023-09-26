@@ -3,7 +3,7 @@ import { FC } from "react";
 import Modal from "../custom/Modal";
 import { UseModal } from "@/provider/ModalContext";
 import { HiX } from "react-icons/hi";
-import { BsCheck2Circle } from "react-icons/bs";
+import { LiaCheckCircle } from "react-icons/lia";
 
 interface UpgradeProps {}
 
@@ -36,15 +36,15 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
               Your current plan
             </button>
             <div className="flex items-start gap-1.5 mt-3">
-              <BsCheck2Circle size={20} className="text-xl text-gray-500" />
+              <LiaCheckCircle size={20} className=" text-gray-500" />
               <p className="text-sm">Access to our GPT-3.5 model</p>
             </div>
             <div className="flex items-start gap-1.5 mt-2">
-              <BsCheck2Circle size={20} className="text-xl text-gray-500" />
+              <LiaCheckCircle size={20} className=" text-gray-500" />
               <p className="text-sm">Standard response speed</p>
             </div>
             <div className="flex items-start gap-1.5 mt-2">
-              <BsCheck2Circle size={20} className="text-xl text-gray-500" />
+              <LiaCheckCircle size={20} className=" text-gray-500" />
               <p className="text-sm">Regular model updates</p>
             </div>
           </div>
@@ -57,19 +57,19 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
                 USD $20/mo
               </p>
             </div>
-            <button className="h-[44px]  mt-3  w-full rounded-md bg-green-600/95 text-gray-50 font-semibold">
+            <button className="h-[44px]  mt-3  w-full rounded-md bg-[#10a37f] text-gray-50 font-semibold">
               Upgrade to plus
             </button>
             <div className="flex items-start gap-1.5 mt-3">
-              <BsCheck2Circle size={20} className="text-xl text-green-600" />
+              <LiaCheckCircle size={20} className=" text-[#10a37f]" />
               <p className="text-sm">Access to GPT-4, our most capable model</p>
             </div>
             <div className="flex items-start gap-1.5 mt-2">
-              <BsCheck2Circle size={20} className="text-xl text-green-600" />
+              <LiaCheckCircle size={20} className=" text-[#10a37f]" />
               <p className="text-sm">Faster response speed</p>
             </div>
             <div className="flex items-start gap-1.5 mt-2">
-              <BsCheck2Circle size={20} className="text-xl text-green-600" />
+              <LiaCheckCircle size={20} className="text-[#10a37f]" />
               <p className="text-sm">
                 Exclusive access to features like Plugins and Advanced Data
                 Analysis

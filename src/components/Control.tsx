@@ -10,7 +10,7 @@ const Control: FC<ControlProps> = ({ active }) => {
     <div className="px-2 py-4 w-full flex flex-col">
       <div className="flex items-center justify-between">
         <p>Chat history & Training</p>
-        <div className="w-[42px] h-[25px] justify-end flex items-center bg-green-600 rounded-full">
+        <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full">
           <div className="h-[21px] w-[21px] bg-white rounded-full" />
         </div>
       </div>
@@ -34,7 +34,7 @@ const Control: FC<ControlProps> = ({ active }) => {
       </div>
       <div className="flex items-center justify-between py-3">
         <p>Delete account</p>
-        <button className="py-2 px-4 rounded bg-red-500">Delete</button>
+        <button className="py-2 px-4 rounded bg-[#b91c1c]">Delete</button>
       </div>
     </div>
   ) : null;

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useTheme } from "next-themes";
 import { FC, useEffect, useState } from "react";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
@@ -85,7 +85,7 @@ const General: FC<GeneralProps> = ({ active }) => {
       </div>
       <div className="flex items-center justify-between py-3  border-t border-white/20">
         <p>Clear all chats</p>
-        <button className="py-2 px-4 rounded bg-red-500">Clear</button>
+        <button className="py-2 px-4 rounded bg-[#b91c1c]">Clear</button>
       </div>
     </div>
   ) : null;

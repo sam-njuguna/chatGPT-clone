@@ -40,7 +40,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
               <textarea
                 name=""
                 id=""
-                className="h-[200px] p-4 border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-green-500"
+                className="h-[200px] p-4 border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-[#10a37f]"
               />
               <div className="flex justify-between  text-gray-400">
                 <p className="text-xs">0/1500</p>
@@ -73,7 +73,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
               <textarea
                 name=""
                 id=""
-                className="h-[200px] p-4  border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-green-500"
+                className="h-[200px] p-4  border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-[#10a37f]"
               />
               <div className="flex justify-between  text-gray-400">
                 <p className="text-xs">0/1500</p>
@@ -101,7 +101,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
           <div className="flex justify-between items-center w-full py-4">
             <div className="flex items-center gap-2">
               <p className="text-gray-400 text-sm">Enable for new chats</p>
-              <div className="w-[42px] h-[25px] justify-end flex items-center bg-green-600 rounded-full">
+              <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full">
                 <div className="h-[21px] w-[21px] bg-white rounded-full" />
               </div>
             </div>
@@ -112,7 +112,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
               >
                 Cancle
               </button>
-              <button className="py-2 px-4 rounded bg-green-600 opacity-70">
+              <button className="py-2 px-4 rounded bg-[#10a37f] opacity-70">
                 save
               </button>
             </div>
