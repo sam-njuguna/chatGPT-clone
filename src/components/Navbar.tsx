@@ -29,15 +29,13 @@ const Navbar: FC<NavbarProps> = ({}) => {
     <div
       className={twMerge(
         "flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 max-md:hidden ",
-        isNav && "max-md:bg-gray-300/70 max-md:dark:bg-gray-600/70 md:block"
+        isNav && "max-md:bg-gray-300/70 max-md:dark:bg-gray-600/70 max-md:block"
       )}
     >
       <div
         className={twMerge(
           "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col",
-          isNav
-            ? "max-md:absolute z-10 max-md:w-[260px] md:h-[100dvh]"
-            : "max-md:max-w-[0px]"
+          isNav && "max-md:absolute z-50 max-md:w-[260px] max-md:h-[100dvh]"
         )}
       >
         <div className="flex relative items-center gap-2 w-full">
@@ -61,7 +59,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         <div className="flex flex-1 flex-col"></div>
         <div
           className="w-full relative  border-t border-white/20 pt-2"
-          ref={settingRef} // setting ref
+          ref={settingRef}
         >
           <button
             className={twMerge(
