@@ -1,3 +1,4 @@
+"use client";
 import { useModal } from "@/provider/ModalContext";
 import { FC, useState } from "react";
 import Modal from "../custom/Modal";

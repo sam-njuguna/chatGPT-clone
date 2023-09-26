@@ -1,8 +1,10 @@
 "use client";
 import { Input } from "@/components";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { FC, useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 interface pageProps {}
 
@@ -79,6 +81,12 @@ const page: FC<pageProps> = () => {
             Log in
           </span>
         </p>
+        <Link
+          href="/home"
+          className="flex items-center duration-200 hover:text-gray-600 gap-1 mt-2"
+        >
+          Skip <FaArrowRightLong />
+        </Link>
       </div>
       <div className="w-full flex items-center justify-center max-lg:absolute bottom-0 left-0">
         <div className="py-3 text-[14px]">

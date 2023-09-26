@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { FC } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 interface pageProps {}
 
@@ -54,6 +56,12 @@ const page: FC<pageProps> = () => {
           <a href="" className="text-focus-color-green text-center text-[14px]">
             Resend email
           </a>
+          <Link
+            href="/home"
+            className="flex items-center duration-200 hover:text-gray-600 gap-1 mt-2"
+          >
+            Skip <FaArrowRightLong />
+          </Link>
         </div>
       </div>
     </div>

@@ -20,6 +20,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
     toggleSetting,
     openSettingModal,
     openCustomModal,
+    openUpgradeModal,
   } = useModal();
 
   return (
@@ -55,6 +56,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               isSetting && "hover:bg-transparent"
             )}
             disabled={isSetting && true}
+            onClick={openUpgradeModal}
           >
             <div className="flex items-center gap-3">
               <LuUser size={16} />
@@ -111,7 +113,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               </button>
               <div className="my-1.5 h-px bg-white/20" />
               <Link
-                href="/"
+                href="/app/"
                 className="flex items-center h-11 w-full justify-start gap-3 px-3 duration-200 hover:bg-[#444654] "
               >
                 <FiLogOut size={16} />

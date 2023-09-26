@@ -1,8 +1,10 @@
 "use client";
 import { Button, Input } from "@/components";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function page() {
   const router = useRouter();
@@ -90,6 +92,12 @@ export default function page() {
             type="button"
             icon="/apple-logo.png"
           />
+          <Link
+            href="/home"
+            className="flex items-center duration-200 hover:text-gray-600 gap-1 mt-2"
+          >
+            Skip <FaArrowRightLong />
+          </Link>
         </div>
       </div>
       <div className="w-full flex items-center justify-center max-tablet:absolute bottom-0 left-0">

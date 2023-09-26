@@ -8,7 +8,8 @@ interface layoutProps {
 }
 
 const layout: FC<layoutProps> = ({ children }) => {
-  const { isKeyModal, isSettingModal, isCustomModal } = useModal();
+  const { isKeyModal, isSettingModal, isCustomModal, isUpgradeModal } =
+    useModal();
 
   return (
     <div className="flex relative w-full h-full z-0 supports-[min-height:100dvh]:min-h-[100dvh]">
@@ -28,8 +29,13 @@ const layout: FC<layoutProps> = ({ children }) => {
         </div>
       )}
       {isCustomModal && (
-        <div className="min-h-screen py-6 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40">
+        <div className="min-h-screen overflow-y-scroll py-6 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40">
           <Customize />
+        </div>
+      )}
+      {isUpgradeModal && (
+        <div className="min-h-screen overflow-y-scroll py-6 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40">
+          <Upgrade />
         </div>
       )}
     </div>

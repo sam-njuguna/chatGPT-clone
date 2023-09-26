@@ -1,8 +1,10 @@
 "use client";
 import { Input } from "@/components";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { FC, useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 interface pageProps {}
 
@@ -17,15 +19,15 @@ const page: FC<pageProps> = () => {
   const handleEditClick = () => {
     router.push(`/auth/login?email=${encodeURIComponent(decodedEmail)}`);
   };
-  //to-do
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   if (password) {
-  //     router.push(`/auth/onboarding`);
-  //   } else {
-  //     return null;
-  //   }
-  // };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (password) {
+      router.push(`/auth/onboarding`);
+    } else {
+      return null;
+    }
+  };
   return (
     <div className="w-full relative flex flex-col items-center justify-center supports-[min-height:100dvh]:min-h-[100dvh] bg-white text-[#2d333a]">
       <div className="w-full absolute top-[32px] left-0 flex justify-center items-baseline">
@@ -46,7 +48,7 @@ const page: FC<pageProps> = () => {
         <form
           action=""
           className="w-full mt-6 flex flex-col flex-1 gap-y-[14px]"
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <Input
             type="email"
@@ -82,6 +84,12 @@ const page: FC<pageProps> = () => {
             Sign up
           </span>
         </p>
+        <Link
+          href="/home"
+          className="flex items-center duration-200 hover:text-gray-600 gap-1 mt-2"
+        >
+          Skip <FaArrowRightLong />
+        </Link>
       </div>
       <div className="w-full flex items-center justify-center max-lg:absolute bottom-0 left-0">
         <div className="py-3 text-[14px]">

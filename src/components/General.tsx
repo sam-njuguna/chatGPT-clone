@@ -1,3 +1,4 @@
+"use client"
 import { useTheme } from "next-themes";
 import { FC, useEffect, useState } from "react";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";

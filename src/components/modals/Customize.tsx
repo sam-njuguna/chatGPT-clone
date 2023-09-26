@@ -1,3 +1,4 @@
+"use client";
 import { FC, useEffect, useRef, useState } from "react";
 import Modal from "../custom/Modal";
 import { useModal } from "@/provider/ModalContext";
@@ -10,33 +11,11 @@ const Customize: FC<CustomizeProps> = ({}) => {
   const { isCustomModal, closeCustomModal } = useModal();
   const [instruction, setInstruction] = useState(false);
   const [instruction1, setInstruction1] = useState(false);
-  const textarea1Ref = useRef<HTMLTextAreaElement>(null);
-  const textarea2Ref = useRef<HTMLTextAreaElement>(null);
 
-  useEffect(() => {
-    if (textarea1Ref.current) {
-      textarea1Ref.current.focus();
-    }
-  }, []);
-  const handleFocus1 = () => {
-    setInstruction(true);
-    setInstruction1(false);
-  };
-
-  const handleBlur1 = () => {
-    setInstruction(false);
-  };
   const handleClick1 = () => {
     setInstruction(!instruction);
   };
-  const handleFocus2 = () => {
-    setInstruction(false);
-    setInstruction1(true);
-  };
 
-  const handleBlur2 = () => {
-    setInstruction1(false);
-  };
   const handleClick2 = () => {
     setInstruction1(!instruction1);
   };
@@ -44,9 +23,9 @@ const Customize: FC<CustomizeProps> = ({}) => {
     <Modal
       isOpen={isCustomModal}
       closeModal={closeCustomModal}
-      className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4"
+      className=" max-w-[576px] mx-auto  w-full max-xphone:px-2 max-md:px-4"
     >
-      <div className="bg-home-color-nav_bg w-full rounded-lg   text-gray-300">
+      <div className="bg-home-color-nav_bg w-full rounded-lg mt-12   text-gray-300">
         <div className="text-[18px] flex items-center gap-2 pt-6 pb-6 px-6 border-b border-white/10">
           <p className="font-semibold">Custom instructions</p>
           <TbInfoCircle size={18} />
@@ -61,13 +40,10 @@ const Customize: FC<CustomizeProps> = ({}) => {
               <textarea
                 name=""
                 id=""
-                className="h-[200px] border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-green-500"
-                ref={textarea1Ref}
-                onFocus={handleFocus1}
-                onBlur={handleBlur1}
+                className="h-[200px] p-4 border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-green-500"
               />
               <div className="flex justify-between  text-gray-400">
-                <p>0/1500</p>
+                <p className="text-xs">0/1500</p>
                 <button onClick={handleClick1}>
                   {instruction ? (
                     <div className="flex items-center gap-1 text-sm">
@@ -97,13 +73,10 @@ const Customize: FC<CustomizeProps> = ({}) => {
               <textarea
                 name=""
                 id=""
-                className="h-[200px] border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-green-500"
-                ref={textarea2Ref}
-                onFocus={handleFocus2}
-                onBlur={handleBlur2}
+                className="h-[200px] p-4  border rounded  dark:bg-gray-800 text-[16px] focus:border focus:border-green-500"
               />
               <div className="flex justify-between  text-gray-400">
-                <p>0/1500</p>
+                <p className="text-xs">0/1500</p>
                 <button onClick={handleClick2}>
                   {instruction ? (
                     <div className="flex items-center gap-1 text-sm">
@@ -125,7 +98,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
               )}
             </div>
           </div>
-          <div className="flex justify-between items-center w-full my-4">
+          <div className="flex justify-between items-center w-full py-4">
             <div className="flex items-center gap-2">
               <p className="text-gray-400 text-sm">Enable for new chats</p>
               <div className="w-[42px] h-[25px] justify-end flex items-center bg-green-600 rounded-full">

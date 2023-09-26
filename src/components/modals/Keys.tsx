@@ -1,3 +1,4 @@
+"use client";
 import { shortcuts } from "@/constant";
 import { FC } from "react";
 import Modal from "../custom/Modal";
