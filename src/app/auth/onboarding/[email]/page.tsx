@@ -55,7 +55,7 @@ const Email: FC<pageProps> = () => {
           </a>
           <Link
             href="/home"
-            className="flex items-center justify-end duration-200 hover:text-gray-600 gap-1 mt-4"
+            className="flex items-center w-max justify-end duration-200 hover:text-gray-600 gap-1 mt-4"
           >
             Skip <FaArrowRightLong />
           </Link>
