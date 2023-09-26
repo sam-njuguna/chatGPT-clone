@@ -62,6 +62,8 @@ const Home: FC<pageProps> = ({}) => {
               <BiSolidLockAlt className=" text-[16px]" />
             </button>
           </div>
+          {gpt3 && <div className=""></div>}
+          {gpt4 && <div className=""></div>}
         </div>
         <div className="text-4xl h-[56px] flex justify-center items-center  font-bold text-center text-gray-200 dark:text-[#444654]">
           ChatGPT

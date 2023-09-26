@@ -33,7 +33,7 @@ export default function Signup() {
           />
         </div>
       </div>
-      <div className=" max-w-[400px] my-[10%] max-md:my-[15%] tablet:mt-[20%] xl:mt-[13%] xl:mb-[8.5%] px-8 sm:px-10 w-full mx-auto text-center ">
+      <div className=" max-w-[400px] my-[10%] max-xphone:pt-28 max-md:my-[15%] tablet:mt-[20%] xl:mt-[13%] xl:mb-[8.5%] px-8 sm:px-10 w-full mx-auto text-center ">
         <h1 className="text-[32px] font-bold">Create your account</h1>
         <p className="text-center text-[14px] mt-1">
           Note that phone verification may be required for signup. Your number

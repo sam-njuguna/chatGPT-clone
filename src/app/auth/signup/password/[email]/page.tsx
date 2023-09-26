@@ -40,7 +40,7 @@ const Email: FC<pageProps> = () => {
           />
         </div>
       </div>
-      <div className="  max-w-[400px] my-[10%] max-md:my-[15%] tablet:mt-[20%] xl:mt-[15.5%]  px-8 sm:px-10 w-full mx-auto text-center ">
+      <div className="  max-w-[400px] my-[10%] max-xphone:pt-24 max-md:my-[15%] tablet:mt-[20%] xl:mt-[15.5%]  px-8 sm:px-10 w-full mx-auto text-center ">
         <h1 className="text-[32px] leading-[1.2em] font-bold ">
           Create your account
         </h1>
