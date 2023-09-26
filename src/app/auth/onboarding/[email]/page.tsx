@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { FC } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -9,13 +9,10 @@ interface pageProps {}
 
 const page: FC<pageProps> = () => {
   const param = useParams();
-  const router = useRouter();
   const decodedEmail = param.email
     ? decodeURIComponent(decodeURIComponent(param.email as string))
     : "";
-  const handleEditClick = () => {
-    router.push(`/auth/login?email=${encodeURIComponent(decodedEmail)}`);
-  };
+
   return (
     <div className="w-full relative flex flex-col pt-[174px]  supports-[min-height:100dvh]:min-h-[100dvh] bg-white text-[#2d333a]">
       <div className="w-full absolute top-[32px]  left-0 flex justify-center items-baseline">
