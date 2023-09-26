@@ -86,7 +86,7 @@ const Home: FC<pageProps> = ({}) => {
       </div>
       <div className="absolute top-0 md:hidden">
         {isNav ? (
-          ""
+          "open"
         ) : (
           <button
             className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20"
