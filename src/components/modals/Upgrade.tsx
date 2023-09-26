@@ -74,7 +74,9 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
                 <p className="text-sm">Faster response speed</p>
               </div>
               <div className="flex items-start gap-1.5">
-                <LiaCheckCircle className="text-[20px] text-[#10a37f]" />
+                <div className="h-5 w-5">
+                  <LiaCheckCircle className="text-[20px] text-[#10a37f]" />
+                </div>
                 <p className="text-sm">
                   Exclusive access to features like Plugins and Advanced Data
                   Analysis
