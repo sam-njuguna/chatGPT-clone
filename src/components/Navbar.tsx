@@ -34,8 +34,10 @@ const Navbar: FC<NavbarProps> = ({}) => {
     >
       <div
         className={twMerge(
-          "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col",
-          isNav && "max-md:absolute z-50 max-md:w-[260px] max-md:h-[100dvh]"
+          "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative  p-2 bg-home-color-nav_bg text-white flex flex-col",
+          isNav
+            ? "max-md:absolute z-50 max-w-[260px] w-full max-md:h-[100dvh]"
+            : "w-[0%]"
         )}
       >
         <div className="flex relative items-center gap-2 w-full">
