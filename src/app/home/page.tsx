@@ -34,7 +34,7 @@ const Home: FC<pageProps> = ({}) => {
           <div className="w-full px-3 flex justify-between items-center">
             {!isNavM && (
               <button
-                className="w-10 h-10 flex justify-center items-center rounded hover:border-white border-2  dark:text-gray-300 "
+                className="w-10 h-10 flex justify-center items-center rounded hover:border-white hover:border-2  dark:text-gray-300 "
                 onClick={handleNavM}
               >
                 <HiBars3 size={24} />
