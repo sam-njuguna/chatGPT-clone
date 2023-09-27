@@ -104,7 +104,7 @@ const Home: FC<pageProps> = ({}) => {
         className="absolute hidden max-md:block top-2 left-2"
         onClick={handleNavM}
       >
-        {isNavM && (
+        {!isNavM && (
           <p className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
             <Image
               src="/bar.svg"

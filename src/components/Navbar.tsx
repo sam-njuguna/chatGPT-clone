@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         )}
       >
         {isNavM && (
-          <div className="absolute right-[-50px]">
+          <div className="absolute right-[-50px] top-2">
             <button
               className="w-11 h-11 flex justify-center  items-center rounded-md border border-white/20"
               onClick={handleNav}
