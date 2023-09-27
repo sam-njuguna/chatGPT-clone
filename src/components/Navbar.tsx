@@ -48,7 +48,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               className="w-11 h-11 flex justify-center  items-center border-2 border-white"
               onClick={handleNav}
             >
-              <HiX size={20} />
+              <HiX size={24} />
             </button>
           </div>
         )}

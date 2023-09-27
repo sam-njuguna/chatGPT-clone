@@ -91,12 +91,12 @@ const Home: FC<pageProps> = ({}) => {
         </div>
 
         <div className="absolute w-full left-0 bottom-0 pb-6 max-md:pb-3">
-          <div className="max-w-3xl mx-auto max-md:px-0 max-xtablet:px-4 max-lg:px-6 flex flex-col gap-4 justify-center ">
+          <div className="max-w-3xl mx-auto max-md:px-0 max-xtablet:px-4 max-lg:px-6 flex flex-col gap-2 justify-center ">
             <div className="max-md:px-2">
               <Suggestion />
             </div>
             <div
-              className="text-gray-600  dark:text-gray-300 border-t border-white/20"
+              className="text-gray-600  dark:text-gray-300 max-md:border-t pt-2 border-white/20"
               id="new"
             >
               <div className="flex flex-col gap-3 max-md:px-2">
