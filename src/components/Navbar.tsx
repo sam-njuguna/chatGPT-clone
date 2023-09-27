@@ -2,7 +2,7 @@
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 import { UseModal } from "@/provider/ModalContext";
-import { HiPlus } from "react-icons/hi";
+import { HiPlus, HiX } from "react-icons/hi";
 import { LuUser } from "react-icons/lu";
 import { BsThreeDots } from "react-icons/bs";
 import { FiLogOut, FiSettings } from "react-icons/fi";
@@ -42,6 +42,16 @@ const Navbar: FC<NavbarProps> = ({}) => {
           "supports-[height:100dvh]:h-[100dvh] overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col"
         )}
       >
+        {isNavM && (
+          <div className="absolute right-[-50px]">
+            <button
+              className="w-11 h-11 flex justify-center max-md:hidden items-center rounded-md border border-white/20"
+              onClick={handleNav}
+            >
+              <HiX size={16} />
+            </button>
+          </div>
+        )}
         <div className="flex relative items-center gap-2 w-full">
           <div className="h-[44px] w-[192px] max-md:w-full pl-4 rounded-md border border-white/20 flex items-center justify-start gap-3 cursor-pointer">
             <HiPlus className="text-gray-300 text-[16px]" />
