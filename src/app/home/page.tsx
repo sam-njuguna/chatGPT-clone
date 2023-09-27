@@ -5,6 +5,8 @@ import { flashPathIcon, plusPathIcon } from "@/types";
 import Image from "next/image";
 import { FC, useState } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
+import { HiPlus } from "react-icons/hi";
+import { HiBars3 } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 
 interface pageProps {}
@@ -28,6 +30,20 @@ const Home: FC<pageProps> = ({}) => {
   return (
     <div className="w-full supports-[height:100dvh]:h-[100dvh] relative  ">
       <div className="max-w-3xl w-full mx-auto max-xtablet:px-2 flex flex-col justify-center">
+        <div className="md:hidden h-[44px] border-b border-white/20 flex justify-center items-center">
+          <div className="w-full px-3 flex justify-between items-center">
+            {!isNavM && (
+              <button
+                className="w-10 h-10 flex justify-center items-center  border-2 focus:dark:border-white dark:text-gray-300 "
+                onClick={handleNavM}
+              >
+                <HiBars3 size={24} />
+              </button>
+            )}
+            <p>New Chat</p>
+            <HiPlus size={24} className="text-gray-300" />
+          </div>
+        </div>
         <div className="h-[98px] flex justify-center items-center w-full">
           <div className="flex  relative items-center h-[54px] max-xphone:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-lg">
             <button
@@ -89,22 +105,6 @@ const Home: FC<pageProps> = ({}) => {
         onClick={handleNav}
       >
         {!isNav && (
-          <p className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
-            <Image
-              src="/bar.svg"
-              alt="bar"
-              width={16}
-              height={16}
-              className="object-contain"
-            />
-          </p>
-        )}
-      </button>
-      <button
-        className="absolute hidden max-md:block top-2 left-2"
-        onClick={handleNavM}
-      >
-        {!isNavM && (
           <p className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
             <Image
               src="/bar.svg"
