@@ -31,7 +31,7 @@ const Home: FC<pageProps> = ({}) => {
     <div className="w-full supports-[height:100dvh]:h-[100dvh] relative  ">
       <div className="max-w-3xl w-full mx-auto flex flex-col justify-center">
         <div className="md:hidden h-[44px] border-b border-white/20 flex justify-center items-center">
-          <div className="w-full px-3 flex justify-between items-center">
+          <div className="w-full pr-2 flex justify-between items-center">
             {!isNavM && (
               <button
                 className="w-10 h-10 flex justify-center items-center rounded hover:border-white hover:border-2  dark:text-gray-300 "
