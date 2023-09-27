@@ -3,6 +3,8 @@ import { Prompt, prompts } from "@/constant";
 import { FC, useEffect, useState } from "react";
 import { Svg } from ".";
 import { arrowPathIcon } from "@/types";
+import { UseModal } from "@/provider/ModalContext";
+import { twMerge } from "tailwind-merge";
 
 interface SuggestionProps {}
 
@@ -14,6 +16,7 @@ function getRandomPrompts(prompts: Prompt[], count: number): Prompt[] {
 const Suggestion: FC<SuggestionProps> = ({}) => {
   const [randomPrompts, setRandomPrompts] = useState<Prompt[]>([]);
   const [numCardsToShow, setNumCardsToShow] = useState<number>(4);
+  const { isNav } = UseModal();
 
   useEffect(() => {
     function handleResize() {
@@ -38,7 +41,12 @@ const Suggestion: FC<SuggestionProps> = ({}) => {
   }, [numCardsToShow]);
 
   return (
-    <ul className="grid w-full grid-cols-1 max-xphone:grid-cols-1 max-md:grid-cols-2 max-xtablet:grid-cols-1 xtablet:grid-cols-2 gap-3">
+    <ul
+      className={twMerge(
+        "grid w-full grid-cols-1 max-xphone:grid-cols-1 max-md:grid-cols-2  xtablet:grid-cols-2 gap-3",
+        isNav ? "max-xtablet:grid-cols-1" : "max-xtablet:grid-cols-2"
+      )}
+    >
       {randomPrompts.map((prompt, index) => (
         <li
           key={index}

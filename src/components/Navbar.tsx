@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
             <p className="text-white">New Chat</p>
           </div>
           <button
-            className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20"
+            className="w-11 h-11 flex justify-center max-md:hidden items-center rounded-md border border-white/20"
             onClick={handleNav}
           >
             <Image
