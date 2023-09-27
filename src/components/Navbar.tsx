@@ -32,7 +32,9 @@ const Navbar: FC<NavbarProps> = ({}) => {
       className={twMerge(
         "flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 ",
         isNav ? "md:block max-md:hidden" : "hidden",
-        isNavM ? "hidden w-full max-md:block max-md:absolute" : "hidden"
+        isNavM
+          ? "hidden max-md:w-full max-md:block max-md:absolute"
+          : "max-md:hidden"
       )}
     >
       <div

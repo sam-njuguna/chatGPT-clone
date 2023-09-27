@@ -96,9 +96,11 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
 
   const handleNav = () => {
     setIsNav(!isNav);
+    setIsNavM(false);
   };
   const handleNavM = () => {
     setIsNavM(!isNavM);
+    setIsNav(false);
   };
 
   useEffect(() => {
