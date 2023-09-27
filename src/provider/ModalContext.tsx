@@ -41,7 +41,14 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isSettingModal, setIsSettingModal] = useState(false);
   const [isCustomModal, setIsCustomModal] = useState(false);
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
-  const [isNav, setNav] = useState(true);
+  const [isNav, setIsNav] = useState<boolean>(
+    localStorage.getItem("isNav") === "true" ? true : false
+  );
+
+  // Track the closed state
+  const [isClosed, setIsClosed] = useState<boolean>(
+    localStorage.getItem("isNav") === "true" ? true : false
+  );
 
   const keyRef = useRef<HTMLDivElement | null>(null);
   const settingRef = useRef<HTMLDivElement | null>(null);
@@ -90,8 +97,29 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   };
 
   const handleNav = () => {
-    setNav(!isNav);
+    const updatedIsNav = !isNav;
+    setIsNav(updatedIsNav);
+    localStorage.setItem("isNav", updatedIsNav.toString());
+    setIsClosed(updatedIsNav);
   };
+
+  // Use useEffect to check screen size and maintain closed state
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsNav(isClosed);
+      } else {
+        setIsNav(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isClosed]);
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
