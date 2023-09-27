@@ -7,6 +7,7 @@ import { FC, useState } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
 import { HiPlus } from "react-icons/hi";
 import { HiBars3 } from "react-icons/hi2";
+import { MdKeyboardArrowUp } from "react-icons/md";
 import { twMerge } from "tailwind-merge";
 
 interface pageProps {}
@@ -18,15 +19,10 @@ const Home: FC<pageProps> = ({}) => {
   const enterGpt3 = () => {
     setGpt3(!gpt3);
   };
-  const leaveGpt3 = () => {
-    setGpt3(false);
-  };
   const enterGpt4 = () => {
     setGpt4(!gpt4);
   };
-  const leaveGpt4 = () => {
-    setGpt4(false);
-  };
+
   return (
     <div className="w-full supports-[height:100dvh]:h-[100dvh] relative  ">
       <div className="max-w-3xl w-full mx-auto flex flex-col justify-center">
@@ -46,14 +42,16 @@ const Home: FC<pageProps> = ({}) => {
             </a>
           </div>
         </div>
-        <div className="max-md:px-2 pt-2 ">
-          <div className="h-[98px] max-md:h-full flex justify-center items-center w-full">
+        <div className="max-md:px-2 pt-2">
+          <div className="h-[98px] relative max-md:h-full flex justify-center items-center w-full">
             <div className="flex  relative items-center h-[54px] max-xphone:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-lg">
               <button
                 className={twMerge(
                   "h-full flex gap-2 items-center justify-center w-[148px] max-xphone:w-full  bg-white dark:bg-[#444654] border border-gray-400 rounded-lg font-semibold text-home-color-dark_btn dark:text-home-color-dark_text ",
-                  "border-black/10 shodow-[o_1px_7px_rgba(0,0,0,0,0.6)] "
+                  "border-black/10 shodow-[o_1px_7px_rgba(0,0,0,0,0.6)] ",
+                  !gpt3 && "group"
                 )}
+                onClick={enterGpt3}
               >
                 <Svg
                   className="text-green-500"
@@ -63,10 +61,11 @@ const Home: FC<pageProps> = ({}) => {
                   pathData={flashPathIcon}
                 />
                 GPT-3.5
+                {gpt3 && <MdKeyboardArrowUp size={16} />}
               </button>
 
               <button
-                className="h-full group flex items-center justify-center gap-2 w-[148px] max-xphone:w-full btn font-semibold text-[#8e8ea0]"
+                className="h-full flex items-center justify-center gap-2 w-[148px] max-xphone:w-full btn font-semibold text-[#8e8ea0]"
                 onClick={enterGpt4}
               >
                 <div className="h-4 w-4">
@@ -80,10 +79,26 @@ const Home: FC<pageProps> = ({}) => {
                 </div>
                 GPT-4
                 <BiSolidLockAlt className=" text-[16px]" />
+                {gpt4 && <MdKeyboardArrowUp size={16} />}
               </button>
             </div>
-            {gpt3 && <div className=""></div>}
-            {gpt4 && <div className=""></div>}
+            <div
+              className={twMerge(
+                "absolute w-full top-[106px]",
+                gpt3 ? "block" : "hidden group-hover:block"
+              )}
+            >
+              gpt3
+            </div>
+
+            <div
+              className={twMerge(
+                "absolute w-full top-[106px]",
+                gpt3 ? "block" : "hidden group-hover:block"
+              )}
+            >
+              gpt4
+            </div>
           </div>
           <div className="text-4xl h-[56px] flex justify-center items-center  font-bold text-center text-gray-200 dark:text-[#444654]">
             ChatGPT
