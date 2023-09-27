@@ -84,14 +84,11 @@ const Home: FC<pageProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="absolute top-4 left-4">
+      <button className="absolute top-4 left-4" onClick={handleNav}>
         {isNav ? (
           "open"
         ) : (
-          <button
-            className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20"
-            onClick={handleNav}
-          >
+          <p className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
             <Image
               src="/bar.svg"
               alt="bar"
@@ -99,9 +96,9 @@ const Home: FC<pageProps> = ({}) => {
               height={16}
               className="object-contain"
             />
-          </button>
+          </p>
         )}
-      </div>
+      </button>
     </div>
   );
 };

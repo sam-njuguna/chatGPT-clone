@@ -31,7 +31,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         "flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 ",
         isNav
           ? "block max-md:absolute max-md:w-full"
-          : `hidden max-md:hidden ${isNav ? "block" : "hidden"}`
+          : `hidden max-md:hidden ${isNav ? "hidden" : "block"}`
       )}
     >
       <div
