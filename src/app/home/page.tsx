@@ -34,14 +34,16 @@ const Home: FC<pageProps> = ({}) => {
           <div className="w-full px-3 flex justify-between items-center">
             {!isNavM && (
               <button
-                className="w-10 h-10 flex justify-center items-center rounded dark:focus:border-white border-2  dark:text-gray-300 "
+                className="w-10 h-10 flex justify-center items-center rounded focus:border-white border-2  dark:text-gray-300 "
                 onClick={handleNavM}
               >
                 <HiBars3 size={24} />
               </button>
             )}
-            <p>New Chat</p>
-            <HiPlus size={24} className="text-gray-300" />
+            <p className="font-medium">New Chat</p>
+            <a href="#new">
+              <HiPlus size={24} className="text-gray-300" />
+            </a>
           </div>
         </div>
         <div className="max-md:px-2 pt-2 ">
@@ -88,16 +90,25 @@ const Home: FC<pageProps> = ({}) => {
           </div>
         </div>
 
-        <div className="absolute w-full left-0 bottom-0 pb-6">
-          <div className="max-w-3xl mx-auto max-xphone:px-2 max-xtablet:px-4 max-lg:px-6 flex flex-col gap-4 justify-center ">
-            <Suggestion />
-            <div className="text-gray-600 flex flex-col gap-3 dark:text-gray-300">
-              <Textarea />
-              <p className="text-xs text-center">
-                Free Research Preview. ChatGPT may produce inaccurate
-                information about people, places, or facts.
-                <span className="underline ml-1">ChatGPT August 3 Version</span>
-              </p>
+        <div className="absolute w-full left-0 bottom-0 pb-6 max-md:pb-3">
+          <div className="max-w-3xl mx-auto max-md:px-0 max-xtablet:px-4 max-lg:px-6 flex flex-col gap-4 justify-center ">
+            <div className="max-md:px-2">
+              <Suggestion />
+            </div>
+            <div
+              className="text-gray-600  dark:text-gray-300 border-t border-white/20"
+              id="new"
+            >
+              <div className="flex flex-col gap-3 max-md:px-2">
+                <Textarea />
+                <p className="text-xs text-center">
+                  Free Research Preview. ChatGPT may produce inaccurate
+                  information about people, places, or facts.
+                  <span className="underline ml-1">
+                    ChatGPT August 3 Version
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
