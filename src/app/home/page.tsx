@@ -10,7 +10,7 @@ import { twMerge } from "tailwind-merge";
 interface pageProps {}
 
 const Home: FC<pageProps> = ({}) => {
-  const { openKeyModal, isNav, handleNav, handleNavM } = UseModal();
+  const { openKeyModal, isNav, isNavM, handleNav, handleNavM } = UseModal();
   const [gpt3, setGpt3] = useState(false);
   const [gpt4, setGpt4] = useState(false);
   const enterGpt3 = () => {
@@ -104,7 +104,7 @@ const Home: FC<pageProps> = ({}) => {
         className="absolute hidden max-md:block top-2 left-2"
         onClick={handleNavM}
       >
-        {isNav ? (
+        {!isNavM && (
           <p className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
             <Image
               src="/bar.svg"
@@ -114,8 +114,6 @@ const Home: FC<pageProps> = ({}) => {
               className="object-contain"
             />
           </p>
-        ) : (
-          "close"
         )}
       </button>
     </div>
