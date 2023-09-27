@@ -31,8 +31,8 @@ const Navbar: FC<NavbarProps> = ({}) => {
     <div
       className={twMerge(
         "flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 ",
-        isNav && "block max-md:hidden",
-        isNavM && " hidden w-full max-md:block max-md:absolute"
+        isNav ? "md:block max-md:hidden" : "hidden",
+        isNavM ? "hidden w-full max-md:block max-md:absolute" : "hidden"
       )}
     >
       <div
@@ -41,7 +41,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         )}
       >
         <div className="flex relative items-center gap-2 w-full">
-          <div className="h-[44px] w-[192px] pl-4 rounded-md border border-white/20 flex items-center justify-start gap-3 cursor-pointer">
+          <div className="h-[44px] w-[192px] max-md:w-full pl-4 rounded-md border border-white/20 flex items-center justify-start gap-3 cursor-pointer">
             <HiPlus className="text-gray-300 text-[16px]" />
             <p className="text-white">New Chat</p>
           </div>
