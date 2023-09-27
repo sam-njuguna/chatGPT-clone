@@ -41,7 +41,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isSettingModal, setIsSettingModal] = useState(false);
   const [isCustomModal, setIsCustomModal] = useState(false);
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
-  const [isNav, setIsNav] = useState(window.innerWidth > 768);
+  const [isNav, setIsNav] = useState(false);
 
   // Track the closed state
 
@@ -97,19 +97,22 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
 
   // Use useEffect to check screen size and maintain closed state
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    if (typeof window !== "undefined") {
+      // Access the window object only on the client side
+      const mediaQuery = window.matchMedia("(min-width: 768px)");
 
-    const closeNavBarOnResize = (e: MediaQueryListEvent) => {
-      if (e.matches) {
-        setIsNav(false);
-      }
-    };
+      const closeNavBarOnResize = (e: MediaQueryListEvent) => {
+        if (e.matches) {
+          setIsNav(false);
+        }
+      };
 
-    mediaQuery.addEventListener("change", closeNavBarOnResize);
+      mediaQuery.addEventListener("change", closeNavBarOnResize);
 
-    return () => {
-      mediaQuery.removeEventListener("change", closeNavBarOnResize);
-    };
+      return () => {
+        mediaQuery.removeEventListener("change", closeNavBarOnResize);
+      };
+    }
   }, []);
 
   useEffect(() => {
