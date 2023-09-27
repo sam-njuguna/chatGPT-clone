@@ -41,7 +41,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isSettingModal, setIsSettingModal] = useState(false);
   const [isCustomModal, setIsCustomModal] = useState(false);
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
-  const [isNav, setNav] = useState(false);
+  const [isNav, setNav] = useState(true);
 
   const keyRef = useRef<HTMLDivElement | null>(null);
   const settingRef = useRef<HTMLDivElement | null>(null);
