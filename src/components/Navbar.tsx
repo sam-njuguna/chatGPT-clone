@@ -18,18 +18,21 @@ const Navbar: FC<NavbarProps> = ({}) => {
     isSetting,
     settingRef,
     isNav,
+    isNavM,
     toggleSetting,
     openSettingModal,
     openCustomModal,
     openUpgradeModal,
     handleNav,
+    handleNavM,
   } = UseModal();
 
   return (
     <div
       className={twMerge(
         "flex-shrink-0 relative z-30 flex overflow-x-hidden h-full min-h-0 ",
-        isNav ? "block" : "hidden"
+        isNav && "block max-md:hidden",
+        isNavM && " hidden max-md:block max-md:absolute"
       )}
     >
       <div

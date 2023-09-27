@@ -15,6 +15,7 @@ interface DropdownContextType {
   isCustomModal: boolean;
   isUpgradeModal: boolean;
   isNav: boolean;
+  isNavM: boolean;
   toggleKey: () => void;
   toggleSetting: () => void;
   openKeyModal: () => void;
@@ -26,6 +27,7 @@ interface DropdownContextType {
   openUpgradeModal: () => void;
   closeUpgardeModal: () => void;
   handleNav: () => void;
+  handleNavM: () => void;
   keyRef: React.RefObject<HTMLDivElement> | null;
   settingRef: React.RefObject<HTMLDivElement> | null;
 }
@@ -41,7 +43,8 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isSettingModal, setIsSettingModal] = useState(false);
   const [isCustomModal, setIsCustomModal] = useState(false);
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
-  const [isNav, setIsNav] = useState(false);
+  const [isNav, setIsNav] = useState(true);
+  const [isNavM, setIsNavM] = useState(false);
 
   // Track the closed state
 
@@ -94,26 +97,9 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const handleNav = () => {
     setIsNav(!isNav);
   };
-
-  // Use useEffect to check screen size and maintain closed state
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Access the window object only on the client side
-      const mediaQuery = window.matchMedia("(min-width: 768px)");
-
-      const closeNavBarOnResize = (e: MediaQueryListEvent) => {
-        if (e.matches) {
-          setIsNav(false);
-        }
-      };
-
-      mediaQuery.addEventListener("change", closeNavBarOnResize);
-
-      return () => {
-        mediaQuery.removeEventListener("change", closeNavBarOnResize);
-      };
-    }
-  }, []);
+  const handleNavM = () => {
+    setIsNavM(!isNavM);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
@@ -169,6 +155,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     isCustomModal,
     isUpgradeModal,
     isNav,
+    isNavM,
     toggleKey,
     toggleSetting,
     openKeyModal,
@@ -180,6 +167,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     openUpgradeModal,
     closeUpgardeModal,
     handleNav,
+    handleNavM,
     keyRef,
     settingRef,
   };
