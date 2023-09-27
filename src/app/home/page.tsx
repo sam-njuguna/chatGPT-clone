@@ -84,10 +84,8 @@ const Home: FC<pageProps> = ({}) => {
           </div>
         </div>
       </div>
-      <button className="absolute top-4 left-4" onClick={handleNav}>
-        {isNav ? (
-          "open"
-        ) : (
+      <button className="absolute top-2 left-2" onClick={handleNav}>
+        {!isNav && (
           <p className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
             <Image
               src="/bar.svg"
