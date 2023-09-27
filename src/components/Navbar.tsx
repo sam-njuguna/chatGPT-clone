@@ -39,16 +39,16 @@ const Navbar: FC<NavbarProps> = ({}) => {
     >
       <div
         className={twMerge(
-          "supports-[height:100dvh]:h-[100dvh] md:overflow-hidden relative w-full max-w-[260px] p-2 bg-home-color-nav_bg text-white flex flex-col"
+          "supports-[height:100dvh]:h-[100dvh] md:overflow-hidden relative w-full max-w-[260px] max-md:max-w-[300px] p-2 bg-home-color-nav_bg text-white flex flex-col"
         )}
       >
         {isNavM && (
           <div className="absolute right-[-50px] top-2">
             <button
-              className="w-11 h-11 flex justify-center  items-center rounded-md border border-white/20"
+              className="w-11 h-11 flex justify-center  items-center border-2 border-white"
               onClick={handleNav}
             >
-              <HiX size={16} />
+              <HiX size={20} />
             </button>
           </div>
         )}

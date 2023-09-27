@@ -14,4 +14,7 @@
   font-family: "Figtree", sans-serif;
 }
 @layer components {
+  * {
+    @apply max-md:select-none;
+  }
 }
