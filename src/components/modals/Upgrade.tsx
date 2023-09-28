@@ -15,7 +15,7 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
       closeModal={closeUpgardeModal}
       className=" max-w-[652px] max-[639px]:max-w-[310px] mx-auto w-full max-xphone:px-2 px-4"
     >
-      <div className="bg-home-color-nav_bg w-full rounded-lg  text-gray-100">
+      <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
         <div className="h-[49px] px-4  border-b border-white/10 flex items-center justify-between">
           <p className="text-[16px] font-bold text-gray-900 dark:text-gray-50 ">
             Your plan

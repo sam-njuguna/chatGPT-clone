@@ -83,9 +83,11 @@ const General: FC<GeneralProps> = ({ active }) => {
           )}
         </div>
       </div>
-      <div className="flex items-center justify-between py-3  border-t border-white/20">
+      <div className="flex items-center justify-between py-3  border-t border-black/20 dark:border-white/20 ">
         <p>Clear all chats</p>
-        <button className="py-2 px-4 rounded bg-[#b91c1c]">Clear</button>
+        <button className="py-2 px-4 rounded bg-[#b91c1c] text-gray-100">
+          Clear
+        </button>
       </div>
     </div>
   ) : null;
