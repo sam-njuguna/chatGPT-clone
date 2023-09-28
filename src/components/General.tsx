@@ -68,7 +68,7 @@ const General: FC<GeneralProps> = ({ active }) => {
                   <button
                     key={option}
                     onClick={() => handleThemeChange(option)}
-                    className={` w-full px-4 text-start py-2 text-sm text-gray-300 hover:dark:bg-black/30 hover:bg-gray-100 border-black/20 dark:border-white/20  ${
+                    className={` w-full px-4 text-start py-2 text-sm text-gray-300 hover:dark:bg-black/10 rounded-md hover:bg-gray-100 border-black/20 dark:border-white/20  ${
                       option === selectedTheme
                         ? " text-gray-900 dark:text-white dark:bg-black/30 bg-gray-200"
                         : " text-gray-500 dark:text-gray-200"

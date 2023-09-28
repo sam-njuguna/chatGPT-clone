@@ -37,17 +37,20 @@ type Prop = {
   children: React.ReactNode;
 };
 export const ModalProvider: React.FC<Prop> = ({ children }) => {
+  const isLocalStorageAvailable =
+    typeof window !== "undefined" && window.localStorage;
   const [isKey, setIsKey] = useState(false);
   const [isKeyModal, setIsKeyModal] = useState(false);
   const [isSetting, setIsSetting] = useState(false);
   const [isSettingModal, setIsSettingModal] = useState(false);
   const [isCustomModal, setIsCustomModal] = useState(false);
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
-  const [isNav, setIsNav] = useState(true);
+  const [isNav, setIsNav] = useState(
+    isLocalStorageAvailable && localStorage.getItem("isNav") === "false"
+      ? false
+      : true
+  );
   const [isNavM, setIsNavM] = useState(false);
-
-  // Track the closed state
-
   const keyRef = useRef<HTMLDivElement | null>(null);
   const settingRef = useRef<HTMLDivElement | null>(null);
 
@@ -148,6 +151,11 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isSetting]);
+  useEffect(() => {
+    if (isLocalStorageAvailable) {
+      localStorage.setItem("isNav", isNav.toString());
+    }
+  }, [isNav]);
 
   const contextValue = {
     isKey,

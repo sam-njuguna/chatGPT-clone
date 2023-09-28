@@ -53,7 +53,7 @@ const Home: FC<pageProps> = ({}) => {
             <div className="flex  relative items-center h-[54px] max-md:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-xl">
               <button
                 className={twMerge(
-                  "h-full flex gap-2 items-center justify-center w-[148px] max-md:w-full  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 border border-black/10 dark:border-[#4E4F60] shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] rounded-lg font-semibold",
+                  "h-full flex gap-2 items-center justify-center w-[148px] max-md:w-full  bg-white dark:bg-gray-700/60 text-gray-900 dark:text-gray-100 border border-black/10 dark:border-[#4E4F60] shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] rounded-lg font-semibold",
                   !gpt3 && "group"
                 )}
                 onClick={enterGpt3}
@@ -171,7 +171,7 @@ const Home: FC<pageProps> = ({}) => {
         onClick={handleNav}
       >
         {!isNav && (
-          <p className="w-11 h-11 flex justify-center items-center rounded-md border  hover:bg-gray-100 hover:dark:bg-gray-800">
+          <p className="w-11 h-11 flex justify-center items-center rounded-md  hover:bg-gray-100 hover:dark:bg-gray-800">
             <Image
               src="/bar.svg"
               alt="bar"
