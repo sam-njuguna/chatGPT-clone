@@ -84,12 +84,14 @@ const Email: FC<pageProps> = () => {
             Sign up
           </span>
         </p>
-        <Link
-          href="/home"
-          className="flex items-center w-max justify-end duration-200 hover:text-gray-600 gap-1 mt-4"
-        >
-          Skip <FaArrowRightLong />
-        </Link>
+        <div className="flex items-center justify-end">
+          <Link
+            href="/home"
+            className="flex items-center w-max justify-end duration-200 bg-gray-100  hover:bg-gray-200 rounded-sm p-1 gap-1 mt-4"
+          >
+            Skip <FaArrowRightLong />
+          </Link>
+        </div>
       </div>
       <div className="w-full flex items-center justify-center max-lg:absolute bottom-0 left-0">
         <div className="py-3 text-[14px]">

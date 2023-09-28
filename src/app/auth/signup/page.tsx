@@ -92,12 +92,14 @@ export default function Signup() {
             type="button"
             icon="/apple-logo.png"
           />
-          <Link
-            href="/home"
-            className="flex items-center w-max justify-end duration-200 hover:text-gray-600 gap-1 mt-4"
-          >
-            Skip <FaArrowRightLong />
-          </Link>
+          <div className="flex items-center justify-end">
+            <Link
+              href="/home"
+              className="flex items-center w-max justify-end duration-200 bg-gray-100  hover:bg-gray-200 rounded-sm p-1 gap-1 mt-4"
+            >
+              Skip <FaArrowRightLong />
+            </Link>
+          </div>
         </div>
       </div>
       <div className="w-full flex items-center  max-xphone:pt-10 justify-center max-tablet:absolute bottom-0 left-0">
