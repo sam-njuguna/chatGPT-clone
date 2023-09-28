@@ -121,28 +121,32 @@ const Customize: FC<CustomizeProps> = ({}) => {
           </div>
         </div>
       </Modal>
-      <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
-        <Modal
-          closeModal={() => setInstruction(false)}
-          isOpen={instruction}
-          className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4"
-        >
-          <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
-            hello
-          </div>
-        </Modal>
-      </div>
-      <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
-        <Modal
-          closeModal={() => setInstruction1(false)}
-          isOpen={instruction1}
-          className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4"
-        >
-          <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
-            hello
-          </div>
-        </Modal>
-      </div>
+      {instruction && (
+        <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
+          <Modal
+            closeModal={() => setInstruction(false)}
+            isOpen={instruction}
+            className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4"
+          >
+            <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
+              hello
+            </div>
+          </Modal>
+        </div>
+      )}
+      {instruction1 && (
+        <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
+          <Modal
+            closeModal={() => setInstruction1(false)}
+            isOpen={instruction1}
+            className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4"
+          >
+            <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
+              hello
+            </div>
+          </Modal>
+        </div>
+      )}
     </div>
   );
 };
