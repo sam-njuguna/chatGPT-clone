@@ -93,21 +93,21 @@ const Home: FC<pageProps> = ({}) => {
               </button>
               <div
                 className={twMerge(
-                  "absolute w-full left-0 flex flex-col gap-2 rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[60px]",
+                  "absolute w-full left-0 flex flex-col gap-2 rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[60px]",
                   gpt3 ? "block" : "hidden group-hover:block"
                 )}
               >
                 <h3 className="text-gray-900 dark:text-white text-sm sm:text-base font-semibold">
                   Our fastest model,great for most everyday tasks
                 </h3>
-                <p className="text-gray-500 text-xs font-medium">
+                <p className="text-gray-500 text-xs font-medium mt-3">
                   Avalable to Free and Plus users.
                 </p>
               </div>
 
               <div
                 className={twMerge(
-                  "absolute w-full  left-0 flex flex-col gap-2 rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[60px]",
+                  "absolute w-full  left-0 flex flex-col gap-2 rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[60px]",
                   gpt4 ? "block" : "hidden group-hover:block"
                 )}
               >
@@ -115,13 +115,13 @@ const Home: FC<pageProps> = ({}) => {
                   Our most capable model, great for tasks that require
                   creativity and advanced reasoning.
                 </h3>
-                <p className="text-gray-500 text-xs font-medium">
+                <p className="text-gray-500 text-xs font-medium py-3">
                   Available exclusively to Plus users
                 </p>
                 <p className="text-gray-500 text-xs font-medium">
                   GPT-4 currently has a cap of 25 messages every 3 hours.
                 </p>
-                <button className="w-full rounded py-3 text-xs bg-purple-400 duration-100  hover:brightness-90">
+                <button className="w-full rounded h-[42px] flex items-center justify-center text-xs text-white font-medium bg-purple-300 duration-100  hover:brightness-90 mt-3">
                   Upgrade to ChatGPT Plus
                 </button>
               </div>
