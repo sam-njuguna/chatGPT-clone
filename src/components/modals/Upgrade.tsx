@@ -16,7 +16,7 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
       className=" max-w-[652px] max-[639px]:max-w-[310px] mx-auto w-full max-xphone:px-2 px-4"
     >
       <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
-        <div className="h-[49px] px-4  border-b border-white/10 flex items-center justify-between">
+        <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
           <p className="text-[16px] font-bold text-gray-900 dark:text-gray-50 ">
             Your plan
           </p>
@@ -28,7 +28,7 @@ const Upgrade: FC<UpgradeProps> = ({}) => {
           </button>
         </div>
         <div className="flex max-[639px]:flex-col-reverse">
-          <div className="flex flex-col p-4 max-[639px]:border-t  sm:border-r border-white/10 w-full">
+          <div className="flex flex-col p-4 max-[639px]:border-t  sm:border-r border-black/10 dark:border-white/10  w-full">
             <h3 className="text-[20px] font-bold text-gray-900 dark:text-gray-50 ">
               Free plan
             </h3>

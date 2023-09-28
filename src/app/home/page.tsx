@@ -81,7 +81,7 @@ const Home: FC<pageProps> = ({}) => {
               >
                 <div className="h-4 w-4">
                   <Svg
-                    className=" text-[#8e8ea0] duration-200 group-hover:text-purple-400"
+                    className=" text-[#8e8ea0] duration-200 hover:text-purple-400"
                     width="16"
                     height="16"
                     fill="currentColor"

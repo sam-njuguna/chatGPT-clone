@@ -37,8 +37,6 @@ type Prop = {
   children: React.ReactNode;
 };
 export const ModalProvider: React.FC<Prop> = ({ children }) => {
-  const isLocalStorageAvailable =
-    typeof window !== "undefined" && window.localStorage;
   const [isKey, setIsKey] = useState(false);
   const [isKeyModal, setIsKeyModal] = useState(false);
   const [isSetting, setIsSetting] = useState(false);
@@ -147,16 +145,6 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isSetting]);
-  useEffect(() => {
-    if (isLocalStorageAvailable) {
-      const storedIsOpen = localStorage.getItem("isOpen");
-      if (storedIsOpen === "false") {
-        setIsNav(false);
-      } else {
-        setIsNav(true);
-      }
-    }
-  }, [isLocalStorageAvailable]);
 
   const contextValue = {
     isKey,
