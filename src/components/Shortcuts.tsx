@@ -22,14 +22,14 @@ const Shortcuts: FC<ShortcutsProps> = ({}) => {
         {isKey && (
           <MdModal
             isOpen={isKey}
-            className="absolute top-[-108px] w-[175px] overflow-hidden right-0 my-4 rounded-md bg-gray-100 dark:bg-black drop-shadow-lg dark:text-gray-100 text-gray-700"
+            className="absolute top-[-108px] w-[175px] overflow-hidden right-0 my-4 rounded-md bg-gray-50 dark:bg-gray-800 drop-shadow-lg dark:text-gray-100 text-gray-700"
           >
-            <div className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3  hover:dark:bg-[#444654] hover:bg-gray-200 ">
+            <div className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3  hover:dark:bg-[#444654] hover:bg-gray-100 ">
               <FaArrowUpRightFromSquare className="text-[16px]" />
               <p className="text-sm">Help & FAQ</p>
             </div>
             <div
-              className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3 hover:dark:bg-[#444654] hover:bg-gray-200 "
+              className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3 hover:dark:bg-[#444654] hover:bg-gray-100 "
               onClick={openKeyModal}
             >
               <PiSquaresFourBold className="text-[18px]" />
