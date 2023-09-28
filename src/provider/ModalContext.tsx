@@ -26,6 +26,7 @@ interface DropdownContextType {
   closeCustomModal: () => void;
   openUpgradeModal: () => void;
   closeUpgardeModal: () => void;
+  isLoading: boolean;
   handleNav: () => void;
   handleNavM: () => void;
   keyRef: React.RefObject<HTMLDivElement> | null;
@@ -45,12 +46,9 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isSettingModal, setIsSettingModal] = useState(false);
   const [isCustomModal, setIsCustomModal] = useState(false);
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
-  const [isNav, setIsNav] = useState(
-    isLocalStorageAvailable && localStorage.getItem("isNav") === "false"
-      ? false
-      : true
-  );
+  const [isNav, setIsNav] = useState(true);
   const [isNavM, setIsNavM] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const keyRef = useRef<HTMLDivElement | null>(null);
   const settingRef = useRef<HTMLDivElement | null>(null);
 
@@ -153,9 +151,16 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   }, [isSetting]);
   useEffect(() => {
     if (isLocalStorageAvailable) {
-      localStorage.setItem("isNav", isNav.toString());
+      const storedIsOpen = localStorage.getItem("isOpen");
+      if (storedIsOpen === "false") {
+        setIsNav(false);
+      } else {
+        setIsNav(true);
+      }
     }
-  }, [isNav]);
+
+    setIsLoading(false);
+  }, [isLocalStorageAvailable]);
 
   const contextValue = {
     isKey,
@@ -166,6 +171,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     isUpgradeModal,
     isNav,
     isNavM,
+    isLoading,
     toggleKey,
     toggleSetting,
     openKeyModal,
