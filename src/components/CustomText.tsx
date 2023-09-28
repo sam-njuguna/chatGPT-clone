@@ -39,22 +39,24 @@ const CustomText: React.FC = () => {
   const [shuffledData, setShuffledData] = useState<DataItem[]>([]);
 
   useEffect(() => {
-    const shuffled = [...dataArray].sort(() => Math.random() - 0.5);
-    setShuffledData(shuffled);
-    setCurrentIndex(0);
-    setCurrentSubtitles(shuffled[0]?.subtitles || []);
+    if (dataArray && dataArray.length > 0) {
+      const shuffled = [...dataArray].sort(() => Math.random() - 0.5);
+      setShuffledData(shuffled);
+      setCurrentIndex(0);
+      setCurrentSubtitles(shuffled[0]?.subtitles || []);
 
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % shuffled.length;
-        setCurrentSubtitles(shuffled[nextIndex]?.subtitles || []);
-        return nextIndex;
-      });
-    }, 10000);
+      const timer = setInterval(() => {
+        setCurrentIndex((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % shuffled.length;
+          setCurrentSubtitles(shuffled[nextIndex]?.subtitles || []);
+          return nextIndex;
+        });
+      }, 10000);
 
-    return () => {
-      clearInterval(timer);
-    };
+      return () => {
+        clearInterval(timer);
+      };
+    }
   }, []);
 
   return (
