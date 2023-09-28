@@ -49,7 +49,7 @@ const Home: FC<pageProps> = ({}) => {
             <div className="flex  relative items-center h-[54px] max-xphone:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-lg">
               <button
                 className={twMerge(
-                  "h-full flex gap-2 items-center justify-center w-[148px] max-xphone:w-full  bg-white dark:bg-[#444654] border border-gray-400 rounded-lg font-semibold text-home-color-dark_btn dark:text-home-color-dark_text ",
+                  "h-full flex gap-2 items-center justify-center w-[148px] max-xphone:w-full  bg-white dark:bg-gray-700/90 text-gray-900 dark:text-gray-100 border border-black/10 dark:border-[#4E4F60] shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] rounded-lg font-semibold",
                   "border-black/10 shodow-[o_1px_7px_rgba(0,0,0,0,0.6)] ",
                   !gpt3 && "group"
                 )}
