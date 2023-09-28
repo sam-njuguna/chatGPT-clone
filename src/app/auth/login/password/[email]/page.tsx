@@ -23,7 +23,7 @@ const Email: FC<pageProps> = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (password) {
-      router.push(`/auth/onboarding`);
+      router.push(`/home`);
     } else {
       return null;
     }
