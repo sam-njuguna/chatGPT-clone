@@ -17,9 +17,9 @@ const layout: FC<layoutProps> = ({ children }) => {
     isUpgradeModal,
   } = UseModal();
 
-  return (
+  return isLoading ? null : (
     <div className="flex relative w-full h-full z-0 supports-[min-height:100dvh]:min-h-[100dvh]">
-      {isNav && isLoading && <Navbar />}
+      <Navbar />
       <div className="bg-white flex flex-1 text-home dark:bg-home-color-dark_btn dark:text-home-color-dark_text">
         {children}
       </div>
