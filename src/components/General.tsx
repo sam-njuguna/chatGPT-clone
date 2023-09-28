@@ -46,7 +46,7 @@ const General: FC<GeneralProps> = ({ active }) => {
         <p>Theme</p>
         <div className="relative">
           <button
-            className="flex items-center justify-center gap-2 px-4 h-9 rounded  hover:bg-[#343541]"
+            className="flex items-center justify-center gap-2 px-4 h-9 rounded  hover:bg-gray-100 hover:dark:bg-[#343541]"
             onClick={() => setIsOpen(!isOpen)}
           >
             {theme}
@@ -57,7 +57,7 @@ const General: FC<GeneralProps> = ({ active }) => {
             )}
           </button>
           {isOpen && (
-            <div className="origin-top-right absolute z-10 -right-15 mt-0 w-[220px] rounded-md shadow-lg bg-home-color-nav_bg  ring-1 ring-black ring-opacity-5">
+            <div className="origin-top-right absolute z-10 max-md:right-10 mt-0 w-[220px] rounded-md shadow-lg bg-home-color-nav_bg  ring-1 ring-black ring-opacity-5">
               <div
                 className="py-1 flex flex-col"
                 role="menu"
