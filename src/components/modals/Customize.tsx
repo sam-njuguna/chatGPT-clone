@@ -25,13 +25,14 @@ const Customize: FC<CustomizeProps> = ({}) => {
   const handleClick = () => {
     setIsCustomModal(true);
   };
+  const closeModal = () => {
+    instruction || instruction1 ? handleClick() : closeCustomModal();
+  };
   return (
     <div className="relative w-full">
       <Modal
         isOpen={isCustomModal}
-        closeModal={
-          instruction || instruction1 ? handleClick : closeCustomModal
-        }
+        closeModal={closeModal}
         className=" max-w-[576px] mx-auto pt-[6rem]  w-full max-xphone:px-2 max-md:px-4"
       >
         <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg  w-full rounded-lg  dark:text-gray-300">
@@ -159,7 +160,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
         </div>
       </Modal>
       {instruction1 && (
-        <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
+        <div className="h-screen right-0 z-50 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70  lg:hidden">
           <div className=" max-w-[550px] mx-auto w-full max-xphone:px-2 max-md:px-4">
             <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
               <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
@@ -167,7 +168,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   Keyboard Shortcuts
                 </p>
                 <button
-                  onClick={() => setInstruction(false)}
+                  onClick={handleClick2}
                   className="text-gray-500 hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-200 text-[20px] duration-200"
                 >
                   <HiX />
@@ -194,7 +195,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
         </div>
       )}
       {instruction && (
-        <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
+        <div className="h-screen z-50 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70  lg:hidden">
           <div className=" max-w-[550px] mx-auto w-full max-xphone:px-2 max-md:px-4">
             <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
               <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
@@ -202,7 +203,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   Thought starters
                 </p>
                 <button
-                  onClick={() => setInstruction1(false)}
+                  onClick={handleClick1}
                   className="text-gray-500 hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-200 text-[20px] duration-200"
                 >
                   <HiX />
