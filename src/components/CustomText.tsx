@@ -36,22 +36,18 @@ const CustomText: React.FC = () => {
   const [shuffledData, setShuffledData] = useState<DataItem[]>([]);
 
   useEffect(() => {
-    // Shuffle the data array and store it in shuffledData
     const shuffled = [...dataArray].sort(() => Math.random() - 0.5);
     setShuffledData(shuffled);
-
-    // Start with the first item (index 0)
     setCurrentIndex(0);
     setCurrentSubtitles(shuffled[0].subtitles);
 
-    // Timer for shuffling and showing items
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % shuffled.length;
         setCurrentSubtitles(shuffled[nextIndex].subtitles);
         return nextIndex;
       });
-    }, 10000); // Shuffle every 10 seconds
+    }, 10000);
 
     return () => {
       clearInterval(timer);
@@ -67,7 +63,7 @@ const CustomText: React.FC = () => {
           </h1>
           <TypingText
             textArray={currentSubtitles}
-            delayBetweenTexts={10000} // Delay between subtitles (2 seconds)
+            delayBetweenTexts={10000}
             cursorBlinkSpeed={500} // Cursor blink speed (0.5 seconds)
           />
         </div>
