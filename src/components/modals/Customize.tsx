@@ -98,7 +98,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
               )}
             </div>
           </div>
-          <div className="flex justify-between items-center w-full py-4">
+          <div className="flex justify-between  items-center w-full py-4">
             <div className="flex items-center gap-2">
               <p className="text-gray-400 text-sm">Enable for new chats</p>
               <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full">

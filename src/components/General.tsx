@@ -57,9 +57,9 @@ const General: FC<GeneralProps> = ({ active }) => {
             )}
           </button>
           {isOpen && (
-            <div className="origin-top-right absolute z-10 max-md:right-4 mt-0 w-[220px] rounded-md shadow-lg bg-gray-50  dark:bg-home-color-nav_bg  ring-1 ring-black ring-opacity-5">
+            <div className="origin-top-right absolute z-10 max-md:right-0 mt-0 w-[220px] rounded-md shadow-lg bg-gray-50  dark:bg-home-color-nav_bg  ring-1 ring-black ring-opacity-5">
               <div
-                className="py-1 flex flex-col"
+                className="p-1 flex flex-col"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
@@ -68,9 +68,9 @@ const General: FC<GeneralProps> = ({ active }) => {
                   <button
                     key={option}
                     onClick={() => handleThemeChange(option)}
-                    className={` w-full px-4 text-start py-2 text-sm text-gray-300 hover:dark:bg-black/30 hover:dark:bg-gray-100 border-black/20 dark:border-white/20  ${
+                    className={` w-full px-4 text-start py-2 text-sm text-gray-300 hover:dark:bg-black/30 hover:bg-gray-100 border-black/20 dark:border-white/20  ${
                       option === selectedTheme
-                        ? " text-gray-900 dark:text-white"
+                        ? " text-gray-900 dark:text-white dark:bg-black/30 bg-gray-200"
                         : " text-gray-500 dark:text-gray-200"
                     }`}
                     role="menuitem"
