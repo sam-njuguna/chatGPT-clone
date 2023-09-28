@@ -50,7 +50,7 @@ const Suggestion: FC<SuggestionProps> = ({}) => {
       {randomPrompts.map((prompt, index) => (
         <li
           key={index}
-          className="relative group cursor-pointer max-w-[380px] max-xphone:max-w-full max-xtablet:max-w-full overflow-hidden h-[58px] text-[14px] px-3 flex flex-col items-start justify-center border border-gray-100 dark:border-[#565869]  group w-full whitespace-nowrap rounded-xl text-left text-gray-700 shadow-[0px_1px_6px_0px_rgba(0,0,0,0.02)] dark:text-gray-300 md:whitespace-normal hover:dark:bg-[#444654e8] hover:bg-gray-100"
+          className="relative group cursor-pointer max-w-[380px] max-xphone:max-w-full max-xtablet:max-w-full overflow-hidden h-[58px] text-[14px] px-3 flex flex-col items-start justify-center border border-gray-200 dark:border-[#565869]  group w-full whitespace-nowrap rounded-xl text-left text-gray-700 shadow-[0px_1px_6px_0px_rgba(0,0,0,0.02)] dark:text-gray-300 md:whitespace-normal hover:dark:bg-[#444654e8] hover:bg-gray-100"
         >
           <h3 className="font-bold truncate">{prompt.title}</h3>
           <p className="truncate w-full text-gray-400 text-[14px] font-medium leading-none">

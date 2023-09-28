@@ -32,11 +32,11 @@ const Home: FC<pageProps> = ({}) => {
   return (
     <div className="w-full supports-[height:100dvh]:h-[100dvh] relative  ">
       <div className="max-w-3xl w-full mx-auto flex flex-col justify-center">
-        <div className="md:hidden h-[44px] border-b border-white/20 flex justify-center items-center">
+        <div className="md:hidden max-md bg-home-color-dark_btn text-gray-300  h-[44px] border-b border-white/20 flex justify-center items-center">
           <div className="w-full pr-2 flex justify-between items-center">
             {!isNavM && (
               <button
-                className="w-10 h-10 flex justify-center items-center rounded hover:border-white hover:border-2  dark:text-gray-300 "
+                className="w-10 h-10 flex justify-center items-center rounded hover:border-white hover:border-2  text-gray-300 "
                 onClick={handleNavM}
               >
                 <HiBars3 size={24} />
@@ -146,7 +146,7 @@ const Home: FC<pageProps> = ({}) => {
               <Suggestion />
             </div>
             <div
-              className="text-gray-600  dark:text-gray-300 max-md:border-t pt-2 border-white/20"
+              className="text-gray-600  dark:text-gray-300 max-md:border-t pt-2 dark:border-white/20 border-gray-200"
               id="new"
             >
               <div className="flex flex-col gap-3 max-md:gap-2  max-md:px-2">
