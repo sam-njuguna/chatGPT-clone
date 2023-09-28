@@ -4,6 +4,7 @@ import Modal from "../custom/Modal";
 import { UseModal } from "@/provider/ModalContext";
 import { TbInfoCircle } from "react-icons/tb";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { HiX } from "react-icons/hi";
 
 interface CustomizeProps {}
 
@@ -61,7 +62,13 @@ const Customize: FC<CustomizeProps> = ({}) => {
                 </div>
                 {instruction && (
                   <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg ">
-                    hello
+                    <ul className="list-disc ">
+                      <li>Where are you based?</li>
+                      <li>What do you do for work?</li>
+                      <li>What are your hobbies and interests?</li>
+                      <li>What subjects can you talk about for hours?</li>
+                      <li>What are some goals you have?</li>
+                    </ul>
                   </div>
                 )}
               </div>
@@ -94,7 +101,15 @@ const Customize: FC<CustomizeProps> = ({}) => {
                 </div>
                 {instruction1 && (
                   <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg ">
-                    hello
+                    <ul className="list-disc">
+                      <li>How formal or casual should ChatGPT be?</li>
+                      <li>How long or short should responses generally be?</li>
+                      <li>How do you want to be addressed?</li>
+                      <li>
+                        Should ChatGPT have opinions on topics or remain
+                        neutral?
+                      </li>
+                    </ul>
                   </div>
                 )}
               </div>
@@ -121,30 +136,61 @@ const Customize: FC<CustomizeProps> = ({}) => {
           </div>
         </div>
       </Modal>
-      {instruction && (
-        <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
-          <Modal
-            closeModal={() => setInstruction(false)}
-            isOpen={instruction}
-            className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4"
-          >
-            <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
-              hello
-            </div>
-          </Modal>
-        </div>
-      )}
       {instruction1 && (
         <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
-          <Modal
-            closeModal={() => setInstruction1(false)}
-            isOpen={instruction1}
-            className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4"
-          >
+          <div className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4">
             <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
-              hello
+              <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
+                <p className="text-[18px] font-semibold text-gray-900 dark:text-gray-200 ">
+                  Keyboard Shortcuts
+                </p>
+                <button
+                  onClick={() => setInstruction(false)}
+                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-200 text-[20px] duration-200"
+                >
+                  <HiX />
+                </button>
+              </div>
+              <div className="p-4 sm:p-6 sm:pt-4">
+                <ul className="list-disc ">
+                  <li>How formal or casual should ChatGPT be?</li>
+                  <li>How long or short should responses generally be?</li>
+                  <li>How do you want to be addressed?</li>
+                  <li>
+                    Should ChatGPT have opinions on topics or remain neutral?
+                  </li>
+                </ul>
+              </div>
             </div>
-          </Modal>
+          </div>
+        </div>
+      )}
+      {instruction && (
+        <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
+          <div className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4">
+            <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
+              <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
+                <p className="text-[18px] font-semibold text-gray-900 dark:text-gray-200 ">
+                  Thought starters
+                </p>
+                <button
+                  onClick={() => setInstruction1(false)}
+                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 hover:dark:text-gray-200 text-[20px] duration-200"
+                >
+                  <HiX />
+                </button>
+              </div>
+              <div className="p-4 sm:p-6 sm:pt-4">
+                <ul className="list-disc">
+                  <li>Where are you based?</li>
+                  <li>What do you do for work?</li>
+                  <li>What are your hobbies and interests?</li>
+                  <li>What subjects can you talk about for hours?</li>
+                  <li>What are some goals you have?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

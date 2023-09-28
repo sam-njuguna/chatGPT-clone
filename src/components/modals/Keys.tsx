@@ -36,12 +36,12 @@ const Keys: FC<KeysProps> = ({}) => {
               <p className="font-medium"> {shortcut.action}</p>
               <div className="flex items-center gap-2">
                 {shortcut.keyCombination.map((key, keyIndex) => (
-                  <span
+                  <p
                     key={keyIndex}
                     className=" border rounded min-w-[32px] h-[32px]  flex justify-center items-center p-2 border-black/10 dark:border-white/10"
                   >
                     {key.name}
-                  </span>
+                  </p>
                 ))}
               </div>
             </li>
