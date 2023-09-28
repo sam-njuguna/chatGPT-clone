@@ -15,7 +15,7 @@ const Shortcuts: FC<ShortcutsProps> = ({}) => {
       <div className="flex relative" ref={keyRef}>
         <button
           onClick={toggleKey}
-          className="h-6 w-6 text-[18px] font-medium dark:bg-[#444654] bg-gray-200 border border-black/5 dark:border-gray-400 text-gray-800 dark:text-gray-200 rounded-full flex justify-center items-center"
+          className="h-6 w-6 text-[18px] font-medium dark:bg-[#444654] bg-gray-100 border border-black/5 dark:border-gray-400 text-gray-800 dark:text-gray-200 rounded-full flex justify-center items-center"
         >
           ?
         </button>
@@ -24,12 +24,12 @@ const Shortcuts: FC<ShortcutsProps> = ({}) => {
             isOpen={isKey}
             className="absolute top-[-108px] w-[175px] overflow-hidden right-0 my-4 rounded-md bg-gray-100 dark:bg-black drop-shadow-lg dark:text-gray-100 text-gray-700"
           >
-            <div className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3  hover:dark:bg-[#444654] bg-gray-200 ">
+            <div className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3  hover:dark:bg-[#444654] hover:bg-gray-200 ">
               <FaArrowUpRightFromSquare className="text-[16px]" />
               <p className="text-sm">Help & FAQ</p>
             </div>
             <div
-              className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3 hover:dark:bg-[#444654] bg-gray-200 "
+              className="h-[44px] flex items-center gap-2 cursor-pointer p-2 px-3 hover:dark:bg-[#444654] hover:bg-gray-200 "
               onClick={openKeyModal}
             >
               <PiSquaresFourBold className="text-[18px]" />
