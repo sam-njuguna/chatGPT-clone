@@ -10,128 +10,103 @@ export interface Shortcut {
 export const prompts: Prompt[] = [
   {
     title: "Write a short story",
-    description:
-      "Write a short story about a detective solving a mysterious case in a small town.",
+    description: "Detective solving a mysterious case in a small town.",
   },
   {
     title: "Design a website",
-    description:
-      "Design a modern and user-friendly website for a fictional e-commerce store selling outdoor gear.",
+    description: "E-commerce store selling outdoor gear.",
   },
   {
     title: "Create a to-do list app",
-    description:
-      "Develop a to-do list application with features such as task creation, completion, and deletion.",
+    description: "Task creation, completion, and deletion features.",
   },
   {
     title: "Describe your dream vacation",
-    description:
-      "Write a detailed description of your dream vacation destination, including activities and sights to see.",
+    description: "Dream vacation destination with activities and sights.",
   },
   {
     title: "Explain a scientific concept",
-    description:
-      "Explain the concept of photosynthesis and its importance in the process of plant growth.",
+    description: "Photosynthesis and its importance in plant growth.",
   },
   {
     title: "Write a poem",
-    description:
-      "Compose a poem about the beauty of nature and its impact on human emotions.",
+    description: "Beauty of nature and its impact on emotions.",
   },
   {
     title: "Design a mobile app",
-    description:
-      "Design a mobile application for tracking daily water intake and providing hydration reminders.",
+    description: "Track daily water intake and provide hydration reminders.",
   },
   {
     title: "Explain blockchain technology",
-    description:
-      "Write an explanation of blockchain technology, its use cases, and its potential impact on various industries.",
+    description: "Use cases and impact on industries.",
   },
   {
     title: "Create a recipe",
-    description:
-      "Share your favorite recipe for a homemade pasta dish, including ingredients and step-by-step instructions.",
+    description: "Favorite homemade pasta dish recipe with instructions.",
   },
   {
     title: "Describe a historical event",
-    description:
-      "Provide a detailed description of a significant historical event and its consequences on society.",
+    description: "Significant historical event and its consequences.",
   },
   {
     title: "Invent a new board game",
-    description:
-      "Invent a fun and engaging board game with rules, objectives, and gameplay mechanics.",
+    description: "Fun and engaging board game with rules and objectives.",
   },
   {
     title: "Discuss the future of AI",
-    description:
-      "Share your thoughts on the future of artificial intelligence, its potential benefits, and ethical concerns.",
+    description: "AI's potential benefits and ethical concerns.",
   },
   {
     title: "Write a product review",
-    description:
-      "Write a review of a recently purchased product, highlighting its features, pros, and cons.",
+    description: "Review of a recently purchased product's features.",
   },
   {
     title: "Create a short film plot",
-    description:
-      "Outline the plot for a short film, including characters, setting, and key plot points.",
+    description: "Plot for a short film with characters and setting.",
   },
   {
     title: "Describe your ideal workspace",
-    description:
-      "Describe your ideal workspace, including its design, location, and elements that inspire creativity.",
+    description: "Ideal workspace design and elements inspiring creativity.",
   },
   {
     title: "Write a short biography",
-    description:
-      "Write a short biography of a historical figure who has inspired you.",
+    description: "Short biography of an inspiring historical figure.",
   },
   {
     title: "Design a logo",
-    description:
-      "Design a logo for a fictional coffee shop called 'Mocha Delights.'",
+    description: "Logo for 'Mocha Delights' coffee shop.",
   },
   {
     title: "Explain climate change",
-    description:
-      "Explain the causes and consequences of climate change and suggest ways individuals can help combat it.",
+    description: "Causes, consequences, and individual actions.",
   },
   {
     title: "Create a workout routine",
-    description:
-      "Create a weekly workout routine for someone looking to improve their fitness and strength.",
+    description: "Weekly workout routine for fitness and strength.",
   },
   {
     title: "Analyze a piece of art",
-    description:
-      "Select a famous artwork and analyze its composition, symbolism, and historical significance.",
+    description: "Famous artwork's composition, symbolism, and significance.",
   },
   {
     title: "Invent a new smartphone feature",
-    description:
-      "Imagine and describe a new feature that could revolutionize smartphone technology.",
+    description: "Revolutionary smartphone feature concept.",
   },
   {
     title: "Debate a controversial topic",
-    description:
-      "Choose a controversial topic (e.g., social media's impact on society) and write arguments for and against it.",
+    description: "Arguments for and against a controversial topic.",
   },
   {
     title: "Write a movie script",
-    description:
-      "Write the script for a short film or scene based on a dramatic conflict between two characters.",
+    description: "Script for a dramatic conflict scene.",
   },
   {
     title: "Describe an alien world",
-    description:
-      "Create a vivid description of an imaginary alien planet, its inhabitants, and ecosystems.",
+    description: "Vivid description of an imaginary alien planet.",
   },
   {
     title: "Suggest a business idea",
-    description:
-      "Pitch a unique business idea, including its target market, revenue model, and competitive advantage.",
+    description: "Unique business idea with target market and revenue model.",
   },
 ];
 
