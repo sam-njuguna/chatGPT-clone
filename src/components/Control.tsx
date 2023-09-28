@@ -14,7 +14,7 @@ const Control: FC<ControlProps> = ({ active }) => {
           <div className="h-[21px] w-[21px] bg-white rounded-full" />
         </div>
       </div>
-      <p className=" border-b border-gray-200 dark:border-[#565869] pb-3 text-gray-400 text-xs pt-1">
+      <p className=" border-b border-black/20 dark:border-white/20 pb-3 text-gray-400 text-xs pt-1">
         Save new chats on this browser to your history and allow them to be used
         to improve our models. Unsaved chats will be deleted from our systems
         within 30 days. This setting does not sync across browsers or devices.
