@@ -168,13 +168,20 @@ const Home: FC<pageProps> = ({}) => {
         onClick={handleNav}
       >
         {!isNav && (
-          <p className="w-11 h-11 flex justify-center items-center rounded-md border border-white/20">
+          <p className="w-11 h-11 flex justify-center items-center rounded-md border  hover:bg-gray-100 hover:dark:bg-gray-800">
             <Image
               src="/bar.svg"
               alt="bar"
               width={16}
               height={16}
-              className="object-contain"
+              className="object-contain hidden dark:block"
+            />
+            <Image
+              src="/bar2.svg"
+              alt="bar"
+              width={16}
+              height={16}
+              className="object-contain dark:hidden"
             />
           </p>
         )}
