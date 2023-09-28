@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { GoDotFill } from "react-icons/go";
 interface TypingTextProps {
   textArray: string[];
   delayBetweenTexts: number;
@@ -61,7 +61,7 @@ const TypingText: React.FC<TypingTextProps> = ({
       <span>{currentText}</span>
       {showCursor && (
         <span>
-          <span className="block h-6 w-6 rounded-full bg-theme-color-light dark:bg-theme-color-dark " />
+          <GoDotFill className="bg-theme-color-light dark:bg-theme-color-dark" />
         </span>
       )}
     </div>
