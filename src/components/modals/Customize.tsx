@@ -9,27 +9,29 @@ import { HiX } from "react-icons/hi";
 interface CustomizeProps {}
 
 const Customize: FC<CustomizeProps> = ({}) => {
-  const { isCustomModal, closeCustomModal } = UseModal();
+  const { isCustomModal, setIsCustomModal, closeCustomModal } = UseModal();
   const [instruction, setInstruction] = useState(false);
   const [instruction1, setInstruction1] = useState(false);
 
   const handleClick1 = () => {
     setInstruction(!instruction);
     setInstruction1(false);
+    setIsCustomModal(true);
   };
 
   const handleClick2 = () => {
     setInstruction1(!instruction1);
     setInstruction(false);
+    setIsCustomModal(true);
   };
   return (
     <div className="relative w-full">
       <Modal
         isOpen={isCustomModal}
         closeModal={closeCustomModal}
-        className=" max-w-[576px] mx-auto  w-full max-xphone:px-2 max-md:px-4"
+        className=" max-w-[576px] mx-auto pt-[6rem]  w-full max-xphone:px-2 max-md:px-4"
       >
-        <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg pt-10 w-full rounded-lg  dark:text-gray-300">
+        <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg  w-full rounded-lg  dark:text-gray-300">
           <div className="text-[18px] flex items-center gap-2 pt-6 pb-6 px-6 border-b border-white/10">
             <p className="font-semibold">Custom instructions</p>
             <TbInfoCircle size={18} />
@@ -132,20 +134,20 @@ const Customize: FC<CustomizeProps> = ({}) => {
               </div>
             </div>
             <div className="flex justify-between max-sm:flex-col  items-center w-full py-4">
-              <div className="flex items-center max-sm:justify-between gap-2 max-sm:w-full">
+              <div className="flex items-center max-sm:justify-between gap-2 max-sm:w-full max-sm:mb-3 ">
                 <p className="text-gray-400 text-sm">Enable for new chats</p>
-                <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full pl-1">
+                <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full pr-1">
                   <div className="h-[21px] w-[21px] bg-white rounded-full" />
                 </div>
               </div>
-              <div className="flex items-center max-sm:flex-col max-sm:w-full  gap-3">
+              <div className="flex items-center max-sm:flex-col-reverse max-sm:w-full  gap-3">
                 <button
-                  className=" py-2 px-4 rounded max-sm:w-full dark:bg-[#343541] border bg-transparent border-gray-200 dark:border-[#565869]"
+                  className=" py-2 px-4 rounded max-sm:w-full dark:bg-[#343541] border bg-transparent duration-200 hover:bg-gray-100 hover:dark:bg-gray-700/40 border-gray-200 dark:border-[#565869]"
                   onClick={closeCustomModal}
                 >
                   Cancle
                 </button>
-                <button className="py-2 px-4 rounded max-sm:w-full bg-[#10a37f] opacity-70">
+                <button className="py-2 px-4 rounded max-sm:w-full text-white bg-[#10a37f] opacity-70">
                   save
                 </button>
               </div>

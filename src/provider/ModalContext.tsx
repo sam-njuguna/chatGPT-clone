@@ -28,6 +28,7 @@ interface DropdownContextType {
   closeUpgardeModal: () => void;
   handleNav: () => void;
   handleNavM: () => void;
+  setIsCustomModal: (isCustomModal: boolean) => void;
   keyRef: React.RefObject<HTMLDivElement> | null;
   settingRef: React.RefObject<HTMLDivElement> | null;
 }
@@ -155,6 +156,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     isUpgradeModal,
     isNav,
     isNavM,
+    setIsCustomModal: () => {},
     toggleKey,
     toggleSetting,
     openKeyModal,
