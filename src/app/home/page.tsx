@@ -93,36 +93,36 @@ const Home: FC<pageProps> = ({}) => {
               </button>
               <div
                 className={twMerge(
-                  "absolute w-full flex flex-col gap-2 rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[50px]",
+                  "absolute w-full left-0 flex flex-col gap-2 rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[60px]",
                   gpt3 ? "block" : "hidden group-hover:block"
                 )}
               >
-                <h3 className="text-gray-900 dark:text-white text-sm sm:text-base">
+                <h3 className="text-gray-900 dark:text-white text-sm sm:text-base font-semibold">
                   Our fastest model,great for most everyday tasks
                 </h3>
-                <p className="text-gray-500 text-xs">
-                  Avalable to Free and Plus users.{" "}
+                <p className="text-gray-500 text-xs font-medium">
+                  Avalable to Free and Plus users.
                 </p>
               </div>
 
               <div
                 className={twMerge(
-                  "absolute w-full flex flex-col gap-2  rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[50px]",
-                  gpt3 ? "block" : "hidden group-hover:block"
+                  "absolute w-full  left-0 flex flex-col gap-2 rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[60px]",
+                  gpt4 ? "block" : "hidden group-hover:block"
                 )}
               >
-                <h3 className="text-gray-900 dark:text-white text-sm sm:text-base">
+                <h3 className="text-gray-900 dark:text-white text-sm sm:text-base font-semibold">
                   Our most capable model, great for tasks that require
                   creativity and advanced reasoning.
                 </h3>
-                <p className="text-gray-500 text-xs">
-                  Available exclusively to Plus users <br /> GPT-4 currently has
-                  a cap of 25 messages every 3 hours.
+                <p className="text-gray-500 text-xs font-medium">
+                  Available exclusively to Plus users
                 </p>
-                <button className="btn relative btn-primary w-full !bg-brand-purple py-3 text-xs hover:bg-brand-purple hover:brightness-90">
-                  <div className="flex w-full gap-2 items-center justify-center">
-                    Upgrade to ChatGPT Plus
-                  </div>
+                <p className="text-gray-500 text-xs font-medium">
+                  GPT-4 currently has a cap of 25 messages every 3 hours.
+                </p>
+                <button className="w-full rounded py-3 text-xs bg-purple-400 duration-100  hover:brightness-90">
+                  Upgrade to ChatGPT Plus
                 </button>
               </div>
             </div>
