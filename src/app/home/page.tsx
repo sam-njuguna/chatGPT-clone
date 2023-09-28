@@ -5,7 +5,7 @@ import { flashPathIcon, plusPathIcon } from "@/types";
 import Image from "next/image";
 import { FC, useState } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
-import { HiPlus } from "react-icons/hi";
+import { HiInformationCircle, HiPlus } from "react-icons/hi";
 import { HiBars3 } from "react-icons/hi2";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { twMerge } from "tailwind-merge";
@@ -18,9 +18,11 @@ const Home: FC<pageProps> = ({}) => {
   const [gpt4, setGpt4] = useState(false);
   const enterGpt3 = () => {
     setGpt3(!gpt3);
+    setGpt4(false);
   };
   const enterGpt4 = () => {
     setGpt4(!gpt4);
+    setGpt3(false);
   };
 
   return (
@@ -61,7 +63,13 @@ const Home: FC<pageProps> = ({}) => {
                   pathData={flashPathIcon}
                 />
                 GPT-3.5
-                {gpt3 && <MdKeyboardArrowUp size={16} />}
+                <div className="block md:hidden">
+                  {gpt3 ? (
+                    <MdKeyboardArrowUp size={16} />
+                  ) : (
+                    <HiInformationCircle size={16} />
+                  )}
+                </div>
               </button>
 
               <button
@@ -79,25 +87,44 @@ const Home: FC<pageProps> = ({}) => {
                 </div>
                 GPT-4
                 <BiSolidLockAlt className=" text-[16px]" />
-                {gpt4 && <MdKeyboardArrowUp size={16} />}
+                {gpt4 && (
+                  <MdKeyboardArrowUp size={16} className="block md:hidden" />
+                )}
               </button>
-            </div>
-            <div
-              className={twMerge(
-                "absolute w-full top-[106px]",
-                gpt3 ? "block" : "hidden group-hover:block"
-              )}
-            >
-              gpt3
-            </div>
+              <div
+                className={twMerge(
+                  "absolute w-full flex flex-col gap-2 rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[50px]",
+                  gpt3 ? "block" : "hidden group-hover:block"
+                )}
+              >
+                <h3 className="text-gray-900 dark:text-white text-sm sm:text-base">
+                  Our fastest model,great for most everyday tasks
+                </h3>
+                <p className="text-gray-500 text-xs">
+                  Avalable to Free and Plus users.{" "}
+                </p>
+              </div>
 
-            <div
-              className={twMerge(
-                "absolute w-full top-[106px]",
-                gpt3 ? "block" : "hidden group-hover:block"
-              )}
-            >
-              gpt4
+              <div
+                className={twMerge(
+                  "absolute w-full flex flex-col gap-2  rounded-md dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[50px]",
+                  gpt3 ? "block" : "hidden group-hover:block"
+                )}
+              >
+                <h3 className="text-gray-900 dark:text-white text-sm sm:text-base">
+                  Our most capable model, great for tasks that require
+                  creativity and advanced reasoning.
+                </h3>
+                <p className="text-gray-500 text-xs">
+                  Available exclusively to Plus users <br /> GPT-4 currently has
+                  a cap of 25 messages every 3 hours.
+                </p>
+                <button className="btn relative btn-primary w-full !bg-brand-purple py-3 text-xs hover:bg-brand-purple hover:brightness-90">
+                  <div className="flex w-full gap-2 items-center justify-center">
+                    Upgrade to ChatGPT Plus
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div className="text-4xl h-[56px] flex justify-center items-center  font-bold text-center text-gray-200 dark:text-[#444654]">
