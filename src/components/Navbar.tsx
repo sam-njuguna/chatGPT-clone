@@ -138,7 +138,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
               </button>
               <div className="my-1.5 h-px bg-white/20" />
               <Link
-                href="/home/"
+                href="https://gptui-clone.vercel.app/"
                 className="flex items-center h-11 w-full justify-start gap-3 px-3 duration-200 hover:bg-[#444654] "
               >
                 <FiLogOut size={16} />
