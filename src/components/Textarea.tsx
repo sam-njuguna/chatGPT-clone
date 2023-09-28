@@ -20,7 +20,7 @@ const Textarea: FC<TextareaProps> = ({}) => {
   return (
     <div className="w-full relative">
       <TextareaAutosize
-        className="max-h-[200px] text-[16px]  shadow-lg p-4 max-xtablet:p-[10px] pr-12 bg-[#444654] drop-shadow-xl w-full rounded-xl font-medium dark:text-gray-300 text-gray-700"
+        className="max-h-[200px] text-[16px]  shadow-lg p-4 max-xtablet:p-[10px] pr-12 bg-white border border-gray-100 dark:border-none dark:bg-[#444654] dark:drop-shadow-xl w-full rounded-xl b0 font-medium dark:text-gray-300 text-gray-700"
         value={text}
         placeholder="Send a message"
         onChange={handleTextChange}
