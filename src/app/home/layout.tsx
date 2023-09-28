@@ -28,11 +28,15 @@ const layout: FC<layoutProps> = ({ children }) => {
           <Settings />
         </div>
       )}
-      {isCustomModal && (
-        <div className="min-h-screen overflow-y-scroll  py-6 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40">
-          <Customize />
-        </div>
-      )}
+
+      <div
+        className={`min-h-screen overflow-y-scroll  py-6 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40 ${
+          isCustomModal ? "block" : "hidde"
+        }`}
+      >
+        <Customize />
+      </div>
+
       {isUpgradeModal && (
         <div className="min-h-screen overflow-y-scroll py-6 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-40">
           <Upgrade />
