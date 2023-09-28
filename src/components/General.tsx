@@ -57,9 +57,9 @@ const General: FC<GeneralProps> = ({ active }) => {
             )}
           </button>
           {isOpen && (
-            <div className="origin-top-right absolute z-10 max-md:right-0 mt-0 w-[220px] rounded-md shadow-lg bg-gray-50  dark:bg-home-color-nav_bg  ring-1 ring-black ring-opacity-5">
+            <div className="origin-top-right absolute z-10 max-md:right-0 mt-0 w-[220px] rounded-lg shadow-lg bg-gray-50  dark:bg-home-color-nav_bg  ring-1 ring-black ring-opacity-5">
               <div
-                className="p-1 flex flex-col"
+                className="p-1 flex flex-col rounded-lg"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"

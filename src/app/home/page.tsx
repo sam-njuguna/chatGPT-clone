@@ -48,7 +48,7 @@ const Home: FC<pageProps> = ({}) => {
             </a>
           </div>
         </div>
-        <div className="max-md:px-2 pt-2">
+        <div className="max-md:p-2">
           <div className="h-[98px] relative max-md:h-full flex justify-center items-center w-full">
             <div className="flex  relative items-center h-[54px] max-md:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-xl">
               <button
@@ -98,7 +98,7 @@ const Home: FC<pageProps> = ({}) => {
                 closeModal={() => setGpt3(false)}
                 isOpen={gpt3}
                 className={twMerge(
-                  "absolute w-full left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line bg-white   top-[64px]",
+                  "absolute w-full left-0 flex z-20 flex-col gap-2 font-semibold rounded-xl dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line bg-white   top-[64px]",
                   "border border-gray-200 dark:border-none",
                   gpt3 ? "block" : "hidden group-hover:block"
                 )}
@@ -114,7 +114,7 @@ const Home: FC<pageProps> = ({}) => {
                 closeModal={() => setGpt4(false)}
                 isOpen={gpt4}
                 className={twMerge(
-                  "absolute w-full  left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line  bg-white border border-black/10 dark:border-none  top-[64px]",
+                  "absolute w-full  left-0 flex z-20 flex-col gap-2 font-semibold rounded-xl dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line  bg-white border border-black/10 dark:border-none  top-[64px]",
                   gpt4 ? "block" : "hidden group-hover:block",
                   "border border-gray-200 dark:border-none"
                 )}

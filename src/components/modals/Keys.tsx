@@ -15,8 +15,8 @@ const Keys: FC<KeysProps> = ({}) => {
       closeModal={closeKeyModal}
       className=" max-w-[928px] mx-auto w-full px-2 xphone:px-4 md:px-8 "
     >
-      <div className="bg-home-color-nav_bg w-full rounded-lg overflow-hidden">
-        <div className=" p-4 sm:p-6 border-b border-white/10 flex items-center justify-between">
+      <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg dark:text-gray-300">
+        <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
           <p className="text-[18px] font-semibold text-gray-900 dark:text-gray-200 ">
             Keyboard Shortcuts
           </p>
@@ -38,7 +38,7 @@ const Keys: FC<KeysProps> = ({}) => {
                 {shortcut.keyCombination.map((key, keyIndex) => (
                   <span
                     key={keyIndex}
-                    className=" border rounded min-w-[32px] h-[32px]  flex justify-center items-center p-2 border-white/10"
+                    className=" border rounded min-w-[32px] h-[32px]  flex justify-center items-center p-2 border-black/10 dark:border-white/10"
                   >
                     {key.name}
                   </span>
