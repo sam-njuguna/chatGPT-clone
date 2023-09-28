@@ -24,6 +24,10 @@ const Home: FC<pageProps> = ({}) => {
     setGpt4(!gpt4);
     setGpt3(false);
   };
+  const openModal = () => {
+    setGpt4(false);
+    openKeyModal();
+  };
 
   return (
     <div className="w-full supports-[height:100dvh]:h-[100dvh] relative  ">
@@ -49,8 +53,7 @@ const Home: FC<pageProps> = ({}) => {
             <div className="flex  relative items-center h-[54px] max-xphone:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-lg">
               <button
                 className={twMerge(
-                  "h-full flex gap-2 items-center justify-center w-[148px] max-xphone:w-full  bg-white dark:bg-gray-700/90 text-gray-900 dark:text-gray-100 border border-black/10 dark:border-[#4E4F60] shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] rounded-lg font-semibold",
-                  "border-black/10 shodow-[o_1px_7px_rgba(0,0,0,0,0.6)] ",
+                  "h-full flex gap-2 items-center justify-center w-[148px] max-md:w-full  bg-white dark:bg-gray-700/90 text-gray-900 dark:text-gray-100 border border-black/10 dark:border-[#4E4F60] shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] rounded-lg font-semibold",
                   !gpt3 && "group"
                 )}
                 onClick={enterGpt3}
@@ -93,7 +96,8 @@ const Home: FC<pageProps> = ({}) => {
               </button>
               <div
                 className={twMerge(
-                  "absolute w-full left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[64px]",
+                  "absolute w-full left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white   top-[64px]",
+                  "border border-gray-100 dark:border-none",
                   gpt3 ? "block" : "hidden group-hover:block"
                 )}
               >
@@ -107,8 +111,9 @@ const Home: FC<pageProps> = ({}) => {
 
               <div
                 className={twMerge(
-                  "absolute w-full  left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white  top-[64px]",
-                  gpt4 ? "block" : "hidden group-hover:block"
+                  "absolute w-full  left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line shadow-xl bg-white border border-black/10 dark:border-none  top-[64px]",
+                  gpt4 ? "block" : "hidden group-hover:block",
+                  "border border-gray-100 dark:border-none"
                 )}
               >
                 <h3 className="text-gray-900 dark:text-white text-sm sm:text-base font-bold">
@@ -121,7 +126,10 @@ const Home: FC<pageProps> = ({}) => {
                 <p className="text-gray-500 text-xs">
                   GPT-4 currently has a cap of 25 messages every 3 hours.
                 </p>
-                <button className="w-full rounded h-[42px] flex items-center justify-center text-xs text-white font-bold bg-[#ab68ff] duration-100  hover:brightness-90 mt-3">
+                <button
+                  className="w-full rounded h-[42px] flex items-center justify-center text-xs text-white font-bold bg-[#ab68ff] duration-100  hover:brightness-90 mt-3"
+                  onClick={openModal}
+                >
                   Upgrade to ChatGPT Plus
                 </button>
               </div>
