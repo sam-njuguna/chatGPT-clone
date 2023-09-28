@@ -1,9 +1,9 @@
 "use client";
-import { Suggestion, Svg, Textarea } from "@/components";
+import { ModalGpt, Suggestion, Svg, Textarea } from "@/components";
 import { UseModal } from "@/provider/ModalContext";
 import { flashPathIcon, plusPathIcon } from "@/types";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
 import { HiInformationCircle, HiPlus } from "react-icons/hi";
 import { HiBars3 } from "react-icons/hi2";
@@ -66,7 +66,7 @@ const Home: FC<pageProps> = ({}) => {
                   pathData={flashPathIcon}
                 />
                 GPT-3.5
-                <div className="block md:hidden">
+                <div className="block md:hidden text-gray-600 dark:text-gray-300">
                   {gpt3 ? (
                     <MdKeyboardArrowUp size={16} />
                   ) : (
@@ -94,7 +94,9 @@ const Home: FC<pageProps> = ({}) => {
                   <MdKeyboardArrowUp size={16} className="block md:hidden" />
                 )}
               </button>
-              <div
+              <ModalGpt
+                closeModal={() => setGpt3(false)}
+                isOpen={gpt3}
                 className={twMerge(
                   "absolute w-full left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line bg-white   top-[64px]",
                   "border border-gray-200 dark:border-none",
@@ -107,9 +109,10 @@ const Home: FC<pageProps> = ({}) => {
                 <p className="text-gray-500 text-xs mt-3">
                   Avalable to Free and Plus users.
                 </p>
-              </div>
-
-              <div
+              </ModalGpt>
+              <ModalGpt
+                closeModal={() => setGpt4(false)}
+                isOpen={gpt4}
                 className={twMerge(
                   "absolute w-full  left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line  bg-white border border-black/10 dark:border-none  top-[64px]",
                   gpt4 ? "block" : "hidden group-hover:block",
@@ -132,7 +135,7 @@ const Home: FC<pageProps> = ({}) => {
                 >
                   Upgrade to ChatGPT Plus
                 </button>
-              </div>
+              </ModalGpt>
             </div>
           </div>
           <div className="text-4xl h-[56px] flex justify-center items-center  font-bold text-center text-gray-200 dark:text-[#444654]">
