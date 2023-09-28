@@ -8,16 +8,10 @@ interface layoutProps {
 }
 
 const layout: FC<layoutProps> = ({ children }) => {
-  const {
-    isNav,
-    isLoading,
-    isKeyModal,
-    isSettingModal,
-    isCustomModal,
-    isUpgradeModal,
-  } = UseModal();
+  const { isKeyModal, isSettingModal, isCustomModal, isUpgradeModal } =
+    UseModal();
 
-  return isLoading ? null : (
+  return (
     <div className="flex relative w-full h-full z-0 supports-[min-height:100dvh]:min-h-[100dvh]">
       <Navbar />
       <div className="bg-white flex flex-1 text-home dark:bg-home-color-dark_btn dark:text-home-color-dark_text">

@@ -26,7 +26,6 @@ interface DropdownContextType {
   closeCustomModal: () => void;
   openUpgradeModal: () => void;
   closeUpgardeModal: () => void;
-  isLoading: boolean;
   handleNav: () => void;
   handleNavM: () => void;
   keyRef: React.RefObject<HTMLDivElement> | null;
@@ -48,7 +47,6 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
   const [isUpgradeModal, setIsUpgradeModal] = useState(false);
   const [isNav, setIsNav] = useState(true);
   const [isNavM, setIsNavM] = useState(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const keyRef = useRef<HTMLDivElement | null>(null);
   const settingRef = useRef<HTMLDivElement | null>(null);
 
@@ -158,8 +156,6 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
         setIsNav(true);
       }
     }
-
-    setIsLoading(false);
   }, [isLocalStorageAvailable]);
 
   const contextValue = {
@@ -171,7 +167,6 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     isUpgradeModal,
     isNav,
     isNavM,
-    isLoading,
     toggleKey,
     toggleSetting,
     openKeyModal,
