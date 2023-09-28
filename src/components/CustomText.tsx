@@ -34,20 +34,19 @@ const dataArray: DataItem[] = [
 ];
 
 const CustomText: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0); // Start from index 0
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentSubtitles, setCurrentSubtitles] = useState<string[]>([]);
   const [shuffledData, setShuffledData] = useState<DataItem[]>([]);
 
   useEffect(() => {
     const shuffled = [...dataArray].sort(() => Math.random() - 0.5);
-    console.log("shuffled:", shuffled);
     setShuffledData(shuffled);
+    setCurrentIndex(0);
     setCurrentSubtitles(shuffled[0]?.subtitles || []);
 
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % shuffled.length;
-        console.log("nextIndex:", nextIndex);
         setCurrentSubtitles(shuffled[nextIndex]?.subtitles || []);
         return nextIndex;
       });
