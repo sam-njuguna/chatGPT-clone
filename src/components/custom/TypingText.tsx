@@ -59,7 +59,7 @@ const TypingText: React.FC<TypingTextProps> = ({
   return (
     <div className="text-[32px] md:text-[40px] font-medium leading-[1.2]">
       <span>{currentText}</span>
-      {showCursor && <span className="text-[32px] md:text-[40px]">.</span>}
+      {showCursor && <span>|</span>}
     </div>
   );
 };

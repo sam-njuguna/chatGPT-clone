@@ -10,23 +10,26 @@ interface DataItem {
 const dataArray: DataItem[] = [
   {
     title: "Recommend a dish",
-    subtitles: ["Subtitle 1-1", "Subtitle 1-2"],
+    subtitles: [
+      "A Flavorful and Healthy Seafood Delight",
+      "Quick and Easy Recipe for Weeknight Dinners",
+    ],
   },
   {
     title: "Sammarize this artical",
-    subtitles: ["Subtitle 2-", "Into 3 points"],
+    subtitles: ["Key Points and Takeaways", "Into 3 points"],
   },
   {
     title: "Plan a trip",
-    subtitles: ["Subtitle 3-1", "Subtitle 3-2"],
+    subtitles: ["Choosing Your Destination", "Creating an Itinerary"],
   },
   {
     title: "Write a thank-you note",
-    subtitles: ["Subtitle 3-1", "Subtitle 3-2"],
+    subtitles: ["Expressing Gratitude for a Gift"],
   },
   {
     title: "Brainstorm names",
-    subtitles: ["Subtitle 3-1", "Subtitle 3-2"],
+    subtitles: ["Name Generation Techniques", "Creative Naming Ideas"],
   },
 ];
 
