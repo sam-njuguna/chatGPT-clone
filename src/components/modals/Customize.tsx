@@ -61,13 +61,22 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   </button>
                 </div>
                 {instruction && (
-                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg ">
+                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg text-sm ">
+                    <p className="font-semibold text-gray-900 dark:text-gray-200 ">
+                      Keyboard Shortcuts
+                    </p>
                     <ul className="list-disc ">
-                      <li>Where are you based?</li>
-                      <li>What do you do for work?</li>
-                      <li>What are your hobbies and interests?</li>
-                      <li>What subjects can you talk about for hours?</li>
-                      <li>What are some goals you have?</li>
+                      <li className="list-disc">Where are you based?</li>
+                      <li className="list-disc">What do you do for work?</li>
+                      <li className="list-disc">
+                        What are your hobbies and interests?
+                      </li>
+                      <li className="list-disc">
+                        What subjects can you talk about for hours?
+                      </li>
+                      <li className="list-disc">
+                        What are some goals you have?
+                      </li>
                     </ul>
                   </div>
                 )}
@@ -100,12 +109,18 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   </button>
                 </div>
                 {instruction1 && (
-                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg ">
+                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg text-sm ">
                     <ul className="list-disc">
-                      <li>How formal or casual should ChatGPT be?</li>
-                      <li>How long or short should responses generally be?</li>
-                      <li>How do you want to be addressed?</li>
-                      <li>
+                      <li className="list-disc">
+                        How formal or casual should ChatGPT be?
+                      </li>
+                      <li className="list-disc">
+                        How long or short should responses generally be?
+                      </li>
+                      <li className="list-disc">
+                        How do you want to be addressed?
+                      </li>
+                      <li className="list-disc">
                         Should ChatGPT have opinions on topics or remain
                         neutral?
                       </li>
@@ -138,7 +153,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
       </Modal>
       {instruction1 && (
         <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
-          <div className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4">
+          <div className=" max-w-[550px] mx-auto w-full max-xphone:px-2 max-md:px-4">
             <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
               <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
                 <p className="text-[18px] font-semibold text-gray-900 dark:text-gray-200 ">
@@ -153,10 +168,16 @@ const Customize: FC<CustomizeProps> = ({}) => {
               </div>
               <div className="p-4 sm:p-6 sm:pt-4">
                 <ul className="list-disc ">
-                  <li>How formal or casual should ChatGPT be?</li>
-                  <li>How long or short should responses generally be?</li>
-                  <li>How do you want to be addressed?</li>
-                  <li>
+                  <li className="list-disc">
+                    How formal or casual should ChatGPT be?
+                  </li>
+                  <li className="list-disc">
+                    How long or short should responses generally be?
+                  </li>
+                  <li className="list-disc">
+                    How do you want to be addressed?
+                  </li>
+                  <li className="list-disc">
                     Should ChatGPT have opinions on topics or remain neutral?
                   </li>
                 </ul>
@@ -167,7 +188,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
       )}
       {instruction && (
         <div className="h-screen right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70 z-50 lg:hidden">
-          <div className=" max-w-[576px] mx-auto w-full max-xphone:px-2 max-md:px-4">
+          <div className=" max-w-[550px] mx-auto w-full max-xphone:px-2 max-md:px-4">
             <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
               <div className=" p-4 sm:p-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
                 <p className="text-[18px] font-semibold text-gray-900 dark:text-gray-200 ">
@@ -181,12 +202,16 @@ const Customize: FC<CustomizeProps> = ({}) => {
                 </button>
               </div>
               <div className="p-4 sm:p-6 sm:pt-4">
-                <ul className="list-disc">
-                  <li>Where are you based?</li>
-                  <li>What do you do for work?</li>
-                  <li>What are your hobbies and interests?</li>
-                  <li>What subjects can you talk about for hours?</li>
-                  <li>What are some goals you have?</li>
+                <ul>
+                  <li className="list-disc">Where are you based?</li>
+                  <li className="list-disc">What do you do for work?</li>
+                  <li className="list-disc">
+                    What are your hobbies and interests?
+                  </li>
+                  <li className="list-disc">
+                    What subjects can you talk about for hours?
+                  </li>
+                  <li className="list-disc">What are some goals you have?</li>
                 </ul>
               </div>
             </div>
