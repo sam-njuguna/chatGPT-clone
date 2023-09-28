@@ -15,19 +15,21 @@ const Customize: FC<CustomizeProps> = ({}) => {
 
   const handleClick1 = () => {
     setInstruction(!instruction);
+    setInstruction1(false);
   };
 
   const handleClick2 = () => {
     setInstruction1(!instruction1);
+    setInstruction(false);
   };
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Modal
         isOpen={isCustomModal}
         closeModal={closeCustomModal}
         className=" max-w-[576px] mx-auto  w-full max-xphone:px-2 max-md:px-4"
       >
-        <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
+        <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg pt-10 w-full rounded-lg  dark:text-gray-300">
           <div className="text-[18px] flex items-center gap-2 pt-6 pb-6 px-6 border-b border-white/10">
             <p className="font-semibold">Custom instructions</p>
             <TbInfoCircle size={18} />
@@ -61,7 +63,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   </button>
                 </div>
                 {instruction && (
-                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-white dark:bg-home-color-nav_bg text-sm ">
+                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md max-w-[320px] top-0 bg-white dark:bg-home-color-nav_bg text-sm ">
                     <p className="font-semibold text-gray-900 dark:text-gray-200 ">
                       Keyboard Shortcuts
                     </p>
@@ -109,7 +111,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   </button>
                 </div>
                 {instruction1 && (
-                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-white dark:bg-home-color-nav_bg text-sm ">
+                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md max-w-[320px] top-0 bg-white dark:bg-home-color-nav_bg text-sm ">
                     <ul className="pl-6">
                       <li className="list-disc ">
                         How formal or casual should ChatGPT be?
@@ -130,20 +132,20 @@ const Customize: FC<CustomizeProps> = ({}) => {
               </div>
             </div>
             <div className="flex justify-between max-sm:flex-col  items-center w-full py-4">
-              <div className="flex items-center max-sm:justify-between gap-2">
+              <div className="flex items-center max-sm:justify-between gap-2 max-sm:w-full">
                 <p className="text-gray-400 text-sm">Enable for new chats</p>
-                <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full">
+                <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full pl-1">
                   <div className="h-[21px] w-[21px] bg-white rounded-full" />
                 </div>
               </div>
-              <div className="flex items-center max-sm:flex-col  gap-3">
+              <div className="flex items-center max-sm:flex-col max-sm:w-full  gap-3">
                 <button
-                  className="py-2 px-4 rounded bg-[#343541] border border-[rgba(86,88,105,1)]"
+                  className=" py-2 px-4 rounded max-sm:w-full dark:bg-[#343541] border bg-transparent border-gray-200 dark:border-[#565869]"
                   onClick={closeCustomModal}
                 >
                   Cancle
                 </button>
-                <button className="py-2 px-4 rounded bg-[#10a37f] opacity-70">
+                <button className="py-2 px-4 rounded max-sm:w-full bg-[#10a37f] opacity-70">
                   save
                 </button>
               </div>
