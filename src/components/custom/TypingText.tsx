@@ -60,7 +60,9 @@ const TypingText: React.FC<TypingTextProps> = ({
     <div className="text-[32px] md:text-[40px] font-medium leading-[1.2]">
       <span>{currentText}</span>
       {showCursor && (
-        <span className="block h-6 w-6 rounded-full bg-theme-color-light dark:bg-theme-color-dark " />
+        <span>
+          <span className="block h-6 w-6 rounded-full bg-theme-color-light dark:bg-theme-color-dark " />
+        </span>
       )}
     </div>
   );
