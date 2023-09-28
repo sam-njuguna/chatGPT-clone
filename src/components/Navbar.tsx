@@ -45,7 +45,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         {isNavM && (
           <div className="absolute right-[-50px] top-2">
             <button
-              className="w-11 h-11 flex justify-center  items-center border-2 border-white"
+              className="w-11 h-11 flex justify-center  items-center border-2 dark:border-white border-gray-400 text-gray-900 dark:text-white "
               onClick={handleNav}
             >
               <HiX size={24} />

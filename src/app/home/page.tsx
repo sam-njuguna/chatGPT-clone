@@ -50,10 +50,10 @@ const Home: FC<pageProps> = ({}) => {
         </div>
         <div className="max-md:px-2 pt-2">
           <div className="h-[98px] relative max-md:h-full flex justify-center items-center w-full">
-            <div className="flex  relative items-center h-[54px] max-md:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-lg">
+            <div className="flex  relative items-center h-[54px] max-md:w-full p-1 sm:h-[50px]  gap-1 sm:p-1 bg-home-color-light_btn dark:bg-home-color-nav_bg rounded-xl">
               <button
                 className={twMerge(
-                  "h-full flex gap-2 items-center justify-center w-[148px] max-md:w-full  bg-white dark:bg-gray-700/90 text-gray-900 dark:text-gray-100 border border-black/10 dark:border-[#4E4F60] shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] rounded-lg font-semibold",
+                  "h-full flex gap-2 items-center justify-center w-[148px] max-md:w-full  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 border border-black/10 dark:border-[#4E4F60] shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] rounded-lg font-semibold",
                   !gpt3 && "group"
                 )}
                 onClick={enterGpt3}
@@ -76,7 +76,7 @@ const Home: FC<pageProps> = ({}) => {
               </button>
 
               <button
-                className="h-full flex items-center justify-center gap-2 w-[148px] max-xphone:w-full btn font-semibold text-[#8e8ea0]"
+                className="h-full flex items-center justify-center gap-2 w-[148px] max-md:w-full btn font-semibold text-[#8e8ea0]"
                 onClick={enterGpt4}
               >
                 <div className="h-4 w-4">
@@ -97,7 +97,7 @@ const Home: FC<pageProps> = ({}) => {
               <div
                 className={twMerge(
                   "absolute w-full left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line bg-white   top-[64px]",
-                  "border border-gray-100 dark:border-none",
+                  "border border-gray-200 dark:border-none",
                   gpt3 ? "block" : "hidden group-hover:block"
                 )}
               >
@@ -113,7 +113,7 @@ const Home: FC<pageProps> = ({}) => {
                 className={twMerge(
                   "absolute w-full  left-0 flex z-20 flex-col gap-2 font-semibold rounded-lg dark:bg-home-color-nav_bg px-5 py-4 whitespace-pre-line  bg-white border border-black/10 dark:border-none  top-[64px]",
                   gpt4 ? "block" : "hidden group-hover:block",
-                  "border border-gray-100 dark:border-none"
+                  "border border-gray-200 dark:border-none"
                 )}
               >
                 <h3 className="text-gray-900 dark:text-white text-sm sm:text-base font-bold">

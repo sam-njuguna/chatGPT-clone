@@ -24,7 +24,7 @@ const Settings: FC<SettingsProps> = ({}) => {
       closeModal={closeSettingModal}
       className=" max-w-[680px] mx-auto w-full max-xphone:px-2 max-md:px-4"
     >
-      <div className="bg-home-color-nav_bg w-full rounded-lg  text-gray-300">
+      <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg w-full rounded-lg  dark:text-gray-300">
         <div className=" p-4 sm:p-5 border-b border-white/10 flex items-center justify-between">
           <p className="text-[18px] font-semibold text-gray-900 dark:text-gray-200 ">
             Settings
@@ -37,11 +37,11 @@ const Settings: FC<SettingsProps> = ({}) => {
           </button>
         </div>
         <div className="h-[370px] flex  max-[765px]:h-full max-[765px]:mt-4 max-[765px]:flex-col  w-full gap-3 px-4">
-          <div className="flex flex-col max-[765px]:flex-row  mt-4 max-[765px]:p-1 max-[765px]:bg-black/30 rounded-md">
+          <div className="flex flex-col max-[765px]:flex-row  mt-4 max-[765px]:p-1 max-[765px]:dark:bg-black/30 max-[765px]:bg-gray-100  rounded-md">
             <button
               className={twMerge(
-                "flex gap-2 py-1.5 px-2 rounded-md h-8 w-[180px] max-[765px]:w-full items-center justify-start max-[765px]:justify-center text-gray-300",
-                active === 1 && "bg-[#343541] text-white"
+                "flex gap-2 py-1.5 px-2 rounded-md h-8 w-[180px] max-[765px]:w-full items-center justify-start max-[765px]:justify-center text-gray-800 dark:text-gray-300",
+                active === 1 && "bg-gray-800 dark:bg-[#343541] text-white"
               )}
               onClick={() => handleActive(1)}
             >
@@ -50,7 +50,7 @@ const Settings: FC<SettingsProps> = ({}) => {
             </button>
             <button
               className={twMerge(
-                "flex gap-2 py-1.5 px-2 rounded-md h-8 w-[180px] max-[765px]:w-full items-center justify-start max-[765px]:justify-center text-gray-300",
+                "flex gap-2 py-1.5 px-2 rounded-md h-8 w-[180px] max-[765px]:w-full items-center justify-start max-[765px]:justify-center  text-gray-800 dark:text-gray-300",
                 active === 2 && "bg-[#343541] text-white"
               )}
               onClick={() => handleActive(2)}
