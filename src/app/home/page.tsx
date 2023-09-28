@@ -121,7 +121,7 @@ const Home: FC<pageProps> = ({}) => {
                 <p className="text-gray-500 text-xs">
                   GPT-4 currently has a cap of 25 messages every 3 hours.
                 </p>
-                <button className="w-full rounded h-[42px] flex items-center justify-center text-xs text-white font-medium bg-[#ab68ff] duration-100  hover:brightness-90 mt-3">
+                <button className="w-full rounded h-[42px] flex items-center justify-center text-xs text-white font-bold bg-[#ab68ff] duration-100  hover:brightness-90 mt-3">
                   Upgrade to ChatGPT Plus
                 </button>
               </div>
