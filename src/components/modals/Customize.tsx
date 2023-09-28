@@ -61,11 +61,11 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   </button>
                 </div>
                 {instruction && (
-                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg text-sm ">
+                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-white dark:bg-home-color-nav_bg text-sm ">
                     <p className="font-semibold text-gray-900 dark:text-gray-200 ">
                       Keyboard Shortcuts
                     </p>
-                    <ul className="list-disc ">
+                    <ul className="pl-6 ">
                       <li className="list-disc">Where are you based?</li>
                       <li className="list-disc">What do you do for work?</li>
                       <li className="list-disc">
@@ -109,9 +109,9 @@ const Customize: FC<CustomizeProps> = ({}) => {
                   </button>
                 </div>
                 {instruction1 && (
-                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-home-color-nav_bg text-sm ">
-                    <ul className="list-disc">
-                      <li className="list-disc">
+                  <div className="absolute right-[-324px] hidden lg:block p-4 rounded-md w-[320px] top-0 bg-white dark:bg-home-color-nav_bg text-sm ">
+                    <ul className="pl-6">
+                      <li className="list-disc ">
                         How formal or casual should ChatGPT be?
                       </li>
                       <li className="list-disc">
@@ -129,14 +129,14 @@ const Customize: FC<CustomizeProps> = ({}) => {
                 )}
               </div>
             </div>
-            <div className="flex justify-between  items-center w-full py-4">
-              <div className="flex items-center gap-2">
+            <div className="flex justify-between max-sm:flex-col  items-center w-full py-4">
+              <div className="flex items-center max-sm:justify-between gap-2">
                 <p className="text-gray-400 text-sm">Enable for new chats</p>
                 <div className="w-[42px] h-[25px] justify-end flex items-center bg-[#10a37f] rounded-full">
                   <div className="h-[21px] w-[21px] bg-white rounded-full" />
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center max-sm:flex-col  gap-3">
                 <button
                   className="py-2 px-4 rounded bg-[#343541] border border-[rgba(86,88,105,1)]"
                   onClick={closeCustomModal}
@@ -167,8 +167,8 @@ const Customize: FC<CustomizeProps> = ({}) => {
                 </button>
               </div>
               <div className="p-4 sm:p-6 sm:pt-4">
-                <ul className="list-disc ">
-                  <li className="list-disc">
+                <ul className="pl-6 ">
+                  <li className="list-disc  ">
                     How formal or casual should ChatGPT be?
                   </li>
                   <li className="list-disc">
@@ -202,7 +202,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
                 </button>
               </div>
               <div className="p-4 sm:p-6 sm:pt-4">
-                <ul>
+                <ul className="pl-6 ">
                   <li className="list-disc">Where are you based?</li>
                   <li className="list-disc">What do you do for work?</li>
                   <li className="list-disc">
