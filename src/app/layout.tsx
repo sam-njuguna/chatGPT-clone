@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ChatGPT UI clone",
+  title: "ChatGPT UI Clone",
   description: "Only the UI of ChatGpt no AI.",
 };
 
