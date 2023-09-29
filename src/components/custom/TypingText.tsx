@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BsDot } from "react-icons/bs"; // Import the circle icon from react-icons
+import { BsCircleFill } from "react-icons/bs"; // Import the circle icon from react-icons
 
 interface TypingAnimationProps {
   text: string;
@@ -30,7 +30,7 @@ const TypingText: React.FC<TypingAnimationProps> = ({ text, typingSpeed }) => {
   return (
     <span className="text-[32px] md:text-[40px] font-medium leading-[1.2]">
       {displayText}
-      {showCursor && <BsDot className="inline-block" />}
+      {showCursor && <BsCircleFill className="inline-block ml-4" />}
     </span>
   );
 };
