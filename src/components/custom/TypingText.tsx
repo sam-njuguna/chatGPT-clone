@@ -30,9 +30,7 @@ const TypingText: React.FC<TypingAnimationProps> = ({ text, typingSpeed }) => {
   return (
     <span className="text-[32px] md:text-[40px] font-medium leading-[1.2]">
       {displayText}
-      {showCursor && (
-        <BsDot className="inline-block text-[32px] md:text-[40px]" />
-      )}
+      {showCursor && <BsDot className="inline-block" />}
     </span>
   );
 };
