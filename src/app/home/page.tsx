@@ -28,8 +28,17 @@ const Home: FC<pageProps> = ({}) => {
     setGpt4(false);
     openKeyModal();
   };
+  const [refreshed, setRefreshed] = useState(false);
+
   useEffect(() => {
-    window.location.reload();
+    const hasRefreshed = localStorage.getItem("hasRefreshed");
+
+    if (!hasRefreshed) {
+      localStorage.setItem("hasRefreshed", "true");
+      window.location.reload();
+    } else {
+      localStorage.removeItem("hasRefreshed");
+    }
   }, []);
 
   return (
