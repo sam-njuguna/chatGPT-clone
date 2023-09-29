@@ -28,6 +28,7 @@ interface DropdownContextType {
   closeUpgardeModal: () => void;
   handleNav: () => void;
   handleNavM: () => void;
+  closeNavM: () => void;
   setIsCustomModal: (isCustomModal: boolean) => void;
   keyRef: React.RefObject<HTMLDivElement> | null;
   settingRef: React.RefObject<HTMLDivElement> | null;
@@ -100,6 +101,9 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     setIsNavM(!isNavM);
     setIsNav(true);
   };
+  const closeNavM = () => {
+    setIsNavM(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
@@ -169,6 +173,7 @@ export const ModalProvider: React.FC<Prop> = ({ children }) => {
     closeUpgardeModal,
     handleNav,
     handleNavM,
+    closeNavM,
     keyRef,
     settingRef,
   };

@@ -21,10 +21,12 @@ const Navbar: FC<NavbarProps> = ({}) => {
     isNavM,
     toggleSetting,
     openSettingModal,
+    closeSettingModal,
     openCustomModal,
     openUpgradeModal,
     handleNav,
     handleNavM,
+    closeNavM,
   } = UseModal();
 
   return (
@@ -127,7 +129,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
                 onClick={openCustomModal}
               >
                 <TbMessageDots size={16} />
-                <div className="text-sm font-medium">Customize</div>
+                <div className="text-sm font-medium">Custom instructions</div>
               </button>
               <button
                 className="flex items-center h-11 w-full justify-start gap-3 px-3 duration-200 hover:bg-[#444654] "
@@ -140,6 +142,10 @@ const Navbar: FC<NavbarProps> = ({}) => {
               <Link
                 href="https://gptc-ui.vercel.app/"
                 className="flex items-center h-11 w-full justify-start gap-3 px-3 duration-200 hover:bg-[#444654] "
+                onClick={() => {
+                  closeSettingModal();
+                  closeNavM();
+                }}
               >
                 <FiLogOut size={16} />
                 <div className="text-sm font-medium"> Log out</div>
