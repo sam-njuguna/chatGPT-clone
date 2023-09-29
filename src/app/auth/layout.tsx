@@ -6,7 +6,7 @@ interface layoutProps {
 }
 export const metadata: Metadata = {
   title: "Auth |",
-  description: "",
+  description: "Login && Signup Form",
 };
 const layout: FC<layoutProps> = ({ children }) => {
   return <div>{children}</div>;
