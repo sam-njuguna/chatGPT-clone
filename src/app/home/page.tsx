@@ -3,12 +3,13 @@ import { ModalGpt, Suggestion, Svg, Textarea } from "@/components";
 import { UseModal } from "@/provider/ModalContext";
 import { flashPathIcon, plusPathIcon } from "@/types";
 import Image from "next/image";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { BiSolidLockAlt } from "react-icons/bi";
 import { HiInformationCircle, HiPlus } from "react-icons/hi";
 import { HiBars3 } from "react-icons/hi2";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { twMerge } from "tailwind-merge";
+import Cookies from "js-cookie";
 
 interface pageProps {}
 
@@ -28,16 +29,12 @@ const Home: FC<pageProps> = ({}) => {
     setGpt4(false);
     openKeyModal();
   };
-  const [refreshed, setRefreshed] = useState(false);
-
   useEffect(() => {
-    const hasRefreshed = localStorage.getItem("hasRefreshed");
+    const refreshed = Cookies.get("refreshed");
 
-    if (!hasRefreshed) {
-      localStorage.setItem("hasRefreshed", "true");
+    if (!refreshed) {
+      Cookies.set("refreshed", "true", { expires: 365 });
       window.location.reload();
-    } else {
-      localStorage.removeItem("hasRefreshed");
     }
   }, []);
 
