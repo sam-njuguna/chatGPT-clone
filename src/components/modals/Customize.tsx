@@ -33,7 +33,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
       <Modal
         isOpen={isCustomModal}
         closeModal={closeModal}
-        className=" max-w-[576px] mx-auto pt-[3rem] max-md:pt-[10rem] w-full max-xphone:px-2 max-md:px-4"
+        className=" max-w-[576px] mx-auto pt-[3rem] max-md:pt-[10rem] max-md:pb-[4rem] w-full max-xphone:px-2 max-md:px-4"
       >
         <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg  w-full rounded-lg  dark:text-gray-300">
           <div className="text-[18px] flex items-center gap-2 pt-6 pb-6 px-6 border-b  border-black/10 dark:border-white/10 ">
@@ -160,7 +160,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
         </div>
       </Modal>
       {instruction1 && (
-        <div className="h-screen right-0 z-50 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70  lg:hidden">
+        <div className="h-screen right-0 z-50 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/60 dark:bg-gray-600/60  lg:hidden">
           <Modal
             closeModal={() => setInstruction1(false)}
             isOpen={instruction1}
@@ -199,7 +199,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
         </div>
       )}
       {instruction && (
-        <div className="h-screen z-50 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/70 dark:bg-gray-600/70  lg:hidden">
+        <div className="h-screen z-50 right-0 left-0 w-full flex justify-center items-center fixed inset-0 bg-gray-300/60 dark:bg-gray-600/60  lg:hidden">
           <Modal
             closeModal={() => setInstruction(false)}
             isOpen={instruction}

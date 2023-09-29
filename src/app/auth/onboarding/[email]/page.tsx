@@ -4,9 +4,13 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { FC } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import type { Metadata } from "next";
 
 interface pageProps {}
-
+export const metadata: Metadata = {
+  title: "Gmail Verification |",
+  description: "Link Confirmation",
+};
 const Email: FC<pageProps> = () => {
   const param = useParams();
   const decodedEmail = param.email
