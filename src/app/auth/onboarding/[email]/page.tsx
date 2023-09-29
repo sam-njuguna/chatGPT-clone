@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { FC } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 interface pageProps {}
 export const metadata: Metadata = {

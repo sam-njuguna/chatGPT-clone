@@ -1,5 +1,5 @@
 import { FC } from "react";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 interface layoutProps {
   children: React.ReactNode;
 }

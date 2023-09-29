@@ -3,10 +3,14 @@ import { FC } from "react";
 import { Customize, Keys, Navbar, Settings, Upgrade } from "@/components";
 import Shortcuts from "@/components/Shortcuts";
 import { UseModal } from "@/provider/ModalContext";
+import { Metadata } from "next";
 interface layoutProps {
   children: React.ReactNode;
 }
-
+export const metadata: Metadata = {
+  title: "Home |",
+  description: "Page",
+};
 const layout: FC<layoutProps> = ({ children }) => {
   const { isKeyModal, isSettingModal, isCustomModal, isUpgradeModal } =
     UseModal();
