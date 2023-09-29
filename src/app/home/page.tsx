@@ -29,9 +29,7 @@ const Home: FC<pageProps> = ({}) => {
     openKeyModal();
   };
   useEffect(() => {
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
+    window.location.reload();
   }, []);
 
   return (
