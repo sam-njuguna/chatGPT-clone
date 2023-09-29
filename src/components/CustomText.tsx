@@ -4,73 +4,73 @@ import TypingText from "./custom/TypingText";
 
 interface DataItem {
   title: string;
-  subtitles: string[];
+  subtitles: string;
 }
 
 const dataArray: DataItem[] = [
   {
     title: "Recommend a dish",
-    subtitles: [
-      "A Flavorful and Healthy Seafood Delight",
-      "Quick and Easy Recipe for Weeknight Dinners",
-    ],
+    subtitles: "Quick and Easy Recipe for Weeknight Dinners",
   },
   {
     title: "Sammarize this artical",
-    subtitles: ["Key Points and Takeaways", "Into 3 points"],
+    subtitles: "Key Points and Takeaways",
   },
   {
     title: "Plan a trip",
-    subtitles: ["Choosing Your Destination", "Creating an Itinerary"],
+    subtitles: "Choosing Your Destination",
   },
   {
     title: "Write a thank-you note",
-    subtitles: ["Expressing Gratitude for a Gift"],
+    subtitles: "Expressing Gratitude for a Gift",
   },
   {
     title: "Brainstorm names",
-    subtitles: ["Name Generation Techniques", "Creative Naming Ideas"],
+    subtitles: "Name Generation Techniques",
   },
 ];
 
 const CustomText: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [currentSubtitles, setCurrentSubtitles] = useState<string[]>([]);
   const [shuffledData, setShuffledData] = useState<DataItem[]>([]);
+  const [visibleIndex, setVisibleIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const shuffled = [...dataArray].sort(() => Math.random() - 0.5);
     setShuffledData(shuffled);
-    setCurrentIndex(0);
-    setCurrentSubtitles(shuffled[0]?.subtitles || []);
+  }, []);
 
+  useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % shuffled.length;
-        setCurrentSubtitles(shuffled[nextIndex]?.subtitles || []);
-        return nextIndex;
-      });
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % shuffledData.length);
     }, 10000);
 
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [currentIndex, shuffledData]);
+
+  useEffect(() => {
+    setVisibleIndex(currentIndex);
+  }, [currentIndex]);
 
   return (
-    <div>
-      {shuffledData.length > 0 && (
-        <div className="min-h-[100px] pt-[30px]">
-          <h1 className="text-[32px] md:text-[40px] font-bold leading-[1.2]">
-            {shuffledData[currentIndex]?.title || ""}
-          </h1>
-          <TypingText
-            textArray={currentSubtitles}
-            delayBetweenTexts={10000}
-            cursorBlinkSpeed={500}
-          />
+    <div className="min-h-[100px] pt-[30px]">
+      {shuffledData.map((item, index) => (
+        <div
+          key={index}
+          className={index === visibleIndex ? "block" : "hidden"}
+        >
+          <h2 className="text-[32px] md:text-[40px] font-bold leading-[1.2]">
+            {item.title}
+          </h2>
+          <p>
+            {index === visibleIndex ? (
+              <TypingText text={item.subtitles} typingSpeed={50} />
+            ) : null}
+          </p>
         </div>
-      )}
+      ))}
     </div>
   );
 };
