@@ -28,6 +28,11 @@ const Home: FC<pageProps> = ({}) => {
     setGpt4(false);
     openKeyModal();
   };
+  useEffect(() => {
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  }, []);
 
   return (
     <div className="w-full supports-[height:100dvh]:h-[100dvh] relative  ">
