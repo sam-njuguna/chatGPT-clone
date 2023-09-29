@@ -33,7 +33,7 @@ const Customize: FC<CustomizeProps> = ({}) => {
       <Modal
         isOpen={isCustomModal}
         closeModal={closeModal}
-        className=" max-w-[576px] mx-auto pt-[3rem] w-full max-xphone:px-2 max-md:px-4"
+        className=" max-w-[576px] mx-auto pt-[3rem] max-md:pt-[10rem] w-full max-xphone:px-2 max-md:px-4"
       >
         <div className="bg-white text-gray-700 dark:bg-home-color-nav_bg  w-full rounded-lg  dark:text-gray-300">
           <div className="text-[18px] flex items-center gap-2 pt-6 pb-6 px-6 border-b  border-black/10 dark:border-white/10 ">
