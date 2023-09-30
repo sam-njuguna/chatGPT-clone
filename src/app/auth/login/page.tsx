@@ -98,7 +98,7 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <div className="w-full flex items-center justify-center max-xphone:pt-10 max-tablet:absolute bottom-0 left-0">
+      <div className="w-full flex items-center justify-center max-xphone:pt-10 max-tablet:absolute bottom-0 max-md:mt-8 left-0">
         <div className="py-3 text-[14px]">
           <a href="" className="text-focus-color-green font-medium mx-3">
             Terms of use
